@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>空き家管理サービス | 下関市豊浦町の便利屋「とよサポ」</title>
+  <meta name="description" content="下関市豊浦町を中心に活動する地域密着型の便利屋「とよサポ」の空き家管理サービス。初回限定お試し単発プラン（3,300円）からあんしん定期管理プラン（月額5,500円）まで。換気、通水、写真報告で大切な実家を守ります。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 個別ページ用のリッチなデザインスタイル */
+    .akiya-hero {
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--secondary-color);
+    }
+    .akiya-hero h1 {
+      color: var(--secondary-color);
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .akiya-hero p {
+      font-size: 18px;
+      color: #333;
+      max-width: 720px;
+      margin: 0 auto;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    
+    .breadcrumb {
+      padding: 12px 20px;
+      background: #f9f9f9;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .breadcrumb a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .breadcrumb span {
+      margin: 0 8px;
+      color: #999;
+    }
+
+    .intro-box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .intro-box p {
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .intro-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 管理メニューカードスタイル */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .menu-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .menu-icon {
+      font-size: 32px;
+      background: #e3f2fd;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--secondary-color);
+    }
+    .menu-info h4 {
+      font-size: 18px;
+      color: var(--secondary-color);
+      margin-bottom: 8px;
+    }
+    .menu-info p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* プランカード */
+    .plan-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 24px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .plan-container {
+        flex-direction: row;
+        align-items: stretch;
+      }
+    }
+    .plan-card {
+      background: white;
+      border-radius: 16px;
+      border: 2px solid var(--border-color);
+      padding: 30px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .plan-card-popular {
+      border-color: var(--accent-color);
+    }
+    .plan-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--accent-color);
+      color: white;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .plan-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--secondary-color);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .plan-price-box {
+      background: #f8f9fa;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .plan-price {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--accent-color);
+    }
+    .plan-price span {
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .plan-desc {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      margin-top: 4px;
+    }
+    .plan-list {
+      list-style: none;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .plan-list li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 15px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .plan-list li::before {
+      content: "✓";
+      color: var(--primary-color);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* 警告枠 */
+    .warning-box {
+      background-color: #fff9c4;
+      border: 2px solid #fbc02d;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+    .warning-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #f57f17;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .warning-content {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.7;
+    }
+    .warning-content p {
+      margin-bottom: 12px;
+    }
+    .warning-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .flow-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .flow-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      border-left: 5px solid var(--secondary-color);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      border: 1px solid var(--border-color);
+      border-left-width: 5px;
+    }
+    .flow-card-num {
+      background: var(--secondary-color);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .flow-card-content h4 {
+      margin-bottom: 6px;
+      font-size: 18px;
+      color: var(--secondary-color);
+    }
+    .flow-card-content p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 768px) {
+      .flow-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="とよサポ" class="header-logo">
+        <div class="header-text-group">
+          <span class="header-site-name">とよサポ</span>
+          <span class="header-site-sub">豊浦暮らしサポート</span>
+        </div>
+      </a>
+    </div>
+    
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#services">作業内容</a></li>
+        <li><a href="index.html#price">料金</a></li>
+        <li><a href="index.html#cases">事例</a></li>
+        <li><a href="index.html#flow">ご依頼の流れ</a></li>
+        <li><a href="index.html#about">当社について</a></li>
+        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container" style="padding: 0;">
+      <a href="index.html">ホーム</a><span>❯</span>空き家管理サービス
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="akiya-hero">
+    <div class="container">
+      <h1>空き家管理サービス</h1>
+      <p>不動産の専門知識を持つプロが、大切なご実家を丁寧にサポート。<br>まずは1回だけ試せる「初回限定・お試し単発プラン」をご用意しました！</p>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="section bg-cool">
+    <div class="container">
+      
+      <!-- Intro Box -->
+      <div class="intro-box">
+        <p><strong>「遠方の実家が心配だけど、遠いのでなかなか様子を見に行けない…」</strong><br>
+        <strong>「将来的に売却や賃貸をするかもしれないから、資産価値を落とさずにきれいに維持したい…」</strong></p>
+        <p>そんなお悩みは、本業が不動産業の「とよサポ」にお任せください！不動産の専門知識を持つプロが、ただの清掃や見回りにとどまらず、将来の有効活用（売買・賃貸など）まで見据えた「資産価値を守る建物管理」を責任を持って行います。プロならではの視点で建物の傷みやトラブル（雨漏り・ひび割れ等の劣化リスク）を早期に発見しご報告します。</p>
+        <p>「どのようなレポートが届くか確かめたい」「まずは一度対応を見てみたい」というお客様のために、初回限定の「お試し単発プラン（3,300円）」をご用意しました。プロならではの丁寧な作業品質と、詳細な「写真付き報告書」をぜひ実際にご確認ください。</p>
+      </div>
+
+      <h2>空き家管理の基本サービス内容</h2>
+      <p style="text-align: center; margin-top: -16px; margin-bottom: 32px; font-size: 16px; color: #666;">大切なお住まいの資産価値を維持するため、以下の基本業務を徹底して行います。</p>
+
+      <!-- 管理メニューグリッド -->
+      <div class="menu-grid">
+        <!-- 1. 換気 -->
+        <div class="menu-card">
+          <div class="menu-icon">🪟</div>
+          <div class="menu-info">
+            <h4>全部屋の空気入れ替え（換気）</h4>
+            <p>すべての部屋の窓や押し入れなどを全開にし、約40〜60分間空気を通します。湿気を追い出し、カビや木部の傷みを効果的に防ぎます。</p>
+          </div>
+        </div>
+        <!-- 2. 通水 -->
+        <div class="menu-card">
+          <div class="menu-icon">🚰</div>
+          <div class="menu-info">
+            <h4>通水による害虫侵入・悪臭防止</h4>
+            <p>キッチン、トイレ、浴室、洗面台の各蛇口を数分間通水させます。排水トラップに水を満たすことで、下水からの嫌な臭いや害虫の上昇をしっかりと防ぎます。</p>
+          </div>
+        </div>
+        <!-- 3. 郵便物 -->
+        <div class="menu-card">
+          <div class="menu-icon">📬</div>
+          <div class="menu-info">
+            <h4>郵便物の回収・報告・転送</h4>
+            <p>ポスト内のチラシや郵便物をすべて回収・整理します。チラシなどの不要物は処分し、重要な郵便物は内容をご報告のうえ、ご指定の住所へ転送いたします。</p>
+          </div>
+        </div>
+        <!-- 4. 防虫 -->
+        <div class="menu-card">
+          <div class="menu-icon">🐜</div>
+          <div class="menu-info">
+            <h4>防虫スプレーによる侵入予防</h4>
+            <p>害虫の侵入経路となりやすい排水口付近や玄関まわり等に防虫予防スプレーを散布します。（※防虫効果を完全に保証するものではありません）</p>
+          </div>
+        </div>
+        <!-- 5. 清掃 -->
+        <div class="menu-card">
+          <div class="menu-icon">🧹</div>
+          <div class="menu-info">
+            <h4>玄関まわり等の簡易清掃</h4>
+            <p>玄関周辺の掃き掃除や簡単な落ち葉拾い、ゴミの回収を行います。生活感を保つことで、空き家だと悟られにくくする防犯効果も期待できます。</p>
+          </div>
+        </div>
+        <!-- 6. 写真報告 -->
+        <div class="menu-card">
+          <div class="menu-icon">📸</div>
+          <div class="menu-info">
+            <h4>屋外・屋内の写真報告書送付</h4>
+            <p>巡回時の建物の状況（外壁のひび割れ、雨漏りの有無、庭の様子など）を写真撮影します。作業完了後、詳細な状況報告書（レポート）を作成して送付いたします。</p>
+          </div>
+        </div>
+        <!-- 7. 草刈り提案 -->
+        <div class="menu-card" style="grid-column: 1 / -1;">
+          <div class="menu-icon">🌱</div>
+          <div class="menu-info">
+            <h4>お庭の草刈り・除草剤散布のご提案</h4>
+            <p>お庭の雑草の伸び具合や樹木の繁茂状況を確認し、近隣のご迷惑になりそうな場合は、草刈りや除草剤散布の最適なメンテナンスプランを別途お見積りと共にご提案いたします。</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>選べる2つの管理プラン</h2>
+      <p style="text-align: center; margin-top: -16px; margin-bottom: 16px; font-size: 16px; color: #666;">初回お試しは出張費のみの3,300円、継続定期は5,500円の安心設定です。</p>
+
+      <!-- プラン比較コンテナ -->
+      <div class="plan-container">
+        <!-- 初回お試し -->
+        <div class="plan-card">
+          <div class="plan-badge">初回限定</div>
+          <div class="plan-title">お試し単発プラン</div>
+          <div class="plan-price-box">
+            <div class="plan-price">3,300<span>円(税込)</span></div>
+            <div class="plan-desc">（作業費0円 ＋ 出張費3,300円）</div>
+            <div class="plan-desc" style="font-weight: bold; margin-top: 4px;">/ 1回切り（お試し）</div>
+          </div>
+          <ul class="plan-list">
+            <li>基本管理メニューのすべてを実施</li>
+            <li>換気、通水、郵便物回収、簡易清掃、防虫散布</li>
+            <li>写真報告書の作成・送付</li>
+            <li>契約期間：単発（自動更新はありません）</li>
+          </ul>
+          <p style="font-size: 13px; text-align: center; color: #666; font-weight: bold;">まずは作業や報告書の品質を確認したい方に</p>
+        </div>
+
+        <!-- あんしん定期管理 -->
+        <div class="plan-card plan-card-popular">
+          <div class="plan-badge" style="background-color: var(--secondary-color);">継続維持</div>
+          <div class="plan-title">あんしん定期管理プラン</div>
+          <div class="plan-price-box">
+            <div class="plan-price">5,500<span>円(税込)</span></div>
+            <div class="plan-desc">（作業費2,200円 ＋ 出張費3,300円）</div>
+            <div class="plan-desc" style="font-weight: bold; margin-top: 4px;">/ 月額（毎月1回定期巡回）</div>
+          </div>
+          <ul class="plan-list">
+            <li>基本管理メニューのすべてを毎月実施</li>
+            <li>毎月の継続的な巡回・建物の維持管理</li>
+            <li>毎月、写真付き状況報告書を送付</li>
+            <li>契約期間：月額定額制（毎月自動更新）</li>
+          </ul>
+          <p style="font-size: 13px; text-align: center; color: var(--secondary-color); font-weight: bold;">大切な資産を長期的に美しく安全に守り続けます</p>
+        </div>
+      </div>
+
+      <!-- 重要なお知らせ警告枠 -->
+      <div class="warning-box">
+        <div class="warning-title">⚠️ お申込み前に必ずご確認ください</div>
+        <div class="warning-content">
+          <p><strong>■ 2回目以降のご依頼について：</strong><br>
+          とよサポの空き家管理は、建物の資産価値を長期的に維持することを目的としているため、<strong>2回目以降のご利用は「月額定額制プラン（サブスク）」のみの受付</strong>とさせていただきます。2回目の単発利用や、隔月でのスポット利用はお受けできかねますので予めご了承ください。</p>
+          <p><strong>■ 勝手に定額制に移行することはありません：</strong><br>
+          初回の「お試し単発プラン」ご利用後に、お客様の同意なく自動的に有料会員（定額制プラン）へ移行することは一切ございません。サービス内容にご満足いただき、継続を希望される場合のみ、改めて定額制のご契約手続きをいただきますのでご安心ください。</p>
+        </div>
+      </div>
+      <div style="margin-top: 24px; text-align: center; margin-bottom: 40px;">
+        <a href="price.html" class="btn btn-price-detail">その他の詳しい料金表はこちら ❯</a>
+      </div>
+
+      <!-- ご依頼の流れ -->
+      <h3 style="text-align: center; color: var(--secondary-color); margin-top: 40px; margin-bottom: 20px;">ご利用の流れ</h3>
+      <div class="flow-card-grid">
+        <div class="flow-card">
+          <div class="flow-card-num">1</div>
+          <div class="flow-card-content">
+            <h4>お問い合わせ</h4>
+            <p>お電話またはLINEにて、「空き家管理のお試しプランをお願いしたい」とご連絡ください。建物の場所や現状について伺います。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">2</div>
+          <div class="flow-card-content">
+            <h4>ご相談・鍵の確認</h4>
+            <p>サービス内容のご説明と、巡回時の入り口となる鍵の受け渡し方法などについてご相談・打ち合わせを行います（お見積りは無料です）。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">3</div>
+          <div class="flow-card-content">
+            <h4>巡回管理作業の実施</h4>
+            <p>プロのスタッフが現地へ向かい、換気、通水、郵便物回収、簡易清掃、写真撮影などを丁寧に行います。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">4</div>
+          <div class="flow-card-content">
+            <h4>写真報告書の送付・お支払い</h4>
+            <p>詳細な写真報告書をLINEでお届けします。内容をご確認いただいた上でお支払いとなります。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="contact" class="section bg-light text-center" style="padding-bottom: 120px;">
+    <div class="container">
+      <h2 style="color: var(--primary-color);">空き家の維持管理でお悩みなら、<br>まずはお気軽にご相談ください。</h2>
+      <p style="margin-bottom: 32px; font-weight: bold;">地域の皆様を支える「とよサポ」が、<br>大切な思い出の詰まったご実家を丁寧に管理いたします！</p>
+      
+      <a href="tel:09075294121" class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;">
+        📞 090-7529-4121<br>
+        <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜18:00)</span>
+      </a>
+      
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;">
+        LINEで簡単申し込み・相談
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
+        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
+        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
+          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
+          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>地域の困りごと相談窓口</p>
+        <p>代表：森脇靖斗</p>
+      </div>
+      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Fixed Bottom Bar -->
+  <div class="fixed-bottom">
+    <a href="tel:09075294121" class="btn btn-phone">📞 090-7529-4121</a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

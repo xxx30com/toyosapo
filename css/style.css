@@ -1,0 +1,836 @@
+/* css/style.css */
+:root {
+  --primary-color: #005A32; /* Navy-ish dark green / Dark green for trust */
+  --secondary-color: #1B3B6F; /* Navy */
+  --accent-color: #E65100; /* Orange for CTA */
+  --bg-color: #FFFFFF;
+  --text-color: #333333;
+  --light-gray: #F5F5F5;
+  --border-color: #E0E0E0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  font-size: 18px; /* High legibility */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: 1.4;
+  color: var(--secondary-color);
+}
+
+h1 { font-size: 32px; }
+h2 { font-size: 28px; margin-bottom: 24px; text-align: center; }
+h3 { font-size: 24px; margin-bottom: 16px; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.bg-light {
+  background-color: var(--light-gray);
+}
+
+.bg-cool {
+  background: #F8F9FA; /* ボックスがより際立つ、ほんのりグレーがかった白 */
+  color: var(--text-color);
+}
+
+.bg-cool h2 {
+  color: var(--secondary-color);
+}
+
+.bg-cool .problem-footer {
+  color: var(--text-color);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: opacity 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn:active {
+  opacity: 0.8;
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-phone {
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 24px;
+  padding: 20px 24px;
+}
+
+/* PCなどで電話リンクをクリックできないようにする */
+@media (min-width: 768px) {
+  a[href^="tel:"] {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+.btn-line {
+  background-color: #06C755;
+  color: white;
+}
+
+.btn-price-detail {
+  background-color: #F08080; /* 優しめの赤色 (LightCoral) */
+  color: white;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.btn-price-detail:hover {
+  background-color: #E06666;
+}
+
+.btn-outline {
+  background-color: white;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+/* Header */
+header {
+  background-color: white;
+  padding: 16px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.header-text-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header-site-name {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--accent-color);
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.header-site-sub {
+  font-size: 10px;
+  font-weight: bold;
+  color: #666;
+  line-height: 1.2;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.header-logo {
+  height: 60px; /* ヘッダーの高さに合わせて調整 */
+  width: auto;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.header-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Menu */
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.main-nav {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.main-nav.active {
+  display: block;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-nav li {
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.main-nav a {
+  display: block;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover {
+  color: var(--accent-color);
+}
+
+.nav-contact-btn {
+  background-color: #B22222; /* 参考サイトに寄せた赤色 */
+  color: white !important;
+  text-align: center;
+}
+
+.nav-contact-btn:hover {
+  background-color: #8B0000;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  background-color: #333; /* 画像読み込み前のベース色 */
+}
+
+.hero-img-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* 写真がしっかり見えるように高さを広げる */
+}
+
+.hero-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1; /* 写真をそのまま表示 */
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.hero-catch {
+  font-size: 42px;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.8), 0 0 24px rgba(0,0,0,0.6); /* 写真の上でも見やすいように強い影 */
+  line-height: 1.4;
+}
+
+.hero-sub {
+  font-size: 22px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-bottom: 32px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.6);
+}
+
+.hero-cta {
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  color: var(--text-color);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  margin-top: -60px;
+  position: relative;
+  z-index: 20;
+}
+
+/* Problems Section */
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.problem-item {
+  position: relative;
+  background-color: #ffffff; /* 画像がない場合のベース色 */
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15), 0 5px 10px rgba(0,0,0,0.1); /* 白背景に合うように少し柔らかく自然なシャドウに調整 */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.problem-item:hover {
+  transform: translateY(-6px) scale(1.02); /* ホバー時に少し手前に迫る動き */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2), 0 8px 15px rgba(0,0,0,0.15);
+  border-color: var(--accent-color);
+}
+
+.problem-item::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.6); /* 白みがかったオーバーレイ */
+  backdrop-filter: blur(2px); /* グラスモーフィズム（すりガラス効果） */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.problem-text {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+  font-weight: 900;
+  color: #00A040; /* 参考画像の明るい緑色 */
+  text-shadow: 
+    -2px -2px 0 #fff,
+     2px -2px 0 #fff,
+    -2px  2px 0 #fff,
+     2px  2px 0 #fff,
+    -3px 0 0 #fff,
+     3px 0 0 #fff,
+     0 -3px 0 #fff,
+     0  3px 0 #fff;
+  text-align: center;
+  line-height: 1.3;
+  padding: 0 4px;
+  letter-spacing: 0;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: auto;
+}
+
+.problem-footer {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* Services Section */
+.service-category {
+  margin-bottom: 40px;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.service-category h3 {
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.service-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.service-list li::before {
+  content: "✓";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Price Section */
+.price-calc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.price-box {
+  background: white;
+  border-radius: 8px;
+  padding: 24px 16px;
+  width: 100%;
+  max-width: 280px;
+  flex: 1;
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.price-box-orange { background-color: #E67E22; }
+.price-box-blue { background-color: #2980B9; }
+.price-box-green { background-color: #27AE60; }
+
+.price-box-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 8px;
+}
+
+.price-box-amount {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.price-box-amount span {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.price-box-desc {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.price-plus {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.price-box-bubble {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: #F1C40F;
+  color: #333;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transform: rotate(10deg);
+  text-align: center;
+}
+
+/* Price Detail Table */
+.price-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.price-table-header {
+  background-color: #CC0000;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px 24px;
+}
+
+.price-table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.price-table-row:last-child {
+  border-bottom: none;
+}
+
+.price-table-cell.service-name {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.price-table-cell.service-price {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.price-table-cell.service-price span {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+/* Reasons Section */
+.reason-item {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  border-left: 6px solid var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.reason-item h3 {
+  color: var(--primary-color);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+/* Greeting Section */
+.greeting-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.greeting-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+}
+
+.greeting-text {
+  text-align: left;
+}
+
+/* Voices Section */
+.voice-item {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.voice-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.voice-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.voice-title {
+  font-weight: bold;
+  color: var(--secondary-color);
+  font-size: 20px;
+}
+
+.voice-text {
+  font-size: 18px;
+  background: var(--light-gray);
+  padding: 16px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.voice-text::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent var(--light-gray) transparent;
+}
+
+/* Flow Section */
+.flow-step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.step-num {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.step-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.flow-arrow {
+  text-align: center;
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+/* FAQ Section */
+.faq-item {
+  margin-bottom: 24px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.faq-q {
+  background: var(--primary-color);
+  color: white;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.faq-a {
+  padding: 16px;
+  font-size: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.faq-icon {
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Area Section */
+.area-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.area-badge {
+  background: var(--light-gray);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  font-weight: bold;
+}
+
+/* Footer & Fixed Bottom Bar */
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 40px 20px 100px;
+  text-align: center;
+}
+
+.footer-info {
+  margin-bottom: 24px;
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 20px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: flex;
+  gap: 12px;
+}
+
+.fixed-bottom .btn {
+  margin-bottom: 0;
+  font-size: 18px;
+  padding: 12px;
+}
+
+.fixed-bottom .btn-phone {
+  flex: 2;
+  font-size: 20px;
+}
+
+.fixed-bottom .btn-line {
+  flex: 1;
+}
+
+/* PC Layout Adjustments */
+@media (min-width: 900px) {
+  body {
+    font-size: 16px;
+  }
+  .header-sub {
+    display: none; /* PCでは幅を取るので非表示にするか調整 */
+  }
+  .header-site-name {
+    font-size: 26px;
+  }
+  .header-site-sub {
+    font-size: 12px;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  .main-nav {
+    display: block;
+    position: static;
+    width: auto;
+    box-shadow: none;
+  }
+  .main-nav ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+  .main-nav li {
+    border-bottom: none;
+  }
+  .main-nav a {
+    padding: 8px 0;
+    font-size: 16px;
+  }
+  .nav-contact {
+    margin-left: 16px;
+  }
+  .nav-contact-btn {
+    padding: 12px 24px !important;
+    border-radius: 4px;
+  }
+  .greeting-content {
+    flex-direction: row;
+  }
+  .greeting-text {
+    flex: 1;
+  }
+  .problem-text {
+    font-size: 16px; /* 1行または2行に綺麗に収まるように調整 */
+  }
+  .problems-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .service-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .price-calc-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .price-plus {
+    display: flex;
+    align-items: center;
+  }
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .voice-item {
+    margin-bottom: 0;
+  }
+}

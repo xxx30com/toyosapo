@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>草刈り・除草剤散布作業 | 下関市豊浦町の便利屋「とよサポ」</title>
+  <meta name="description" content="下関市豊浦町を中心に活動する地域密着型の便利屋「とよサポ」の草刈り・除草剤散布作業。お庭、空き地、駐車場などの伸び放題の草をプロがスッキリ綺麗に解決します。お見積り無料。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 個別ページ用のリッチなデザインスタイル */
+    .mowing-hero {
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--primary-color);
+    }
+    .mowing-hero h1 {
+      color: var(--primary-color);
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .mowing-hero p {
+      font-size: 18px;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    
+    .breadcrumb {
+      padding: 12px 20px;
+      background: #f9f9f9;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .breadcrumb a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .breadcrumb span {
+      margin: 0 8px;
+      color: #999;
+    }
+
+    .intro-box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .intro-box p {
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .intro-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .service-card-header {
+      background: var(--primary-color);
+      color: white;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .service-card-body {
+      padding: 24px;
+    }
+    .service-card h4 {
+      font-size: 20px;
+      color: var(--secondary-color);
+      margin-top: 24px;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--primary-color);
+      padding-left: 10px;
+    }
+    .service-card h4:first-of-type {
+      margin-top: 0;
+    }
+    .service-card p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 16px;
+    }
+    
+    .recommend-list {
+      list-style: none;
+      background: #f1f8e9;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .recommend-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #33691e;
+    }
+    .recommend-list li:last-child {
+      margin-bottom: 0;
+    }
+    .recommend-list li::before {
+      content: "📌";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .flow-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .flow-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      border-left: 5px solid var(--accent-color);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      border: 1px solid var(--border-color);
+      border-left-width: 5px;
+    }
+    .flow-card-num {
+      background: var(--accent-color);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .flow-card-content h4 {
+      margin-bottom: 6px;
+      font-size: 18px;
+      color: var(--secondary-color);
+    }
+    .flow-card-content p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 768px) {
+      .flow-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="とよサポ" class="header-logo">
+        <div class="header-text-group">
+          <span class="header-site-name">とよサポ</span>
+          <span class="header-site-sub">豊浦暮らしサポート</span>
+        </div>
+      </a>
+    </div>
+    
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#services">作業内容</a></li>
+        <li><a href="index.html#price">料金</a></li>
+        <li><a href="index.html#cases">事例</a></li>
+        <li><a href="index.html#flow">ご依頼の流れ</a></li>
+        <li><a href="index.html#about">当社について</a></li>
+        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container" style="padding: 0;">
+      <a href="index.html">ホーム</a><span>❯</span>草刈り・除草剤散布
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="mowing-hero">
+    <div class="container">
+      <h1>草刈り・除草剤散布作業</h1>
+      <p>伸び放題のお庭の草、とよサポがすっきり綺麗に解決します！</p>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="section bg-cool">
+    <div class="container">
+      
+      <!-- Intro Box -->
+      <div class="intro-box">
+        <p><strong>「お庭や空き地の草が伸び放題で、手が付けられない…」</strong><br>
+        <strong>「暑い時期や虫が多い中の草刈りは、体力的にもきつい…」</strong><br>
+        <strong>「近所迷惑になっていないか心配…」</strong></p>
+        <p>そんなお悩みは、ぜひ地域密着の「とよサポ」へご相談ください！経験豊富なスタッフが、草むしりから広範囲の機械刈り、そして効果が長持ちする除草剤散布まで、親切丁寧に対応いたします。</p>
+      </div>
+
+      <h2>選べる2つの除草対策</h2>
+      
+      <!-- 草刈り作業カード -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <span>🌱</span> 草刈り作業（機械刈り・手むしり）
+        </div>
+        <div class="service-card-body">
+          <ul class="recommend-list">
+            <li>とにかく早く、広範囲の草をすっきり綺麗にしたい方</li>
+            <li>自分で草刈り機を使用するのが不安・危険と感じる方</li>
+            <li>刈った草の袋詰めから処分まで、全てまとめて任せたい方</li>
+          </ul>
+          
+          <h4>プロの機材と手作業でスピーディーに解決</h4>
+          <p>お庭、空き地、駐車場、畑など、場所や状況に応じた最適な方法で草刈りを行います。広範囲の場所は刈払機（草刈り機）を使用して手早く綺麗に仕上げます。また、機械が入らない狭い隙間や、花壇の周り、根深くしつこい雑草などは、一本一本丁寧に手作業で草むしりを行います。</p>
+          
+          <h4>刈り取った草の回収・処分もお任せ</h4>
+          <p>草刈りで一番大変なのが「刈った草の処分」です。とよサポでは、刈り取った草の集積、袋詰め、そして処分用トラックへの積み込み・搬出まで全て対応いたします。お客様が後片付けをする必要は一切ありません。</p>
+        </div>
+      </div>
+
+      <!-- 除草剤散布作業カード -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <span>🧴</span> 除草剤散布作業
+        </div>
+        <div class="service-card-body">
+          <ul class="recommend-list">
+            <li>草刈りをしても、すぐにまた新しい草が生えてきてしまう方</li>
+            <li>砂利敷きの駐車場や空き地を長期間綺麗な状態に維持したい方</li>
+            <li>年間を通じた草むしりの回数や手間を劇的に減らしたい方</li>
+          </ul>
+          
+          <h4>根まで枯らし、新しい草の発生を長期間ストップ</h4>
+          <p>草刈り後に除草剤を適切に散布することで、残った根までしっかりと枯らし、新しい雑草が生えてくるのを長期間（数ヶ月間）抑制できます。</p>
+          <p>とよサポでは、葉っぱや茎から吸収されて根っこまでしっかり枯らす、液状タイプの薬剤を使用しています。この薬剤は、土に落ちると自然の成分に分解されるため、土壌や近くの川などを汚染することがなく、環境や周囲の生き物にもとても優しい安心なものです。お客様の環境に合わせて、丁寧で効果的な散布を行います。</p>
+          
+          <h4>草刈りとの併用がおすすめ</h4>
+          <p>草が伸びている状態でそのまま除草剤をまくだけでは、枯れた後の草がそのまま残ってしまい見栄えが悪くなります。一度草刈りを行ってすっきりさせた後に除草剤を散布することで、美観を最も長く保つことができます。</p>
+        </div>
+      </div>
+
+      <!-- 料金セクション -->
+      <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid var(--border-color);">
+        <h3 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">料金のご案内</h3>
+        
+        <div class="price-table" style="box-shadow: none; border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">草刈り・草むしり作業</div>
+            <div class="price-table-cell service-price">7,700<span>円(税込)〜</span></div>
+          </div>
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">除草剤散布（薬剤費含む）</div>
+            <div class="price-table-cell service-price">3,300<span>円(税込)〜</span></div>
+          </div>
+        </div>
+        
+        <p style="font-size: 15px; color: #666; line-height: 1.6;">
+          ※上記は標準的な広さにおける料金の目安です。お庭の広さ、傾斜の有無、草の丈や密度によって正確な料金が変わります。<br>
+          ※お見積りは無料ですので、まずはお気軽にご相談ください。<br>
+          ※現地調査が必要な場合は3,300円（税込）がかかります。ただしご成約の場合は費用は発生致しません。
+        </p>
+        <div style="margin-top: 24px; text-align: center;">
+          <a href="price.html" class="btn btn-price-detail">その他の詳しい料金表はこちら ❯</a>
+        </div>
+      </div>
+
+      <!-- ご利用の流れ -->
+      <h3 style="text-align: center; color: var(--secondary-color); margin-top: 40px; margin-bottom: 20px;">ご利用の流れ</h3>
+      <div class="flow-card-grid">
+        <div class="flow-card">
+          <div class="flow-card-num">1</div>
+          <div class="flow-card-content">
+            <h4>お問い合わせ</h4>
+            <p>お電話またはLINEにて、「草刈りの見積りをしてほしい」とご連絡ください。ご希望のスケジュールなどを伺います。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">2</div>
+          <div class="flow-card-content">
+            <h4>現地調査・お見積り</h4>
+            <p>担当スタッフが直接お庭を確認し、正確なお見積りをご提示します（お見積りは無料ですが、現地調査が必要な場合は3,300円がかかります。ただしご成約の場合は費用は発生致しません）。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">3</div>
+          <div class="flow-card-content">
+            <h4>丁寧な作業実施</h4>
+            <p>お見積りにご納得いただけましたら、作業日を決定し、安全管理を徹底した上でプロが丁寧に作業を行います。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">4</div>
+          <div class="flow-card-content">
+            <h4>仕上がり確認・お支払い</h4>
+            <p>作業が完了しましたらお客様に仕上がりをご確認いただき、問題がなければお支払い（現金または各種決済）となります。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="contact" class="section bg-light text-center" style="padding-bottom: 120px;">
+    <div class="container">
+      <h2 style="color: var(--primary-color);">お庭の草むしり・草刈り、<br>まずはお気軽にご相談ください。</h2>
+      <p style="margin-bottom: 32px; font-weight: bold;">地域の皆様を支える「とよサポ」が、<br>迅速・丁寧にスッキリ綺麗にいたします！</p>
+      
+      <a href="tel:09075294121" class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;">
+        📞 090-7529-4121<br>
+        <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜18:00)</span>
+      </a>
+      
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;">
+        LINEで簡単見積り・相談
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
+        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
+        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
+          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
+          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>地域の困りごと相談窓口</p>
+        <p>代表：森脇靖斗</p>
+      </div>
+      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Fixed Bottom Bar -->
+  <div class="fixed-bottom">
+    <a href="tel:09075294121" class="btn btn-phone">📞 090-7529-4121</a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

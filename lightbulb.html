@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電球交換・電気工事サービス | 下関市豊浦町の便利屋「とよサポ」</title>
+  <meta name="description" content="下関市豊浦町を中心に活動する地域密着型の便利屋「とよサポ」の電球交換・電気工事サービス。電球1個の交換から、故障したスイッチの修理、コンセント増設まで、第二種電気工事士の有資格者が安全・丁寧に対応。お見積り無料。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 個別ページ用のリッチなデザインスタイル */
+    .lightbulb-hero {
+      background: linear-gradient(135deg, #fffde7 0%, #ffe082 100%);
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--accent-color);
+    }
+    .lightbulb-hero h1 {
+      color: #e65100;
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .lightbulb-hero p {
+      font-size: 18px;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    
+    .breadcrumb {
+      padding: 12px 20px;
+      background: #f9f9f9;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .breadcrumb a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .breadcrumb span {
+      margin: 0 8px;
+      color: #999;
+    }
+
+    .intro-box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .intro-box p {
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .intro-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .service-card-header {
+      background: var(--accent-color);
+      color: white;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .service-card-body {
+      padding: 24px;
+    }
+    .service-card h4 {
+      font-size: 20px;
+      color: var(--secondary-color);
+      margin-top: 24px;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 10px;
+    }
+    .service-card h4:first-of-type {
+      margin-top: 0;
+    }
+    .service-card p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 16px;
+    }
+    
+    .recommend-list {
+      list-style: none;
+      background: #fff8e1;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .recommend-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #e65100;
+    }
+    .recommend-list li:last-child {
+      margin-bottom: 0;
+    }
+    .recommend-list li::before {
+      content: "💡";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .flow-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .flow-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      border-left: 5px solid var(--accent-color);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      border: 1px solid var(--border-color);
+      border-left-width: 5px;
+    }
+    .flow-card-num {
+      background: var(--accent-color);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .flow-card-content h4 {
+      margin-bottom: 6px;
+      font-size: 18px;
+      color: var(--secondary-color);
+    }
+    .flow-card-content p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 768px) {
+      .flow-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="とよサポ" class="header-logo">
+        <div class="header-text-group">
+          <span class="header-site-name">とよサポ</span>
+          <span class="header-site-sub">豊浦暮らしサポート</span>
+        </div>
+      </a>
+    </div>
+    
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#services">作業内容</a></li>
+        <li><a href="index.html#price">料金</a></li>
+        <li><a href="index.html#cases">事例</a></li>
+        <li><a href="index.html#flow">ご依頼の流れ</a></li>
+        <li><a href="index.html#about">当社について</a></li>
+        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container" style="padding: 0;">
+      <a href="index.html">ホーム</a><span>❯</span>電球交換・電気工事
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="lightbulb-hero">
+    <div class="container">
+      <h1>電球交換・電気工事サービス</h1>
+      <p>電球1個の交換から、スイッチ故障修理、コンセント増設まで！<br>身近な電気の困りごと、電気工事士が安全に解決します。</p>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="section bg-cool">
+    <div class="container">
+      
+      <!-- Intro Box -->
+      <div class="intro-box">
+        <p><strong>「高所の電球が切れてしまい、自分での交換は怖くてできない…」</strong><br>
+        <strong>「スイッチを押しても照明が点かない、故障してしまったみたい…」</strong><br>
+        <strong>「ここに新しくコンセントを増やして、延長コードをすっきりさせたい…」</strong></p>
+        <p>そんなご家庭の電気の困りごとは、地域密着の「とよサポ」がすっきり解決します！「電球1個だけの交換を頼むのは申し訳ない…」と遠慮される必要はまったくありません。電球交換はもちろん、第二種電気工事士の国家資格を持つプロが、故障したスイッチの修理やコンセントの交換・増設まで、安心安全にしっかりと対応いたします。</p>
+      </div>
+
+      <h2>とよサポが選ばれる2つの理由</h2>
+      
+      <!-- 強み1: 電球交換だけでも大歓迎 -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <span>💡</span> 電球交換だけでも大歓迎！高所の作業もお任せください
+        </div>
+        <div class="service-card-body">
+          <ul class="recommend-list">
+            <li>「電球1個だけの交換」でも快く来てほしい方</li>
+            <li>階段や吹き抜けなど、足場が悪く高所の電球交換が怖くてできない方</li>
+            <li>照明器具本体を新しく丸ごと交換・設置してほしい方</li>
+          </ul>
+          
+          <h4>電球1個から喜んでお伺いいたします！</h4>
+          <p>「たったこれだけの依頼で呼ぶのは悪い気がする…」と悩まれる必要はありません！とよサポでは、電球1個の交換から喜んで対応いたします。特に高齢者の方や女性の方にとって、脚立に乗って行う高所の電球交換は転倒や落下の危険が伴い大変危険です。ぜひ私たちにお気軽に作業をお任せいただき、安全で明るいお部屋を取り戻してください。</p>
+          
+          <h4>照明器具の交換・引っ掛けシーリング設置も対応</h4>
+          <p>電球の交換だけでなく、「部屋の雰囲気を変えたいので照明器具ごと最新のLEDシーリングライトに交換したい」「天井の引っ掛けシーリングを新しく取り付けたい」といった作業も、丁寧に行います。</p>
+        </div>
+      </div>
+
+      <!-- 強み2: スイッチ故障・コンセント増設もプロが対応 -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <span>🔌</span> スイッチ故障の修理・コンセント増設など電気工事もお任せ
+        </div>
+        <div class="service-card-body">
+          <ul class="recommend-list">
+            <li>壁のスイッチが陥没した、押しても反応しなくなった方</li>
+            <li>家電が増えたので、部屋の適切な場所にコンセントを増設したい方</li>
+            <li>電気工事のことは有資格者のプロに安全・確実に施工してほしい方</li>
+          </ul>
+          
+          <h4>第二種電気工事士の有資格スタッフが対応するから安心</h4>
+          <p>コンセントの増設やスイッチの内部配線の交換など、壁の内側の配線を扱う作業は、安全と法律の関係上、国家資格である**「電気工事士」の資格が必須**となります。とよサポには有資格のスタッフが在籍しているため、無資格業者による火災などの危険な工事を回避し、徹底的に安全な施工をお約束します。</p>
+          
+          <h4>スイッチ故障修理・コンセント増設も一気に解決！</h4>
+          <p>「スイッチがカチッと戻らなくなった」「コンセントのカバーが割れてしまって危ない」「ここにコンセントがあれば便利なのに…」といった日常の小さな電気の悩みも、すべてお任せください。配線の修理から安全なコンセント増設まで一挙に対応いたします。</p>
+        </div>
+      </div>
+
+      <!-- 料金セクション -->
+      <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid var(--border-color);">
+        <h3 style="text-align: center; color: var(--accent-color); margin-bottom: 20px;">料金のご案内</h3>
+        
+        <div class="price-table" style="box-shadow: none; border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">
+              電球・蛍光灯の交換
+              <div style="font-size: 13px; color: #666; margin-top: 4px;">
+                ※電球・蛍光灯本体の代金は別途実費となります。<br>
+                ※高所作業の場合は別途お見積りとなります。
+              </div>
+            </div>
+            <div class="price-table-cell service-price">550<span>円(税込)〜</span></div>
+          </div>
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">照明器具本体の交換・設置</div>
+            <div class="price-table-cell service-price">1,100<span>円(税込)〜</span></div>
+          </div>
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">壁スイッチ交換・コンセント本体の交換（1箇所）</div>
+            <div class="price-table-cell service-price">3,300<span>円(税込)〜</span></div>
+          </div>
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">コンセントの新規増設工事</div>
+            <div class="price-table-cell service-price">5,500<span>円(税込)〜</span></div>
+          </div>
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">天井引っ掛けシーリング新規取付</div>
+            <div class="price-table-cell service-price">3,300<span>円(税込)〜</span></div>
+          </div>
+        </div>
+        
+        <p style="font-size: 15px; color: #666; line-height: 1.6;">
+          ※壁の裏の構造や配線状況、増設箇所までの距離などにより料金が変動いたします。<br>
+          *お見積りは無料*ですので、まずはお気軽にご相談ください。<br>
+          ※現地調査が必要な場合は3,300円（税込）がかかります。ただしご成約の場合は費用は発生いたしません。
+        </p>
+        <div style="margin-top: 24px; text-align: center;">
+          <a href="price.html" class="btn btn-price-detail">その他の詳しい料金表はこちら ❯</a>
+        </div>
+      </div>
+
+      <!-- ご利用の流れ -->
+      <h3 style="text-align: center; color: var(--secondary-color); margin-top: 40px; margin-bottom: 20px;">ご利用の流れ</h3>
+      <div class="flow-card-grid">
+        <div class="flow-card">
+          <div class="flow-card-num">1</div>
+          <div class="flow-card-content">
+            <h4>お問い合わせ</h4>
+            <p>お電話またはLINEにて、「電球を替えてほしい」「スイッチが壊れた」「コンセントを増やしたい」などとお伝えください。状況を確認します。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">2</div>
+          <div class="flow-card-content">
+            <h4>現地確認・お見積り</h4>
+            <p>作業内容や環境を確認し、明確なお見積りをご提示します（電球の交換など、一部の軽微な作業は現地調査を行わずに直接お電話等でお見積りできる場合もございます）。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">3</div>
+          <div class="flow-card-content">
+            <h4>プロによる安全な作業</h4>
+            <p>お見積りに納得いただけましたら作業日程を決定し、電気工事士資格を持つスタッフが安全第一で丁寧に施工いたします。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">4</div>
+          <div class="flow-card-content">
+            <h4>動作確認・お支払い</h4>
+            <p>電球が正しく点灯すること、スイッチやコンセントが安全に機能することを確認します。お客様にご確認いただき、問題がなければお支払いとなります。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="contact" class="section bg-light text-center" style="padding-bottom: 120px;">
+    <div class="container">
+      <h2 style="color: var(--primary-color);">電球交換やスイッチの修理・コンセント増設など、<br>身近な電気の困りごとはすべてお任せください！</h2>
+      <p style="margin-bottom: 32px; font-weight: bold;">「とよサポ」の有資格スタッフが、<br>親切、丁寧、そして迅速に対応いたします！</p>
+      
+      <a href="tel:09075294121" class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;">
+        📞 090-7529-4121<br>
+        <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜18:00)</span>
+      </a>
+      
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;">
+        LINEで簡単申し込み・相談
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
+        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
+        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
+          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
+          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>地域の困りごと相談窓口</p>
+        <p>代表：森脇靖斗</p>
+      </div>
+      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Fixed Bottom Bar -->
+  <div class="fixed-bottom">
+    <a href="tel:09075294121" class="btn btn-phone">📞 090-7529-4121</a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

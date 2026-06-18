@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ラクスル入稿用チラシ原稿（両面A4） | とよサポ</title>
+  <link rel="stylesheet" href="css/flyer.css">
+</head>
+<body>
+
+  <!-- プレビュー用ヘッダー（印刷時は非表示） -->
+  <header class="preview-header">
+    <div class="preview-title">
+      <img src="images/logo.png" alt="とよサポ" class="preview-logo-img">
+      <span>とよサポ チラシ印刷プレビュー (A4両面・塗り足し込)</span>
+    </div>
+    <div class="preview-controls">
+      <label class="guide-toggle-label">
+        <input type="checkbox" id="toggleGuides" checked> ガイド線（仕上がり線・安全領域）を表示
+      </label>
+      <button class="btn-print" onclick="window.print()">PDFで保存・印刷する</button>
+    </div>
+  </header>
+
+  <div class="preview-container" id="previewContainer">
+
+    <!-- ==========================================================================
+         【表面（左面）】
+         ========================================================================== -->
+    <div class="page page-front">
+      <!-- ガイド線（印刷時は非表示） -->
+      <div class="guide-line guide-cut-line"></div>
+      <div class="guide-label label-cut guide-line">仕上がり線 (A4: 210x297mm)</div>
+      
+      <div class="guide-line guide-safe-line"></div>
+      <div class="guide-label label-safe guide-line">安全領域 (204x291mm) ※文字はこの内側へ</div>
+
+      <!-- 背景画像（草刈り男性） -->
+      <div class="full-bg front-bg-mowing" style="background-image: url('file:///C:/Users/yfore/.gemini/antigravity-ide/brain/d728c2b1-4e44-404f-b8d6-66113f97166c/flyer_mowing_bg_1781442205309.png');"></div>
+
+      <!-- 安全領域に収めるコンテンツ -->
+      <div class="flyer-content">
+        
+        <!-- ヘッダー部分 -->
+        <div class="front-header">
+          <div class="logo-white-box">
+            <img src="images/logo.png" alt="とよサポ">
+            <div class="logo-white-text">
+              <span class="logo-white-main">とよサポ</span>
+              <span class="logo-white-sub">豊浦暮らしサポート</span>
+            </div>
+          </div>
+          <div class="header-balloon">
+            豊浦・豊北・菊川・豊田を中心に<span>迅速対応！</span>
+          </div>
+        </div>
+
+        <!-- キャッチコピー（右寄せ・黒フチ） -->
+        <div class="hero-text-container">
+          <p class="hero-text-row1 text-stroke-black">こんなこと、</p>
+          <div class="hero-text-row2-wrap">
+            <h1 class="hero-text-row2 text-stroke-black">誰に頼めばいいの？</h1>
+            <span class="hero-text-question-mark text-stroke-black">？</span>
+          </div>
+          <p class="hero-text-row3 text-stroke-black">そんな暮らしのお困りごと、</p>
+          <p class="hero-text-row4 text-stroke-black"><span>とよサポ</span>におまかせください！</p>
+        </div>
+
+        <!-- お困りごと6枚カード -->
+        <div class="services-grid-wrap">
+          <img src="images/services_grid.png" alt="お困りごと一覧（電球交換、草刈り・草むしり、家具の移動、墓掃除・お参り代行、空き家の見回り、買い物代行・その他）" class="services-grid-image">
+        </div>
+
+        <!-- 下部CTA -->
+        <p class="front-cta-intro">＼ 小さなことでも大丈夫！お気軽にご相談ください ／</p>
+        
+        <div class="front-cta-block">
+          <div class="front-cta-left">
+            <img src="images/logo.png" alt="とよサポフグ" class="front-cta-char">
+            <div class="front-cta-logos">
+              <img src="images/moji.png" alt="とよサポ" class="front-cta-logo-text">
+              <span class="front-cta-subtext">豊浦暮らしサポート</span>
+              <div class="front-cta-divider"></div>
+              <span class="front-cta-info-text">見積無料・LINE相談無料</span>
+            </div>
+          </div>
+
+          <div class="front-cta-right-card">
+            <div class="front-cta-qr-header">
+              <span class="qr-title-main">LINEで簡単相談！</span>
+              <span class="qr-title-sub">写真を送るだけでOK！</span>
+            </div>
+            <div class="front-cta-qr-body">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://lin.ee/s2UKpeO" alt="LINE QRコード" class="front-cta-qr-img">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 最下部フッター（紺背景） -->
+      <div class="front-footer-bg"></div>
+      <div class="front-footer-content">
+        <div class="front-foot-left">
+          <span class="front-foot-badge">お問い合わせ・ご相談はお気軽に！</span>
+          <span class="front-foot-phone">
+            <svg viewBox="0 0 24 24">
+              <path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.26 1.12l-2.2 2.2z"/>
+            </svg>
+            090-7529-4121
+          </span>
+        </div>
+        <div class="front-foot-right">
+          <p class="front-foot-right-title">対応エリア</p>
+          <p class="front-foot-area-list">豊浦町・豊北町・菊川町・豊田町</p>
+          <p class="front-foot-area-sub">エリア外もご相談ください！</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         【裏面（右面）】
+         ========================================================================== -->
+    <div class="page page-back">
+      <!-- ガイド線（印刷時は非表示） -->
+      <div class="guide-line guide-cut-line"></div>
+      <div class="guide-label label-cut guide-line">仕上がり線 (A4: 210x297mm)</div>
+      
+      <div class="guide-line guide-safe-line"></div>
+      <div class="guide-label label-safe guide-line">安全領域 (204x291mm) ※文字はこの内側へ</div>
+
+      <!-- 上部緑バナー（塗り足し対応） -->
+      <div class="full-bg back-header-banner-wrap"></div>
+
+      <!-- 安全領域に収めるコンテンツ -->
+      <div class="flyer-content">
+        
+        <!-- 裏面ヘッダー -->
+        <div class="back-header-inner">
+          <div class="back-header-left">
+            <h2 class="back-banner-title">はじめまして、とよサポです</h2>
+            <p class="back-banner-desc">
+              とよサポは、豊浦町を中心に、暮らしの「困った！」をお手伝いする地域密着のサポートサービスです。<br>
+              「こんなこと頼んでいいのかな？」と思うような小さなことでも、お気軽にご連絡ください。
+            </p>
+          </div>
+          <div class="back-header-right">
+            <img src="images/logo.png" alt="とよサポフグ" class="back-char-circle">
+            <span class="back-char-txt">地域の皆さまの<br>暮らしを応援します！</span>
+          </div>
+        </div>
+
+        <!-- 作業事例 -->
+        <h2 class="back-section-title">作業事例</h2>
+        <div class="back-cases-grid">
+          
+          <!-- 草刈り -->
+          <div class="back-case-card">
+            <div class="back-case-label">草刈り作業</div>
+            <div class="back-case-img" style="background-image: url('file:///C:/Users/yfore/.gemini/antigravity-ide/brain/d728c2b1-4e44-404f-b8d6-66113f97166c/service_mowing_1781440970697.png');">
+              <span class="back-case-arrow">❯</span>
+            </div>
+          </div>
+
+          <!-- 墓掃除 -->
+          <div class="back-case-card">
+            <div class="back-case-label">墓掃除・お参り代行</div>
+            <div class="back-case-img" style="background-image: url('file:///C:/Users/yfore/.gemini/antigravity-ide/brain/d728c2b1-4e44-404f-b8d6-66113f97166c/service_grave_1781441007420.png');">
+              <span class="back-case-arrow">❯</span>
+            </div>
+          </div>
+
+          <!-- 空き家 -->
+          <div class="back-case-card">
+            <div class="back-case-label">空き家の見回り</div>
+            <div class="back-case-img" style="background-image: url('images/empty_house.png');">
+              <span class="back-case-arrow">❯</span>
+            </div>
+          </div>
+
+          <!-- 家具移動 -->
+          <div class="back-case-card">
+            <div class="back-case-label">家具の移動</div>
+            <div class="back-case-img" style="background-image: url('file:///C:/Users/yfore/.gemini/antigravity-ide/brain/d728c2b1-4e44-404f-b8d6-66113f97166c/service_furniture_1781441026103.png');">
+              <span class="back-case-arrow">❯</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 中段レイアウト -->
+        <div class="back-middle-wrap">
+          
+          <!-- 左: 対応エリア -->
+          <div class="back-middle-left">
+            <h3 class="back-col-title">対応エリア</h3>
+            <p class="back-area-main">豊浦町を中心に近隣4町に対応！</p>
+            <div class="back-area-badges">
+              <span class="back-area-badge-item">豊浦町</span>
+              <span class="back-area-badge-item">豊北町</span>
+              <span class="back-area-badge-item">菊川町</span>
+              <span class="back-area-badge-item">豊田町</span>
+            </div>
+            <p class="back-area-subtxt">エリア外もご相談ください！</p>
+          </div>
+
+          <!-- 右: 選ばれる理由 -->
+          <div class="back-middle-right">
+            <div class="back-middle-right-header">とよサポが選ばれる理由</div>
+            <div class="back-reasons-body">
+              <div class="back-reason-item">
+                <span class="back-reason-check">✔</span>
+                <div class="back-reason-txts">
+                  <span class="back-reason-txt-title">地域密着で迅速対応！</span>
+                  <span class="back-reason-txt-desc">地元を知り尽くしたスタッフが対応します</span>
+                </div>
+              </div>
+              <div class="back-reason-item">
+                <span class="back-reason-check">✔</span>
+                <div class="back-reason-txts">
+                  <span class="back-reason-txt-title">小さなことでも大歓迎！</span>
+                  <span class="back-reason-txt-desc">「こんなこと」でもお気軽にどうぞ</span>
+                </div>
+              </div>
+              <div class="back-reason-item">
+                <span class="back-reason-check">✔</span>
+                <div class="back-reason-txts">
+                  <span class="back-reason-txt-title">見積無料で安心！</span>
+                  <span class="back-reason-txt-desc">事前にしっかりとご説明します</span>
+                </div>
+              </div>
+              <div class="back-reason-item">
+                <span class="back-reason-check">✔</span>
+                <div class="back-reason-txts">
+                  <span class="back-reason-txt-title">丁寧・親切な対応！</span>
+                  <span class="back-reason-txt-desc">安心しておまかせいただけます</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ご依頼の流れ -->
+        <h3 class="back-flow-title">ご依頼の流れ</h3>
+        <div class="back-flow-grid">
+          
+          <div class="back-flow-box">
+            <span class="back-flow-hdr">① お問い合わせ</span>
+            <p class="back-flow-desc">電話またはLINEで<br>お気軽にご連絡</p>
+          </div>
+          
+          <div class="back-flow-arrow">▶</div>
+
+          <div class="back-flow-box">
+            <span class="back-flow-hdr">② ご相談・お見積り</span>
+            <p class="back-flow-desc">内容をお伺いし、<br>お見積りをご提案</p>
+          </div>
+          
+          <div class="back-flow-arrow">▶</div>
+
+          <div class="back-flow-box">
+            <span class="back-flow-hdr">③ 作業実施</span>
+            <p class="back-flow-desc">丁寧・迅速に<br>作業を行います</p>
+          </div>
+          
+          <div class="back-flow-arrow">▶</div>
+
+          <div class="back-flow-box">
+            <span class="back-flow-hdr">④ ご確認・お支払い</span>
+            <p class="back-flow-desc">ご確認後、<br>お支払い</p>
+          </div>
+
+        </div>
+
+        <!-- 見積無料 -->
+        <p class="back-cta-banner-txt">見積無料・LINE相談無料　<span>まずはお気軽にご連絡ください！</span></p>
+
+      </div>
+
+      <!-- 裏面フッター（紺・白の二段、塗り足し対応） -->
+      <div class="full-bg back-footer-bg-navy"></div>
+      <div class="full-bg back-footer-bg-white"></div>
+      
+      <!-- 安全領域の裏面フッターコンテンツ -->
+      <div class="back-footer-content-wrap">
+        
+        <!-- 紺色部分の行 -->
+        <div class="back-foot-navy-row">
+          <div class="back-foot-navy-left">
+            <span class="back-foot-navy-intro">お問い合わせ・ご相談はお気軽に！</span>
+            <span class="back-foot-navy-phone">
+              📞 090-7529-4121
+              <span>受付時間 8:00〜18:00 (不定休)</span>
+            </span>
+          </div>
+
+          <div class="back-foot-navy-right">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://lin.ee/s2UKpeO" alt="LINE QR" class="back-foot-navy-qr">
+            <div class="back-foot-navy-qrtxt">
+              LINEで簡単相談！<br>
+              <span style="color:#00e676;">写真を送るだけでOK !</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 白色部分の行 -->
+        <div class="back-foot-white-row">
+          <div class="back-foot-white-left">
+            <span class="back-foot-white-logo">とよサポ</span>
+            <span class="back-foot-white-sub">（豊浦暮らしサポート）</span>
+            <span class="back-foot-white-address">〒759-6301 山口県下関市豊浦町大字川棚6502番地の3</span>
+          </div>
+
+          <div class="back-search-box">
+            <input type="text" class="search-txt-field" value="とよサポ 豊浦" readonly>
+            <button class="search-icon-btn" type="button">
+              <svg viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // ガイド線の表示・非表示切り替え
+    const toggleGuides = document.getElementById('toggleGuides');
+    const previewContainer = document.getElementById('previewContainer');
+
+    toggleGuides.addEventListener('change', function() {
+      if (this.checked) {
+        previewContainer.classList.remove('guides-hidden');
+      } else {
+        previewContainer.classList.add('guides-hidden');
+      }
+    });
+  </script>
+</body>
+</html>

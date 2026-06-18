@@ -1,0 +1,1097 @@
+/* css/flyer.css */
+
+:root {
+  --primary-color: #005A32; /* とよサポグリーン */
+  --secondary-color: #0B2F61; /* ネイビー */
+  --accent-color: #E65100; /* オレンジ */
+  --text-color: #333333;
+  --light-gray: #F5F5F5;
+  --border-color: #E0E0E0;
+  --green-accent: #00A040;
+  --yellow-accent: #FFEA00;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  color: var(--text-color);
+  background-color: #1e272e;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* プレビュー用ヘッダー */
+.preview-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #0f171e;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 1000;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.5);
+}
+
+.preview-title {
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.preview-logo-img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.preview-controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn-print {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: all 0.2s;
+}
+
+.btn-print:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+.guide-toggle-label {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.preview-container {
+  margin-top: 60px;
+  padding: 40px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* 用紙サイズ（A4塗り足し込 216mm x 303mm） */
+.page {
+  position: relative;
+  width: 216mm;
+  height: 303mm;
+  background-color: white;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ガイド線表示 */
+.guide-line {
+  position: absolute;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.guide-cut-line {
+  top: 3mm;
+  left: 3mm;
+  width: 210mm;
+  height: 297mm;
+  border: 1px dotted rgba(231, 76, 60, 0.7);
+}
+
+.guide-safe-line {
+  top: 6mm;
+  left: 6mm;
+  width: 204mm;
+  height: 291mm;
+  border: 1px dashed rgba(52, 152, 219, 0.6);
+}
+
+.guide-label {
+  position: absolute;
+  font-size: 9px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: white;
+}
+
+.label-cut {
+  top: 4mm;
+  left: 4mm;
+  background-color: rgba(231, 76, 60, 0.9);
+}
+
+.label-safe {
+  top: 7mm;
+  left: 7mm;
+  background-color: rgba(52, 152, 219, 0.9);
+}
+
+.guides-hidden .guide-line {
+  display: none !important;
+}
+
+/* 安全インナーエリア */
+.flyer-content {
+  position: absolute;
+  top: 6mm;
+  left: 6mm;
+  width: 204mm;
+  height: 291mm;
+  z-index: 10;
+}
+
+/* 塗り足し端までカバーする背景 */
+.full-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 216mm;
+  height: 303mm;
+}
+
+
+/* ==========================================================================
+   【表面（左面）】の再現
+   ========================================================================== */
+
+.page-front {
+  background-color: #ffffff;
+}
+
+.front-bg-mowing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 216mm;
+  height: 125mm; /* ChatGPTの背景画像の範囲 */
+  background-size: cover;
+  background-position: center;
+}
+
+.front-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 2mm;
+}
+
+.logo-white-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo-white-box img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-white-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-white-main {
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--accent-color);
+  line-height: 1.1;
+}
+
+.logo-white-sub {
+  font-size: 8px;
+  font-weight: bold;
+  color: #666;
+}
+
+/* 吹き出し（右上の対応エリア） */
+.header-balloon {
+  position: relative;
+  background-color: white;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 900;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+  transform: rotate(2deg) translateY(2px);
+}
+
+.header-balloon span {
+  color: var(--accent-color);
+  font-size: 15px;
+}
+
+/* メインコピーエリア（右寄せ） */
+.hero-text-container {
+  margin-top: 10mm;
+  text-align: right;
+  padding-right: 5mm;
+}
+
+/* 強力な文字の縁取りクラス */
+.text-stroke-black {
+  color: white;
+  text-shadow: 
+    -2px -2px 0 #000,  
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+    -2px  0px 0 #000,
+     2px  0px 0 #000,
+     0px -2px 0 #000,
+     0px  2px 0 #000,
+     0px  3px 8px rgba(0,0,0,0.7);
+}
+
+.hero-text-row1 {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 2mm;
+  letter-spacing: 0.05em;
+  transform: rotate(-1deg);
+}
+
+.hero-text-row2-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3mm;
+}
+
+.hero-text-row2 {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--yellow-accent);
+  letter-spacing: 0.02em;
+  display: inline-block;
+}
+
+.hero-text-question-mark {
+  font-size: 45px;
+  font-weight: 900;
+  color: white;
+  display: inline-block;
+  transform: rotate(10deg);
+  margin-left: 2px;
+}
+
+.hero-text-row3 {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 1.5mm;
+}
+
+.hero-text-row4 {
+  font-size: 23px;
+  font-weight: 900;
+  color: var(--yellow-accent);
+  background-color: rgba(0, 90, 50, 0.9);
+  border: 1px solid #ffffff;
+  padding: 4px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  transform: rotate(0.5deg);
+}
+
+.hero-text-row4 span {
+  color: white;
+}
+
+/* お困りごと6枚カードグリッド */
+.services-grid-wrap {
+  margin-top: 31mm; /* 上部草刈り背景からのマージンを微調整 */
+  display: block;
+  width: 100%;
+  text-align: center; /* 画像を中央寄せ */
+}
+
+.services-grid-image {
+  width: 178mm; /* 横幅を抑えて縦幅を約89mmに縮小 */
+  height: auto;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* 下部CTA案内 */
+.front-cta-intro {
+  text-align: center;
+  margin-top: 5mm; /* マージンを削減 */
+  font-size: 13px;
+  font-weight: 900;
+  color: #333;
+}
+
+/* 下部CTAブロック */
+.front-cta-block {
+  margin-top: 2mm; /* マージンを削減 */
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 3mm 5mm; /* パディングを削減 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.front-cta-left {
+  display: flex;
+  align-items: center;
+  gap: 5mm; /* 少し詰める */
+}
+
+.front-cta-char {
+  width: 22mm; /* サイズを25mmから22mmに縮小 */
+  height: 22mm;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.front-cta-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.8mm;
+}
+
+.front-cta-logo-text {
+  height: 9.5mm; /* 文字ロゴ高さを縮小 */
+  object-fit: contain;
+}
+
+.front-cta-subtext {
+  font-size: 3.8mm; /* フォントサイズを縮小 */
+  font-weight: 900;
+  color: #333333;
+  letter-spacing: 0.05em;
+  margin-top: 0.3mm;
+}
+
+.front-cta-divider {
+  width: 105%;
+  height: 0.4mm;
+  background-color: #777777;
+  margin: 1.2mm 0;
+}
+
+.front-cta-info-text {
+  font-size: 4.4mm; /* フォントサイズを縮小 */
+  font-weight: 900;
+  color: #333333;
+  letter-spacing: 0.05em;
+}
+
+/* 右側：LINE QRの緑色カード */
+.front-cta-right-card {
+  background-color: #06c755;
+  border-radius: 10px;
+  padding: 2.5mm 3.5mm 3.5mm; /* パディングを削減 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 48mm; /* 幅を縮小 */
+  height: 39mm; /* 高さを44mmから39mmに縮小 */
+}
+
+.front-cta-qr-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5mm;
+  color: white;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.qr-title-main {
+  font-size: 3.2mm; /* フォントサイズを縮小 */
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.qr-title-sub {
+  font-size: 2.4mm; /* フォントサイズを縮小 */
+  font-weight: bold;
+  opacity: 0.95;
+}
+
+.front-cta-qr-body {
+  background-color: white;
+  border-radius: 6px;
+  padding: 1.2mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.front-cta-qr-img {
+  width: 20mm; /* QRコード画像サイズを縮小 */
+  height: 20mm;
+  display: block;
+}
+
+/* 最下部紺色フッター（塗り足し対応） */
+.front-footer-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 216mm;
+  height: 26mm;
+  background-color: var(--secondary-color);
+}
+
+.front-footer-content {
+  position: absolute;
+  bottom: 0;
+  left: 6mm;
+  width: 204mm;
+  height: 26mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.front-foot-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.front-foot-badge {
+  background-color: white;
+  color: #333;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 2px 10px;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-bottom: 2px;
+}
+
+.front-foot-phone {
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.front-foot-phone svg {
+  width: 26px;
+  height: 26px;
+  fill: white;
+}
+
+.front-foot-right {
+  text-align: right;
+  max-width: 90mm;
+}
+
+.front-foot-right-title {
+  font-size: 11px;
+  font-weight: 900;
+  opacity: 0.9;
+  margin-bottom: 2px;
+}
+
+.front-foot-area-list {
+  font-size: 13px;
+  font-weight: 900;
+  margin-bottom: 1px;
+}
+
+.front-foot-area-sub {
+  font-size: 9px;
+  opacity: 0.8;
+}
+
+
+/* ==========================================================================
+   【裏面（右面）】の再現
+   ========================================================================== */
+
+.page-back {
+  background-color: #ffffff;
+}
+
+/* 上部緑バナー */
+.back-header-banner-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 216mm;
+  height: 40mm;
+  background-color: var(--primary-color);
+}
+
+.back-header-inner {
+  margin-top: 4mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.back-header-left {
+  max-width: 145mm;
+}
+
+.back-banner-title {
+  font-size: 23px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1.5mm;
+}
+
+.back-banner-desc {
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.back-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255,255,255,0.15);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.back-char-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: white;
+  object-fit: cover;
+  margin-bottom: 1px;
+}
+
+.back-char-txt {
+  font-size: 8px;
+  font-weight: 900;
+  color: white;
+  line-height: 1.2;
+}
+
+/* 作業事例 */
+.back-section-title {
+  font-size: 16px;
+  font-weight: 900;
+  color: #333333;
+  text-align: center;
+  margin: 36mm auto 3mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.back-section-title::before, .back-section-title::after {
+  content: "";
+  display: block;
+  width: 25mm;
+  height: 2px;
+  background-color: #333333;
+}
+
+.back-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+}
+
+.back-case-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  border: 1px solid #eee;
+}
+
+.back-case-label {
+  background-color: var(--green-accent);
+  color: white;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 4px;
+  text-align: center;
+}
+
+.back-case-img {
+  width: 100%;
+  height: 26mm;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* 丸い矢印アイコン */
+.back-case-arrow {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background-color: var(--green-accent);
+  color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* 中段2列（エリア＆理由） */
+.back-middle-wrap {
+  margin-top: 5mm;
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+}
+
+.back-middle-left {
+  width: 95mm;
+  background-color: white;
+  border: 1.5px solid var(--green-accent);
+  border-radius: 12px;
+  padding: 4mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.back-middle-right {
+  width: 105mm;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+}
+
+.back-col-title {
+  font-size: 13px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 3mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.back-col-title::before, .back-col-title::after {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.back-middle-left .back-col-title {
+  color: var(--green-accent);
+}
+
+.back-middle-right-header {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+  text-align: center;
+  padding: 6px;
+}
+
+/* エリアカード中身 */
+.back-area-main {
+  font-size: 14px;
+  font-weight: 900;
+  color: #333;
+  text-align: center;
+  margin-bottom: 3mm;
+}
+
+.back-area-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2mm;
+  margin-bottom: 3mm;
+}
+
+.back-area-badge-item {
+  font-size: 10px;
+  font-weight: 900;
+  color: var(--primary-color);
+  background-color: white;
+  border: 1.5px solid var(--green-accent);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.back-area-subtxt {
+  font-size: 11px;
+  font-weight: 900;
+  color: #666;
+  text-align: center;
+}
+
+/* 選ばれる理由中身 */
+.back-reasons-body {
+  padding: 4mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5mm;
+}
+
+.back-reason-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.back-reason-check {
+  color: var(--green-accent);
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.back-reason-txts {
+  display: flex;
+  flex-direction: column;
+}
+
+.back-reason-txt-title {
+  font-size: 11.5px;
+  font-weight: 900;
+  color: var(--primary-color);
+}
+
+.back-reason-txt-desc {
+  font-size: 10px;
+  color: #555;
+  line-height: 1.3;
+}
+
+/* ご依頼の流れ */
+.back-flow-title {
+  font-size: 14px;
+  font-weight: 900;
+  color: #333;
+  margin: 5mm 0 2mm 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-flow-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 14px;
+  background-color: var(--accent-color);
+}
+
+.back-flow-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 1mm;
+}
+
+.back-flow-box {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 3.5mm 1mm;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.back-flow-hdr {
+  font-size: 9.5px;
+  font-weight: 900;
+  color: white;
+  background-color: var(--green-accent);
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 1.5mm;
+}
+
+.back-flow-box:last-child .back-flow-hdr {
+  background-color: var(--accent-color);
+}
+
+.back-flow-desc {
+  font-size: 10px;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.3;
+}
+
+.back-flow-arrow {
+  color: var(--green-accent);
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* 裏面見積無料案内 */
+.back-cta-banner-txt {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 900;
+  color: #333;
+  margin: 4.5mm 0;
+}
+
+.back-cta-banner-txt span {
+  color: var(--accent-color);
+}
+
+/* 裏面フッター（紺・白二段） */
+.back-footer-bg-navy {
+  position: absolute;
+  bottom: 10mm;
+  left: 0;
+  width: 216mm;
+  height: 22mm;
+  background-color: var(--secondary-color);
+}
+
+.back-footer-bg-white {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 216mm;
+  height: 10mm;
+  background-color: white;
+  border-top: 1px solid #ddd;
+}
+
+.back-footer-content-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 6mm;
+  width: 204mm;
+  height: 32mm;
+  z-index: 20;
+}
+
+.back-foot-navy-row {
+  height: 22mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.back-foot-navy-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.back-foot-navy-intro {
+  font-size: 11px;
+  font-weight: 900;
+  opacity: 0.9;
+  margin-bottom: 1px;
+}
+
+.back-foot-navy-phone {
+  font-size: 28px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.back-foot-navy-phone span {
+  font-size: 10px;
+  font-weight: normal;
+  opacity: 0.8;
+  margin-left: 6px;
+}
+
+.back-foot-navy-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255,255,255,0.1);
+  border: 1px dashed rgba(255,255,255,0.3);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.back-foot-navy-qr {
+  width: 42px;
+  height: 42px;
+}
+
+.back-foot-navy-qrtxt {
+  font-size: 9.5px;
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.back-foot-white-row {
+  height: 10mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+}
+
+.back-foot-white-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-foot-white-logo {
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--accent-color);
+}
+
+.back-foot-white-sub {
+  font-size: 9px;
+  font-weight: bold;
+  color: #666;
+}
+
+.back-foot-white-address {
+  font-size: 9px;
+  font-weight: bold;
+  color: #333;
+  margin-left: 10px;
+}
+
+/* 検索窓 */
+.back-search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1.5px solid #aaa;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 7mm;
+}
+
+.search-txt-field {
+  border: none;
+  padding: 0 8px;
+  font-size: 10px;
+  font-weight: 900;
+  width: 30mm;
+  outline: none;
+  color: #333;
+}
+
+.search-icon-btn {
+  background-color: #ddd;
+  border: none;
+  width: 8mm;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.search-icon-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: #555;
+}
+
+
+/* ==========================================================================
+   印刷用設定（@media print）
+   ========================================================================== */
+
+@media print {
+  .preview-header, 
+  .guide-line,
+  .guide-label {
+    display: none !important;
+  }
+
+  body {
+    background-color: white !important;
+    width: 216mm !important;
+    height: 303mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .preview-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .page {
+    width: 216mm !important;
+    height: 303mm !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    page-break-after: always !important;
+    page-break-inside: avoid !important;
+    overflow: hidden !important;
+  }
+
+  @page {
+    size: 216mm 303mm !important;
+    margin: 0 !important;
+  }
+}

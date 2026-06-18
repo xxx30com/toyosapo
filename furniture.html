@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家具移動・組立・処分サービス | 下関市豊浦町の便利屋「とよサポ」</title>
+  <meta name="description" content="下関市豊浦町を中心に活動する地域密着型の便利屋「とよサポ」の家具移動・組立・処分サービス。重い家具のちょっとした移動、レイアウト変更から、通販の組立家具の組み立て代行、不要になった家具の搬出・処分までプロが丁寧・安全に対応。お見積り無料。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 個別ページ用のリッチなデザインスタイル */
+    .furniture-hero {
+      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--accent-color);
+    }
+    .furniture-hero h1 {
+      color: #d84315;
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .furniture-hero p {
+      font-size: 18px;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    
+    .breadcrumb {
+      padding: 12px 20px;
+      background: #f9f9f9;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .breadcrumb a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .breadcrumb span {
+      margin: 0 8px;
+      color: #999;
+    }
+
+    .intro-box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .intro-box p {
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .intro-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .service-card-header {
+      background: var(--accent-color);
+      color: white;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .service-card-body {
+      padding: 24px;
+    }
+    .service-card h4 {
+      font-size: 20px;
+      color: var(--secondary-color);
+      margin-top: 24px;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 10px;
+    }
+    .service-card h4:first-of-type {
+      margin-top: 0;
+    }
+    .service-card p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 16px;
+    }
+    
+    .recommend-list {
+      list-style: none;
+      background: #fff3e0;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .recommend-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #d84315;
+    }
+    .recommend-list li:last-child {
+      margin-bottom: 0;
+    }
+    .recommend-list li::before {
+      content: "🏠";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .flow-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .flow-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      border-left: 5px solid var(--accent-color);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      border: 1px solid var(--border-color);
+      border-left-width: 5px;
+    }
+    .flow-card-num {
+      background: var(--accent-color);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .flow-card-content h4 {
+      margin-bottom: 6px;
+      font-size: 18px;
+      color: var(--secondary-color);
+    }
+    .flow-card-content p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 768px) {
+      .flow-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="とよサポ" class="header-logo">
+        <div class="header-text-group">
+          <span class="header-site-name">とよサポ</span>
+          <span class="header-site-sub">豊浦暮らしサポート</span>
+        </div>
+      </a>
+    </div>
+    
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#services">作業内容</a></li>
+        <li><a href="index.html#price">料金</a></li>
+        <li><a href="index.html#cases">事例</a></li>
+        <li><a href="index.html#flow">ご依頼の流れ</a></li>
+        <li><a href="index.html#about">当社について</a></li>
+        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container" style="padding: 0;">
+      <a href="index.html">ホーム</a><span>❯</span>家具移動・組立・処分
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="furniture-hero">
+    <div class="container">
+      <h1>家具移動・組立・処分サービス</h1>
+      <p>重い家具の移動から、面倒な組み立て、不要家具の処分まで！<br>力仕事のプロが安全・丁寧にしっかりと対応いたします。</p>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="section bg-cool">
+    <div class="container">
+      
+      <!-- Intro Box -->
+      <div class="intro-box">
+        <p><strong>「模様替えしたいけれど、大きなタンスや冷蔵庫が重くて動かせない…」</strong><br>
+        <strong>「ネット通販でオシャレな棚を買ったけれど、組み立て方法が難しくて諦めてしまった…」</strong><br>
+        <strong>「不要になった家具を処分したいけれど、大きすぎて部屋から運び出せない…」</strong></p>
+        <p>そんな家具にまつわるお悩みは、地域密着の便利屋「とよサポ」にお任せください！「タンスを隣の部屋へ少し動かしたい」といった日常のちょっとした作業から、複雑な組み立て、古くなった大型家具の搬出・解体・処分まで、力仕事に慣れた経験豊富なスタッフが、住まいを傷つけないよう徹底して配慮しながらスピーディーに対応いたします。</p>
+      </div>
+
+      <h2>とよサポの家具サービス 2つの強み</h2>
+      
+      <!-- 強み1: 家具の移動・レイアウト変更 -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <span>📦</span> 家具の移動・レイアウト変更（少し動かすだけでも大歓迎！）
+        </div>
+        <div class="service-card-body">
+          <ul class="recommend-list">
+            <li>「タンスを隣の部屋へ少し動かすだけ」といった些細な作業を頼みたい方</li>
+            <li>模様替えをしたいけれど一人暮らしや高齢のため、家具を持ち上げられない方</li>
+            <li>床や壁を傷つけないよう、しっかりと養生をして安全に運んでほしい方</li>
+          </ul>
+          
+          <h4>重い家具を「少し動かすだけ」でも喜んで伺います！</h4>
+          <p>「ベッドを数センチだけ横にずらしたい」「クローゼットを隣の部屋に動かしてほしい」といった、ほんの少しの力仕事でも喜んでお伺いいたします！ご自身で無理に持ち上げようとすると、足腰を痛める原因になったり、床や壁に傷をつけてしまったりする恐れがあります。経験豊富なスタッフが丁寧かつ安全に持ち上げて対応しますので、安心してお任せください。</p>
+          
+          <h4>家全体のレイアウト変更や衣替えの際にも便利</h4>
+          <p>1階から2階への大きな家具の移動や、季節ごとの家具の入れ替えなど、ご希望に応じた最適な移動プランをご提案します。もちろん、お客様の大切なお住まいと家具を守るため、丁寧に養生（カバー）を行って作業いたします。</p>
+        </div>
+      </div>
+
+      <!-- 強み2: 面倒な組立から処分まで -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <span>🧹</span> 面倒な家具の組み立て・不要な家具の処分まで一括解決！
+        </div>
+        <div class="service-card-body">
+          <ul class="recommend-list">
+            <li>通販で買った複雑な組立式の家具（ベッド、デスク、ラック等）を組み立ててほしい方</li>
+            <li>部屋の中で使わなくなった古い家具を、解体して処分したい方</li>
+            <li>自治体の粗大ゴミ置き場まで、自分では大きすぎて持っていけない方</li>
+          </ul>
+          
+          <h4>通販の組立家具もプロの手でスピーディーに完成！</h4>
+          <p>ネットショップや量販店などで購入するおしゃれな家具は、組み立てが非常に難しく、ネジの数が多かったり、説明書が難解だったりすることが多々あります。とよサポのスタッフがプロの工具を用いて、頑丈に・きれいに組み立てて設置いたします。完成後の段ボールや梱包材などのゴミも、すべて回収いたしますので安心です。</p>
+          
+          <h4>要らなくなった古い家具もまとめて処分・回収</h4>
+          <p>「新しく買うので古い家具を処分したい」「大きすぎて部屋から出せないからその場でバラして処分してほしい」といったご要望もお任せください。室外への安全な搬出はもちろん、必要であればその場での解体、さらには適正な処分まですべてワンストップで完了します。面倒な自治体の粗大ゴミ手続き等に悩む必要もなくなります。</p>
+        </div>
+      </div>
+
+      <!-- 料金セクション -->
+      <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid var(--border-color);">
+        <h3 style="text-align: center; color: var(--accent-color); margin-bottom: 20px;">料金のご案内</h3>
+        
+        <div class="price-table" style="box-shadow: none; border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">
+              家具の移動・レイアウト変更（1点）
+              <div style="font-size: 13px; color: #666; margin-top: 4px;">※移動距離、階段の使用有無、家具の重量などにより変動します。</div>
+            </div>
+            <div class="price-table-cell service-price">1,100<span>円(税込)〜</span></div>
+          </div>
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">
+              家具の組み立て代行（1点）
+              <div style="font-size: 13px; color: #666; margin-top: 4px;">※家具のサイズ、構造の複雑さ（組立想定時間）などにより変動します。</div>
+            </div>
+            <div class="price-table-cell service-price">2,200<span>円(税込)〜</span></div>
+          </div>
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">
+              不要になった家具の処分・回収（1点）
+              <div style="font-size: 13px; color: #666; margin-top: 4px;">※家具の種類、大きさ、搬出の難易度などにより変動します。</div>
+            </div>
+            <div class="price-table-cell service-price">1,100<span>円(税込)〜</span></div>
+          </div>
+        </div>
+        
+        <p style="font-size: 15px; color: #666; line-height: 1.6;">
+          ※上記金額は標準的なサイズ、移動経路における目安の金額となります。詳しく状況をお伺いした上で個別にお見積りいたします。<br>
+          *お見積りは無料*ですので、まずはお気軽にご相談ください。<br>
+          ※現地調査が必要な場合は3,300円（税込）がかかります。ただしご成約の場合は費用は発生いたしません。
+        </p>
+        <div style="margin-top: 24px; text-align: center;">
+          <a href="price.html" class="btn btn-price-detail">その他の詳しい料金表はこちら ❯</a>
+        </div>
+      </div>
+
+      <!-- ご利用の流れ -->
+      <h3 style="text-align: center; color: var(--secondary-color); margin-top: 40px; margin-bottom: 20px;">ご利用の流れ</h3>
+      <div class="flow-card-grid">
+        <div class="flow-card">
+          <div class="flow-card-num">1</div>
+          <div class="flow-card-content">
+            <h4>お問い合わせ</h4>
+            <p>お電話またはLINEにて、「タンスを動かしてほしい」「組立をお願いしたい」「処分を頼みたい」などとお伝えください。状況を確認します。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">2</div>
+          <div class="flow-card-content">
+            <h4>現地調査・明確なお見積り</h4>
+            <p>移動経路や組み立てる家具の種類、搬出環境などを確認し、詳細なお見積りをご提示します（お見積りは無料ですが、現地調査が必要な場合は3,300円がかかります。ただしご成約の場合は費用は発生いたしません）。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">3</div>
+          <div class="flow-card-content">
+            <h4>安全・丁寧な作業実施</h4>
+            <p>お見積りにご納得いただけましたら作業日程を決定します。床や壁の養生など安全管理を徹底し、プロのスタッフが丁寧かつスピーディーに作業を行います。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">4</div>
+          <div class="flow-card-content">
+            <h4>ご確認・お支払い</h4>
+            <p>設置位置に狂いがないか、組み立てた家具にガタつきがないかなどをご確認いただき、問題がなければお支払いとなります。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="contact" class="section bg-light text-center" style="padding-bottom: 120px;">
+    <div class="container">
+      <h2 style="color: var(--primary-color);">重い家具の移動、レイアウト変更、組み立てや処分など、<br>家具にまつわるお悩みはなんでもご相談ください！</h2>
+      <p style="margin-bottom: 32px; font-weight: bold;">「とよサポ」の親切丁寧なスタッフが、<br>お住まいに配慮して安全・確実にスッキリ対応いたします！</p>
+      
+      <a href="tel:09075294121" class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;">
+        📞 090-7529-4121<br>
+        <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜18:00)</span>
+      </a>
+      
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;">
+        LINEで簡単申し込み・相談
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
+        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
+        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
+          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
+          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>地域の困りごと相談窓口</p>
+        <p>代表：森脇靖斗</p>
+      </div>
+      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Fixed Bottom Bar -->
+  <div class="fixed-bottom">
+    <a href="tel:09075294121" class="btn btn-phone">📞 090-7529-4121</a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

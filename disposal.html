@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不用品整理・片付けサービス | 下関市豊浦町の便利屋「とよサポ」</title>
+  <meta name="description" content="下関市豊浦町を中心に活動する地域密着型の便利屋「とよサポ」の不用品整理・片付けサービス。壊れた冷蔵庫・洗濯機などの大型家電から、使わなくなった家具、大量の本や雑誌の回収・処分まで、仕分けから搬出まで一括対応。お見積り無料。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 個別ページ用のリッチなデザインスタイル */
+    .disposal-hero {
+      background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 4px solid #00695c;
+    }
+    .disposal-hero h1 {
+      color: #004d40;
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .disposal-hero p {
+      font-size: 18px;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    
+    .breadcrumb {
+      padding: 12px 20px;
+      background: #f9f9f9;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .breadcrumb a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .breadcrumb span {
+      margin: 0 8px;
+      color: #999;
+    }
+
+    .intro-box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .intro-box p {
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .intro-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .service-card-header {
+      background: #00695c;
+      color: white;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .service-card-body {
+      padding: 24px;
+    }
+    .service-card h4 {
+      font-size: 20px;
+      color: var(--secondary-color);
+      margin-top: 24px;
+      margin-bottom: 12px;
+      border-left: 4px solid #00695c;
+      padding-left: 10px;
+    }
+    .service-card h4:first-of-type {
+      margin-top: 0;
+    }
+    .service-card p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 16px;
+    }
+    
+    .recommend-list {
+      list-style: none;
+      background: #e0f2f1;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .recommend-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #004d40;
+    }
+    .recommend-list li:last-child {
+      margin-bottom: 0;
+    }
+    .recommend-list li::before {
+      content: "✨";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .flow-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .flow-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      border-left: 5px solid var(--accent-color);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      border: 1px solid var(--border-color);
+      border-left-width: 5px;
+    }
+    .flow-card-num {
+      background: var(--accent-color);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .flow-card-content h4 {
+      margin-bottom: 6px;
+      font-size: 18px;
+      color: var(--secondary-color);
+    }
+    .flow-card-content p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 768px) {
+      .flow-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="とよサポ" class="header-logo">
+        <div class="header-text-group">
+          <span class="header-site-name">とよサポ</span>
+          <span class="header-site-sub">豊浦暮らしサポート</span>
+        </div>
+      </a>
+    </div>
+    
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#services">作業内容</a></li>
+        <li><a href="index.html#price">料金</a></li>
+        <li><a href="index.html#cases">事例</a></li>
+        <li><a href="index.html#flow">ご依頼の流れ</a></li>
+        <li><a href="index.html#about">当社について</a></li>
+        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container" style="padding: 0;">
+      <a href="index.html">ホーム</a><span>❯</span>不用品整理・片付け
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="disposal-hero">
+    <div class="container">
+      <h1>不用品整理・片付けサービス</h1>
+      <p>壊れた冷蔵庫、使わない家具、大量の本や雑誌のまとめて処分まで！<br>お部屋をスッキリきれいに整え、快適な暮らしをお手伝いします。</p>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="section bg-cool">
+    <div class="container">
+      
+      <!-- Intro Box -->
+      <div class="intro-box">
+        <p><strong>「壊れた大きな冷蔵庫を処分したいけれど、重くて運び出せない…」</strong><br>
+        <strong>「長年使わなくなったタンスやベッドなどの大きな家具をすっきり捨てたい…」</strong><br>
+        <strong>「本棚に溜まった大量の本や雑誌、不要な書類などをまとめて片付けたい…」</strong></p>
+        <p>そんな不用品やお部屋の片付けにまつわるお悩みは、地域密着の便利屋「とよサポ」にお任せください！お客様が分別や荷造りをする必要は一切ありません。重たい大型の不用品搬出から、細々とした古紙やゴミの仕分け・袋詰め、さらには家電リサイクル法対象の適正な処分まで、すべて一括でまごころを込めて対応いたします。</p>
+      </div>
+
+      <h2>とよサポの片付けサービス 2つの特長</h2>
+      
+      <!-- 特長1: 重い家電・家具から大量の古紙まで何でも処分 -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <span>🧹</span> 家電・家具から大量の本・雑誌まで！まとめて搬出・処分
+        </div>
+        <div class="service-card-body">
+          <ul class="recommend-list">
+            <li>壊れた冷蔵庫、洗濯機、テレビなどの大きな家電を安全に処分したい方</li>
+            <li>使わなくなった古いタンス、ソファ、ベッドなどを捨てて部屋を広げたい方</li>
+            <li>押入れや本棚に眠る大量の本、雑誌、ダンボールなどを一掃したい方</li>
+          </ul>
+          
+          <h4>力仕事も面倒な仕分けも、すべてスタッフが代行します</h4>
+          <p>「不用品を処分したいけれど、ゴミの分別や袋詰めを自分でするのが面倒できつい…」という場合でもご安心ください。とよサポのスタッフが現場へお伺いし、面倒な仕分けや袋詰め作業、結束作業からスタートします。お客様は見ているだけで大丈夫です。</p>
+          
+          <h4>自力では動かせない大型家電や家具もスムーズに搬出</h4>
+          <p>壊れて動かなくなった冷蔵庫や、使わなくなって場所をとっている大型の家具（クローゼット、ダイニングテーブルなど）は、搬出するだけでも大仕事です。力仕事に慣れたスタッフが、住まいを傷つけないよう壁や床をしっかり養生した上で、速やかに屋外へ運び出し、適切に回収・処分を行います。</p>
+        </div>
+      </div>
+
+      <!-- 特長2: 家電リサイクル法対応 -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <span>⚖️</span> 家電リサイクル法に完全適正対応！安心安全の回収処分
+        </div>
+        <div class="service-card-body">
+          <ul class="recommend-list">
+            <li>リサイクルが必要な対象製品の処分手続きが分からなくてお困りの方</li>
+            <li>不法投棄などの違法業者を避け、ルールに則って正しく安全に処分したい方</li>
+            <li>リサイクル料金の見積もりを明瞭に提示してほしい方</li>
+          </ul>
+          
+          <h4>法律を守り、クリーンで適正な処分をお約束</h4>
+          <p>一部の家電製品（冷蔵庫、テレビ、洗濯機、エアコンなど）は、国の定める「家電リサイクル法」に基づき、適正に処分することが法律で義務付けられています。とよサポでは、適正な処分フローに従い、安全かつ確実に処分を代行しますので不法投棄といった違法行為のリスクがなく、非常に安心です。</p>
+          
+          <h4>家電リサイクル券の購入と、明瞭なお見積り</h4>
+          <p>対象家電の引き取り・処分には、適正な「家電リサイクル券」の購入が必要となります。家電リサイクル料金は、メーカーや機種、サイズ（容量等）によって正確な金額が細かく分かれております。そのため、とよサポでは事前に処分対象となる家電のメーカーや型番などを確認した上で、クリアで誤解のない個別お見積りをご提示いたします。</p>
+        </div>
+      </div>
+
+      <!-- 料金セクション -->
+      <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid var(--border-color);">
+        <h3 style="text-align: center; color: #00695c; margin-bottom: 20px;">料金のご案内</h3>
+        
+        <div class="price-table" style="box-shadow: none; border: 1px solid var(--border-color); margin-bottom: 20px;">
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">
+              不用品の片付け・整理（基本作業）
+              <div style="font-size: 13px; color: #666; margin-top: 4px;">
+                ※仕分け、袋詰め、荷まとめる等の基本作業費。<br>不用品の量や作業範囲に応じて変動します。
+              </div>
+            </div>
+            <div class="price-table-cell service-price" style="white-space: nowrap;">1,100<span>円(税込)〜</span></div>
+          </div>
+          <div class="price-table-row">
+            <div class="price-table-cell service-name">
+              使わなくなった大型家具の処分（1点）
+              <div style="font-size: 13px; color: #666; margin-top: 4px;">
+                ※タンス、ベッド、ソファ、机などの搬出および回収処分費。
+              </div>
+            </div>
+            <div class="price-table-cell service-price" style="white-space: nowrap;">1,100<span>円(税込)〜</span></div>
+          </div>
+        </div>
+        
+        <p style="font-size: 15px; color: #666; line-height: 1.6;">
+          <strong>【家電リサイクル対象製品（冷蔵庫・テレビ等）について】</strong><br>
+          ※冷蔵庫、冷凍庫、テレビ（ブラウン管・液晶・プラズマ）、洗濯機、衣類乾燥機、エアコン等の回収処分には、法律に基づく「家電リサイクル券」の購入が別途必須となります。<br>
+          ※家電リサイクル料金は、メーカーや機種（容量・サイズ等）によって異なるため、個別に対象品を確認した上で別途お見積りとなります。<br>
+          <br>
+          ※不用品の総量や搬出経路（階段作業の有無など）によって正確な総額料金を計算します。<br>
+          *お見積りは無料*ですので、まずはお気軽にご相談ください。<br>
+          ※現地調査が必要な場合は3,300円（税込）がかかります。ただしご成約の場合は費用は発生いたしません。
+        </p>
+        <div style="margin-top: 24px; text-align: center;">
+          <a href="price.html" class="btn btn-price-detail">その他の詳しい料金表はこちら ❯</a>
+        </div>
+      </div>
+
+      <!-- ご利用の流れ -->
+      <h3 style="text-align: center; color: var(--secondary-color); margin-top: 40px; margin-bottom: 20px;">ご利用の流れ</h3>
+      <div class="flow-card-grid">
+        <div class="flow-card">
+          <div class="flow-card-num">1</div>
+          <div class="flow-card-content">
+            <h4>お問い合わせ</h4>
+            <p>お電話またはLINEにて、「壊れた冷蔵庫を捨てたい」「部屋を片付けてほしい」などとお伝えください。処分したい物の種類や量をお聞きします。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">2</div>
+          <div class="flow-card-content">
+            <h4>現地確認・お見積り</h4>
+            <p>スタッフがお伺いし、不用品の総量や家電製品の型番、搬出経路を確認した上で、正確で分かりやすいお見積りをご提示します（お見積りは無料ですが、現地調査が必要な場合は3,300円がかかります。ただしご成約の場合は費用は発生いたしません）。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">3</div>
+          <div class="flow-card-content">
+            <h4>丁寧・スピーディーな作業</h4>
+            <p>お見積りに納得いただけましたら作業日程を決定し、仕分け・袋詰めから養生、大型不用品の安全な運び出しまで、プロが手際よく安全に作業を行います。</p>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-num">4</div>
+          <div class="flow-card-content">
+            <h4>お部屋のご確認・お支払い</h4>
+            <p>不用品の搬出が終わり、お部屋がすっきり片付いた状態をご確認いただき、問題がなければお支払いとなります。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="contact" class="section bg-light text-center" style="padding-bottom: 120px;">
+    <div class="container">
+      <h2 style="color: var(--primary-color);">壊れた大型家電や使わない家具、溜まった古紙の山など、<br>お部屋の不用品整理・片付けはなんでもご相談ください！</h2>
+      <p style="margin-bottom: 32px; font-weight: bold;">地域の「とよサポ」の誠実なスタッフが、<br>仕分けから搬出、適正な処分まですべてお引き受けいたします！</p>
+      
+      <a href="tel:09075294121" class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;">
+        📞 090-7529-4121<br>
+        <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜18:00)</span>
+      </a>
+      
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;">
+        LINEで簡単申し込み・相談
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
+        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
+        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
+          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
+          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>地域の困りごと相談窓口</p>
+        <p>代表：森脇靖斗</p>
+      </div>
+      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Fixed Bottom Bar -->
+  <div class="fixed-bottom">
+    <a href="tel:09075294121" class="btn btn-phone">📞 090-7529-4121</a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
