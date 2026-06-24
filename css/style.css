@@ -773,11 +773,11 @@ footer {
 
 /* PC Layout Adjustments */
 @media (min-width: 900px) {
+  .hero-img-container img {
+    object-position: center bottom;
+  }
   body {
     font-size: 16px;
-  }
-  .hero-img-container img {
-    object-position: center top;
   }
   .header-sub {
     display: none; /* PCでは幅を取るので非表示にするか調整 */
