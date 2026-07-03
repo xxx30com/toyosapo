@@ -798,6 +798,54 @@ header {
   text-align: left;
 }
 
+/* Qualification (保有資格) */
+.qualification-box {
+  margin-top: 24px;
+  background: var(--primary-pale);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.qualification-title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 17px;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qualification-title::before {
+  content: "📜";
+  font-size: 18px;
+}
+
+.qualification-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.qualification-list li {
+  background: #fff;
+  border: 1px solid rgba(21, 122, 75, 0.3);
+  color: var(--primary-dark);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+
+.qualification-list li::before {
+  content: "✓ ";
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
 /* Flow Section */
 .flow-step {
   display: flex;
