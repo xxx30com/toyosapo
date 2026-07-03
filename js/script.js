@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // スクロールに合わせてふわっと表示する
   const revealTargets = document.querySelectorAll(
-    '.problem-item, .reason-item, .voice-item, .flow-step, .faq-item, .service-category, .price-box, .greeting-content, .area-badge, .cta-panel'
+    '.problem-item, .reason-item, .flow-step, .faq-item, .service-category, .price-box, .greeting-content, .area-badge, .cta-panel'
   );
   if ('IntersectionObserver' in window && revealTargets.length > 0) {
     const observer = new IntersectionObserver(function(entries) {
