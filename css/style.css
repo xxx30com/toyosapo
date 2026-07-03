@@ -1,12 +1,23 @@
-/* css/style.css */
+/* css/style.css — とよサポ デザインリニューアル版 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@700;900&display=swap');
+
 :root {
-  --primary-color: #005A32; /* Navy-ish dark green / Dark green for trust */
-  --secondary-color: #1B3B6F; /* Navy */
-  --accent-color: #E65100; /* Orange for CTA */
+  --primary-color: #157A4B;   /* 信頼感のあるフレッシュな緑 */
+  --primary-dark: #0C3B2A;    /* 深い森の緑（ヒーロー・フッター） */
+  --primary-pale: #E8F5EE;    /* 薄い緑（背景・バッジ） */
+  --secondary-color: #1E3A34; /* 見出し用の深いインクグリーン */
+  --accent-color: #EA580C;    /* 温かいオレンジ（CTA） */
+  --accent-pale: #FFF1E6;
   --bg-color: #FFFFFF;
-  --text-color: #333333;
-  --light-gray: #F5F5F5;
-  --border-color: #E0E0E0;
+  --text-color: #2F3634;
+  --light-gray: #F6F7F5;
+  --border-color: #E4E7E3;
+  --radius: 16px;
+  --shadow-sm: 0 2px 8px rgba(15, 40, 30, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 40, 30, 0.10);
+  --shadow-lg: 0 16px 40px rgba(15, 40, 30, 0.14);
+  --font-heading: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif;
+  --font-body: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 }
 
 * {
@@ -21,22 +32,55 @@ html, body {
 }
 
 body {
-  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  font-family: var(--font-body);
   color: var(--text-color);
   background-color: var(--bg-color);
-  line-height: 1.6;
-  font-size: 18px; /* High legibility */
+  line-height: 1.75;
+  font-size: 18px; /* 読みやすさ重視 */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
+  font-family: var(--font-heading);
+  font-weight: 900;
   line-height: 1.4;
   color: var(--secondary-color);
 }
 
 h1 { font-size: 32px; }
-h2 { font-size: 28px; margin-bottom: 24px; text-align: center; }
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 18px;
+}
+
+/* 見出し下のアクセントバー */
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
 h3 { font-size: 24px; margin-bottom: 16px; }
+
+/* 見出し上の英字ラベル */
+.sec-en {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
 
 img {
   max-width: 100%;
@@ -47,13 +91,13 @@ img {
 /* Utilities */
 .container {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .section {
-  padding: 60px 0;
+  padding: 80px 0;
 }
 
 .bg-light {
@@ -61,7 +105,7 @@ img {
 }
 
 .bg-cool {
-  background: #F8F9FA; /* ボックスがより際立つ、ほんのりグレーがかった白 */
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--primary-pale) 100%);
   color: var(--text-color);
 }
 
@@ -81,6 +125,26 @@ img {
   color: var(--primary-color);
 }
 
+/* ふわっと表示アニメーション */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -88,7 +152,7 @@ img {
   justify-content: center;
   width: 100%;
   padding: 16px 24px;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
@@ -96,21 +160,27 @@ img {
   border: none;
   cursor: pointer;
   margin-bottom: 16px;
-  transition: opacity 0.2s;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s;
+  box-shadow: var(--shadow-md);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn:active {
-  opacity: 0.8;
-  transform: translateY(2px);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  opacity: 0.85;
+  transform: translateY(1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-phone {
-  background-color: var(--accent-color);
+  background: linear-gradient(135deg, #F97316, var(--accent-color));
   color: white;
   font-size: 24px;
   padding: 20px 24px;
+  box-shadow: 0 10px 24px rgba(234, 88, 12, 0.35);
 }
 
 /* PCなどで電話リンクをクリックできないようにする */
@@ -124,30 +194,35 @@ img {
 .btn-line {
   background-color: #06C755;
   color: white;
+  box-shadow: 0 10px 24px rgba(6, 199, 85, 0.3);
 }
 
 .btn-price-detail {
-  background-color: #F08080; /* 優しめの赤色 (LightCoral) */
+  background: linear-gradient(135deg, #F97316, var(--accent-color));
   color: white;
   max-width: 400px;
   margin: 0 auto;
+  box-shadow: 0 10px 24px rgba(234, 88, 12, 0.35);
 }
 
 .btn-price-detail:hover {
-  background-color: #E06666;
+  background: linear-gradient(135deg, #EA580C, #C2410C);
 }
 
 .btn-outline {
   background-color: white;
-  color: var(--secondary-color);
-  border: 2px solid var(--secondary-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Header */
 header {
-  background-color: white;
-  padding: 16px 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 12px 20px;
+  box-shadow: 0 1px 0 rgba(15, 40, 30, 0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -170,14 +245,15 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .header-site-name {
+  font-family: var(--font-heading);
   font-size: 22px;
   font-weight: 900;
-  color: var(--accent-color);
+  color: var(--primary-dark);
   line-height: 1.2;
   letter-spacing: 0.05em;
 }
@@ -185,14 +261,15 @@ header {
 .header-site-sub {
   font-size: 10px;
   font-weight: bold;
-  color: #666;
+  color: var(--primary-color);
   line-height: 1.2;
   margin-top: 2px;
+  letter-spacing: 0.15em;
   white-space: nowrap;
 }
 
 .header-logo {
-  height: 60px; /* ヘッダーの高さに合わせて調整 */
+  height: 52px;
   width: auto;
   display: block;
   transition: transform 0.2s;
@@ -209,7 +286,7 @@ header {
   border: none;
   font-size: 28px;
   cursor: pointer;
-  color: var(--primary-color);
+  color: var(--primary-dark);
 }
 
 .main-nav {
@@ -219,7 +296,7 @@ header {
   top: 100%;
   left: 0;
   background: white;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-md);
 }
 
 .main-nav.active {
@@ -246,75 +323,159 @@ header {
 }
 
 .main-nav a:hover {
-  color: var(--accent-color);
+  color: var(--primary-color);
 }
 
 .nav-contact-btn {
-  background-color: #B22222; /* 参考サイトに寄せた赤色 */
+  background: linear-gradient(135deg, #F97316, var(--accent-color));
   color: white !important;
   text-align: center;
 }
 
 .nav-contact-btn:hover {
-  background-color: #8B0000;
+  background: linear-gradient(135deg, #EA580C, #C2410C);
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  text-align: center;
-  background-color: #333; /* 画像読み込み前のベース色 */
+  background-color: var(--primary-dark);
+  overflow: hidden;
 }
 
-.hero-img-container {
-  position: relative;
-  width: 100%;
-  height: 500px; /* 写真がしっかり見えるように高さを広げる */
+.hero-bg {
+  position: absolute;
+  inset: 0;
 }
 
-.hero-img-container img {
+.hero-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1; /* 写真をそのまま表示 */
+  object-position: center;
 }
 
-.hero-content {
+/* 写真の上に深緑のグラデーションを重ねて高級感を出す */
+.hero-bg::after {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  padding: 0 20px;
-  z-index: 10;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba(9, 42, 30, 0.92) 0%, rgba(9, 42, 30, 0.72) 40%, rgba(9, 42, 30, 0.25) 75%, rgba(9, 42, 30, 0.15) 100%),
+    linear-gradient(0deg, rgba(9, 42, 30, 0.55) 0%, rgba(9, 42, 30, 0) 35%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 88px 24px 96px;
+  text-align: left;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 8px 18px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(4px);
 }
 
 .hero-catch {
-  font-size: 42px;
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 6.5vw, 58px);
   font-weight: 900;
   color: #FFFFFF;
-  margin-bottom: 16px;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.8), 0 0 24px rgba(0,0,0,0.6); /* 写真の上でも見やすいように強い影 */
-  line-height: 1.4;
+  margin-bottom: 20px;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero-catch .accent {
+  color: #FFD9A8;
 }
 
 .hero-sub {
-  font-size: 22px;
-  font-weight: bold;
-  color: #FFFFFF;
-  margin-bottom: 32px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.6);
+  font-size: clamp(17px, 2.4vw, 21px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 36px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  line-height: 2;
 }
 
-.hero-cta {
-  background-color: white;
-  padding: 24px;
-  border-radius: 12px;
-  color: var(--text-color);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  margin-top: -60px;
-  position: relative;
-  z-index: 20;
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 32px;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+}
+
+.hero-btn-phone {
+  background: linear-gradient(135deg, #F97316, var(--accent-color));
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(234, 88, 12, 0.45);
+  font-size: 24px;
+}
+
+.hero-btn-phone small {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.hero-btn-line {
+  background: #06C755;
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(6, 199, 85, 0.4);
+}
+
+.hero-points {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-points li {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--primary-dark);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-points li::before {
+  content: "✓ ";
+  color: var(--primary-color);
+  font-weight: 900;
 }
 
 /* Problems Section */
@@ -333,59 +494,65 @@ header {
 
 .problem-item {
   position: relative;
-  background-color: #ffffff; /* 画像がない場合のベース色 */
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-  overflow: hidden;
-  height: 120px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 20px 44px 20px 18px;
   text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15), 0 5px 10px rgba(0,0,0,0.1); /* 白背景に合うように少し柔らかく自然なシャドウに調整 */
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .problem-item:hover {
-  transform: translateY(-6px) scale(1.02); /* ホバー時に少し手前に迫る動き */
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2), 0 8px 15px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
   border-color: var(--accent-color);
 }
 
-.problem-item::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.6); /* 白みがかったオーバーレイ */
-  backdrop-filter: blur(2px); /* グラスモーフィズム（すりガラス効果） */
-  z-index: 1;
-  pointer-events: none;
+.problem-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
 }
 
 .problem-text {
-  position: relative;
-  z-index: 2;
-  font-size: 16px;
-  font-weight: 900;
-  color: #00A040; /* 参考画像の明るい緑色 */
-  text-shadow: 
-    -2px -2px 0 #fff,
-     2px -2px 0 #fff,
-    -2px  2px 0 #fff,
-     2px  2px 0 #fff,
-    -3px 0 0 #fff,
-     3px 0 0 #fff,
-     0 -3px 0 #fff,
-     0  3px 0 #fff;
-  text-align: center;
-  line-height: 1.3;
-  padding: 0 4px;
-  letter-spacing: 0;
-  white-space: normal;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  line-height: 1.5;
   word-break: keep-all;
-  overflow-wrap: auto;
+}
+
+.problem-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-pale);
+  color: var(--accent-color);
+  font-weight: 900;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.problem-item:hover .problem-arrow {
+  background: var(--accent-color);
+  color: #fff;
 }
 
 .problem-footer {
@@ -398,17 +565,20 @@ header {
 
 /* Services Section */
 .service-category {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
 }
 
 .service-category h3 {
-  border-bottom: 3px solid var(--primary-color);
-  padding-bottom: 8px;
-  display: inline-block;
+  color: var(--primary-dark);
+  padding-left: 14px;
+  border-left: 5px solid var(--primary-color);
+  border-bottom: none;
+  display: block;
 }
 
 .service-list {
@@ -427,14 +597,23 @@ header {
 
 .service-list li {
   position: relative;
-  padding-left: 24px;
+  padding-left: 28px;
 }
 
 .service-list li::before {
   content: "✓";
-  color: var(--primary-color);
+  color: #fff;
+  background: var(--primary-color);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   left: 0;
+  top: 5px;
   font-weight: bold;
 }
 
@@ -449,25 +628,25 @@ header {
 
 .price-box {
   background: white;
-  border-radius: 8px;
-  padding: 24px 16px;
+  border-radius: var(--radius);
+  padding: 28px 16px;
   width: 100%;
   max-width: 280px;
   flex: 1;
   color: white;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-md);
 }
 
-.price-box-orange { background-color: #E67E22; }
-.price-box-blue { background-color: #2980B9; }
-.price-box-green { background-color: #27AE60; }
+.price-box-orange { background: linear-gradient(160deg, #F59E0B, #D97706); }
+.price-box-blue { background: linear-gradient(160deg, #3B82F6, #1D4ED8); }
+.price-box-green { background: linear-gradient(160deg, #22A55B, #157A4B); }
 
 .price-box-title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.35);
   padding-bottom: 8px;
 }
 
@@ -493,15 +672,15 @@ header {
 .price-plus {
   font-size: 40px;
   font-weight: bold;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .price-box-bubble {
   position: absolute;
   top: -15px;
   right: -15px;
-  background-color: #F1C40F;
-  color: #333;
+  background-color: #FBBF24;
+  color: #453006;
   width: 72px;
   height: 72px;
   border-radius: 50%;
@@ -511,7 +690,7 @@ header {
   font-size: 13px;
   font-weight: bold;
   line-height: 1.2;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-md);
   transform: rotate(10deg);
   text-align: center;
 }
@@ -522,11 +701,13 @@ header {
   max-width: 800px;
   margin: 0 auto;
   background-color: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 
 .price-table-header {
-  background-color: #CC0000;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -553,7 +734,7 @@ header {
 .price-table-cell.service-price {
   font-size: 28px;
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--primary-dark);
 }
 
 .price-table-cell.service-price span {
@@ -563,17 +744,30 @@ header {
 }
 
 /* Reasons Section */
+.reasons-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
 .reason-item {
   background: white;
-  padding: 24px;
-  border-radius: 8px;
-  margin-bottom: 16px;
-  border-left: 6px solid var(--primary-color);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 28px;
+  border-radius: var(--radius);
+  margin-bottom: 0;
+  border: 1px solid var(--border-color);
+  border-top: 5px solid var(--primary-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.reason-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .reason-item h3 {
-  color: var(--primary-color);
+  color: var(--primary-dark);
   font-size: 20px;
   margin-bottom: 8px;
 }
@@ -584,6 +778,11 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-sm);
 }
 
 .greeting-img {
@@ -591,7 +790,8 @@ header {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--primary-color);
+  border: 5px solid var(--primary-pale);
+  box-shadow: var(--shadow-md);
 }
 
 .greeting-text {
@@ -601,10 +801,17 @@ header {
 /* Voices Section */
 .voice-item {
   background: white;
-  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
   padding: 24px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.voice-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .voice-header {
@@ -615,23 +822,24 @@ header {
 }
 
 .voice-img {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid var(--primary-pale);
 }
 
 .voice-title {
   font-weight: bold;
   color: var(--secondary-color);
-  font-size: 20px;
+  font-size: 19px;
 }
 
 .voice-text {
-  font-size: 18px;
+  font-size: 17px;
   background: var(--light-gray);
   padding: 16px;
-  border-radius: 8px;
+  border-radius: 12px;
   position: relative;
 }
 
@@ -649,26 +857,29 @@ header {
 .flow-step {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   background: white;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
 }
 
 .step-num {
-  width: 40px;
-  height: 40px;
-  background-color: var(--primary-color);
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   color: white;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
+  font-family: var(--font-heading);
   margin-right: 16px;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(21, 122, 75, 0.35);
 }
 
 .step-text {
@@ -678,39 +889,46 @@ header {
 
 .flow-arrow {
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   color: var(--primary-color);
-  margin-bottom: 16px;
+  padding: 6px 0;
+  opacity: 0.6;
 }
 
 /* FAQ Section */
 .faq-item {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   background: white;
-  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm);
 }
 
 .faq-q {
-  background: var(--primary-color);
-  color: white;
-  padding: 16px;
+  background: var(--primary-pale);
+  color: var(--primary-dark);
+  padding: 16px 20px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 19px;
   display: flex;
   gap: 12px;
 }
 
+.faq-q .faq-icon {
+  color: var(--primary-color);
+}
+
 .faq-a {
-  padding: 16px;
-  font-size: 18px;
+  padding: 16px 20px;
+  font-size: 17px;
   display: flex;
   gap: 12px;
 }
 
 .faq-icon {
-  font-weight: bold;
+  font-weight: 900;
+  font-family: var(--font-heading);
   flex-shrink: 0;
 }
 
@@ -724,23 +942,47 @@ header {
 }
 
 .area-badge {
-  background: var(--light-gray);
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
+  background: white;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-dark);
   font-weight: bold;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Final CTA */
+.cta-panel {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #14533A 100%);
+  border-radius: 24px;
+  padding: 56px 24px;
+  color: #fff;
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-panel h2 {
+  color: #fff;
+}
+
+.cta-panel h2::after {
+  background: var(--accent-color);
+}
+
+.cta-panel p {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 /* Footer & Fixed Bottom Bar */
 footer {
-  background-color: var(--secondary-color);
+  background: linear-gradient(180deg, #10281E 0%, var(--primary-dark) 100%);
   color: white;
-  padding: 40px 20px 100px;
+  padding: 48px 20px 110px;
   text-align: center;
 }
 
 .footer-info {
   margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .fixed-bottom {
@@ -748,23 +990,25 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 12px 20px;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  padding: 10px 16px;
+  box-shadow: 0 -4px 16px rgba(15, 40, 30, 0.12);
   z-index: 1000;
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
 .fixed-bottom .btn {
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: 17px;
   padding: 12px;
+  border-radius: 999px;
 }
 
 .fixed-bottom .btn-phone {
   flex: 2;
-  font-size: 20px;
+  font-size: 19px;
 }
 
 .fixed-bottom .btn-line {
@@ -773,20 +1017,17 @@ footer {
 
 /* PC Layout Adjustments */
 @media (min-width: 900px) {
-  .hero-img-container img {
-    object-position: center bottom;
-  }
   body {
     font-size: 16px;
   }
   .header-sub {
-    display: none; /* PCでは幅を取るので非表示にするか調整 */
+    display: none;
   }
   .header-site-name {
-    font-size: 26px;
+    font-size: 24px;
   }
   .header-site-sub {
-    font-size: 12px;
+    font-size: 11px;
   }
   .menu-toggle {
     display: none;
@@ -796,40 +1037,69 @@ footer {
     position: static;
     width: auto;
     box-shadow: none;
+    background: transparent;
   }
   .main-nav ul {
     flex-direction: row;
     align-items: center;
-    gap: 24px;
+    gap: 28px;
   }
   .main-nav li {
     border-bottom: none;
   }
   .main-nav a {
     padding: 8px 0;
-    font-size: 16px;
+    font-size: 15px;
+    position: relative;
+  }
+  /* ナビのホバー時に下線がすっと伸びる */
+  .main-nav a:not(.nav-contact-btn)::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .main-nav a:not(.nav-contact-btn):hover::after {
+    transform: scaleX(1);
   }
   .nav-contact {
     margin-left: 16px;
   }
   .nav-contact-btn {
-    padding: 12px 24px !important;
-    border-radius: 4px;
+    padding: 12px 26px !important;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(234, 88, 12, 0.3);
   }
+
+  .hero-inner {
+    padding: 130px 24px 140px;
+  }
+
   .greeting-content {
     flex-direction: row;
+    padding: 40px;
   }
   .greeting-text {
     flex: 1;
   }
-  .problem-text {
-    font-size: 16px; /* 1行または2行に綺麗に収まるように調整 */
-  }
   .problems-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .problem-text {
+    font-size: 16px;
+  }
   .service-list {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
   .price-calc-container {
     flex-direction: row;
@@ -849,6 +1119,13 @@ footer {
   .voice-item {
     margin-bottom: 0;
   }
+  /* PCでは下部固定バーは非表示（ヘッダーに問い合わせボタンがあるため） */
+  .fixed-bottom {
+    display: none;
+  }
+  footer {
+    padding-bottom: 48px;
+  }
 }
 
 /* Mobile responsive fixes (under 576px) */
@@ -859,17 +1136,17 @@ footer {
     gap: 8px;
     padding: 16px 20px;
   }
-  
+
   .price-table-cell.service-price {
     align-self: flex-end;
     font-size: 24px;
     margin-top: 4px;
   }
-  
+
   .price-calc-container {
     gap: 16px;
   }
-  
+
   .price-box {
     max-width: 100%;
   }
@@ -880,5 +1157,13 @@ footer {
 
   .greeting-text {
     text-align: left;
+  }
+
+  .hero-cta-row {
+    flex-direction: column;
+  }
+
+  .hero-btn {
+    width: 100%;
   }
 }

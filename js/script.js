@@ -17,6 +17,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // スクロールに合わせてふわっと表示する
+  const revealTargets = document.querySelectorAll(
+    '.problem-item, .reason-item, .voice-item, .flow-step, .faq-item, .service-category, .price-box, .greeting-content, .area-badge, .cta-panel'
+  );
+  if ('IntersectionObserver' in window && revealTargets.length > 0) {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealTargets.forEach(function(el, i) {
+      el.classList.add('reveal');
+      el.style.transitionDelay = (i % 3) * 0.08 + 's';
+      observer.observe(el);
+    });
+  }
+
   // スムーススクロール
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
