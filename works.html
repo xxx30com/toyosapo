@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GL91VF9PT1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GL91VF9PT1');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作業事例・ビフォーアフター | 下関市豊浦町の便利屋「とよサポ」</title>
+  <meta name="description" content="下関市豊浦町の便利屋「とよサポ」の作業事例をビフォーアフター写真でご紹介。草刈り、庭木剪定など、実際の作業の仕上がりをご覧いただけます。お見積り無料。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 作業事例ページ用スタイル */
+    .works-hero {
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--primary-color);
+    }
+    .works-hero h1 {
+      color: var(--primary-color);
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .works-hero p {
+      font-size: 18px;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    .breadcrumb {
+      padding: 12px 20px;
+      background: #f9f9f9;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .breadcrumb a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .breadcrumb span {
+      margin: 0 8px;
+      color: #999;
+    }
+
+    .intro-box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .intro-box p {
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .intro-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 事例カード */
+    .case-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      margin-bottom: 48px;
+      border: 1px solid var(--border-color);
+    }
+    .case-header {
+      background: var(--primary-color);
+      color: white;
+      padding: 18px 24px;
+    }
+    .case-header .case-num {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: #FFD9A8;
+      margin-bottom: 4px;
+    }
+    .case-header h3 {
+      color: white;
+      font-size: 22px;
+      margin: 0;
+      line-height: 1.4;
+    }
+    .case-body {
+      padding: 24px;
+    }
+
+    /* ビフォーアフター写真 */
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .ba-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .ba-item img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+    .ba-label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      color: white;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+    .ba-label.before {
+      background: #5f6b66;
+    }
+    .ba-label.after {
+      background: var(--accent-color);
+    }
+    .ba-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--accent-color);
+      transform: rotate(90deg);
+      padding: 2px 0;
+    }
+    @media (min-width: 768px) {
+      .ba-grid {
+        grid-template-columns: 1fr 44px 1fr;
+        gap: 8px;
+      }
+      .ba-arrow {
+        transform: none;
+        padding: 0;
+      }
+    }
+
+    .case-desc p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .case-tag {
+      background: var(--primary-pale);
+      color: var(--primary-color);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .case-point {
+      background: var(--accent-pale);
+      border-left: 5px solid var(--accent-color);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+    .case-point .case-point-title {
+      font-weight: 900;
+      color: var(--accent-color);
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+    .case-point p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #444;
+      margin: 0;
+    }
+
+    .case-link {
+      text-align: right;
+    }
+    .case-link a {
+      color: var(--primary-color);
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .case-link a:hover {
+      text-decoration: underline;
+    }
+
+    .works-note {
+      text-align: center;
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 0;
+    }
+
+    /* LINEかんたん見積りの案内 */
+    .photo-quote-box {
+      background: white;
+      border: 2px solid var(--primary-color);
+      border-radius: 16px;
+      padding: 30px 24px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    .photo-quote-box h3 {
+      color: var(--primary-color);
+      margin-bottom: 12px;
+    }
+    .photo-quote-box p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="とよサポ" class="header-logo">
+        <div class="header-text-group">
+          <span class="header-site-name">とよサポ</span>
+          <span class="header-site-sub">豊浦暮らしサポート</span>
+        </div>
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#services">作業内容</a></li>
+        <li><a href="works.html">作業事例</a></li>
+        <li><a href="index.html#price">料金</a></li>
+        <li><a href="index.html#flow">ご依頼の流れ</a></li>
+        <li><a href="index.html#about">当社について</a></li>
+        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container" style="padding: 0;">
+      <a href="index.html">ホーム</a><span>❯</span>作業事例
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="works-hero">
+    <div class="container">
+      <h1>作業事例（ビフォーアフター）</h1>
+      <p>「頼んだら、どれくらい綺麗になるの？」<br>その答えを、実際の写真でご覧ください。</p>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="section bg-cool">
+    <div class="container">
+
+      <!-- Intro Box -->
+      <div class="intro-box">
+        <p><strong>「業者に頼むのは初めてで、仕上がりが不安…」</strong><br>
+        そんな方にこそ見ていただきたいのが、このページです。</p>
+        <p>ここでは、とよサポが実際に行った作業のビフォーアフターをご紹介しています。同じようなお悩みをお持ちでしたら、「うちの場合はどうなる？」とお気軽にご相談ください。お見積りは無料です。</p>
+      </div>
+
+      <!-- CASE 01 草刈り -->
+      <div class="case-card">
+        <div class="case-header">
+          <span class="case-num">CASE 01｜草刈り</span>
+          <h3>背丈まで伸びた草むらが、ここまでスッキリ！</h3>
+        </div>
+        <div class="case-body">
+          <div class="ba-grid">
+            <div class="ba-item">
+              <img src="images/works/mowing-before.jpg" alt="草刈り前：大人の背丈ほどまで草が伸び放題の土地">
+              <span class="ba-label before">Before</span>
+            </div>
+            <div class="ba-arrow">❯</div>
+            <div class="ba-item">
+              <img src="images/works/mowing-after.jpg" alt="草刈り後：草が刈り取られ、見通しの良くなった土地">
+              <span class="ba-label after">After</span>
+            </div>
+          </div>
+          <div class="case-desc">
+            <p>長期間手つかずで、大人の背丈ほどまで草が伸びてしまった土地です。刈払機（草刈り機）を使って広範囲を一気に刈り取り、奥まで見通せるスッキリとした状態になりました。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">刈払機による機械刈り</span>
+            <span class="case-tag">広範囲の草刈り</span>
+            <span class="case-tag">空き地・遊休地</span>
+          </div>
+          <div class="case-point">
+            <div class="case-point-title">担当者より</div>
+            <p>ここまで草が伸びると、ご自身での作業は体力的にも大変ですし、虫や蛇などの危険もあります。「もう手が付けられない…」という状態でも大丈夫。プロの機材で一気に解決いたします。</p>
+          </div>
+          <div class="case-link">
+            <a href="mowing.html">草刈り・除草剤散布の詳細はこちら ❯</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 02 庭木剪定 -->
+      <div class="case-card">
+        <div class="case-header">
+          <span class="case-num">CASE 02｜庭木剪定</span>
+          <h3>大きく茂った庭木が、風通しの良いすっきりした姿に</h3>
+        </div>
+        <div class="case-body">
+          <div class="ba-grid">
+            <div class="ba-item">
+              <img src="images/works/pruning-before.jpg" alt="剪定前：枝葉が大きく茂り、道路側まで張り出した庭木">
+              <span class="ba-label before">Before</span>
+            </div>
+            <div class="ba-arrow">❯</div>
+            <div class="ba-item">
+              <img src="images/works/pruning-after.jpg" alt="剪定後：枝葉が整理され、明るく風通しの良くなったお庭">
+              <span class="ba-label after">After</span>
+            </div>
+          </div>
+          <div class="case-desc">
+            <p>枝葉が大きく茂り、お庭が薄暗くなってしまっていた庭木です。1本1本樹形を見ながら思い切って枝を整理し、お庭全体が明るく、風通しの良い状態になりました。剪定した枝葉の回収・処分まで全て対応しています。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">庭木の剪定</span>
+            <span class="case-tag">複数本まとめて対応</span>
+            <span class="case-tag">枝葉の回収・処分込み</span>
+          </div>
+          <div class="case-point">
+            <div class="case-point-title">担当者より</div>
+            <p>枝が伸びすぎると、日当たりや風通しが悪くなるだけでなく、台風時の枝折れや、お隣への越境トラブルの原因にもなります。「どこまで切っていいかわからない」という方も、お気軽にご相談ください。</p>
+          </div>
+          <div class="case-link">
+            <a href="price.html">料金表はこちら ❯</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="works-note">※掲載しているのは、実際にとよサポが行った作業です。事例は今後も随時追加していきます。</p>
+
+      <!-- 写真でかんたん見積り -->
+      <div class="photo-quote-box">
+        <h3>📷 写真を送るだけ！かんたん見積り</h3>
+        <p>「うちの庭も同じような状態…」という方は、LINEで現場のお写真をお送りください。<br>おおよそのお見積りをお伝えできます。もちろん相談だけでも大歓迎です。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="contact" class="section bg-light text-center" style="padding-bottom: 120px;">
+    <div class="container">
+      <h2 style="color: var(--primary-color);">「うちもお願いしたい」と思ったら、<br>まずはお気軽にご相談ください。</h2>
+      <p style="margin-bottom: 32px; font-weight: bold;">地域の皆様を支える「とよサポ」が、<br>迅速・丁寧にスッキリ綺麗にいたします！</p>
+
+      <a href="tel:09075294121" class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;">
+        📞 090-7529-4121<br>
+        <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜17:00)</span>
+      </a>
+
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;">
+        LINEで簡単見積り・相談
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
+        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
+        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
+          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
+          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>地域の困りごと相談窓口</p>
+        <p>代表：森脇靖斗</p>
+      </div>
+      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Fixed Bottom Bar -->
+  <div class="fixed-bottom">
+    <a href="tel:09075294121" class="btn btn-phone">📞 090-7529-4121</a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
