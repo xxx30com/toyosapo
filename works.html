@@ -13,7 +13,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>作業事例・ビフォーアフター | 下関市豊浦町の便利屋「とよサポ」</title>
-  <meta name="description" content="下関市豊浦町の便利屋「とよサポ」の作業事例をビフォーアフター写真でご紹介。草刈り、庭木剪定など、実際の作業の仕上がりをご覧いただけます。お見積り無料。">
+  <meta name="description" content="下関市豊浦町の便利屋「とよサポ」の作業事例をビフォーアフター写真でご紹介。草刈り、草抜き、庭木剪定、蜂の巣駆除など、実際の作業の仕上がりをご覧いただけます。お見積り無料。">
   <link rel="stylesheet" href="css/style.css?v=20260728">
   <style>
     /* 作業事例ページ用スタイル */
@@ -159,6 +159,37 @@
         transform: none;
         padding: 0;
       }
+    }
+
+    /* 縦長写真（3:4）のビフォーアフター */
+    .ba-item.tall img {
+      aspect-ratio: 3 / 4;
+    }
+    .ba-pair-caption {
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin: 20px 0 8px;
+    }
+    .ba-pair-caption:first-child {
+      margin-top: 0;
+    }
+
+    /* 1枚写真の事例 */
+    .single-photo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .single-photo img {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto 8px;
+    }
+    .single-photo figcaption {
+      font-size: 14px;
+      color: #777;
     }
 
     .case-desc p {
@@ -363,6 +394,86 @@
           <div class="case-point">
             <div class="case-point-title">担当者より</div>
             <p>枝が伸びすぎると、日当たりや風通しが悪くなるだけでなく、台風時の枝折れや、お隣への越境トラブルの原因にもなります。「どこまで切っていいかわからない」という方も、お気軽にご相談ください。</p>
+          </div>
+          <div class="case-link">
+            <a href="price.html">料金表はこちら ❯</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 03 草刈り・草抜き -->
+      <div class="case-card">
+        <div class="case-header">
+          <span class="case-num">CASE 03｜草刈り・草抜き</span>
+          <h3>玄関まわり・犬走りの草を、根まで枯らしてスッキリと</h3>
+        </div>
+        <div class="case-body">
+          <p class="ba-pair-caption">▼ 玄関まわり</p>
+          <div class="ba-grid">
+            <div class="ba-item tall">
+              <img src="images/works/weeding-before-2.jpg" alt="草抜き前：玄関まわりに草木が生い茂り、室外機が隠れるほどの状態">
+              <span class="ba-label before">Before</span>
+            </div>
+            <div class="ba-arrow">❯</div>
+            <div class="ba-item tall">
+              <img src="images/works/weeding-after-2.jpg" alt="草抜き後：玄関まわりの草がなくなり、タイルや室外機が見えるスッキリした状態">
+              <span class="ba-label after">After</span>
+            </div>
+          </div>
+          <p class="ba-pair-caption">▼ 犬走り</p>
+          <div class="ba-grid">
+            <div class="ba-item tall">
+              <img src="images/works/weeding-before-1.jpg" alt="草抜き前：犬走り沿いに草が生い茂った状態">
+              <span class="ba-label before">Before</span>
+            </div>
+            <div class="ba-arrow">❯</div>
+            <div class="ba-item tall">
+              <img src="images/works/weeding-after-1.jpg" alt="草抜き後：犬走り沿いの草が取り除かれ、見通しの良くなった状態">
+              <span class="ba-label after">After</span>
+            </div>
+          </div>
+          <div class="case-desc">
+            <p>駐車場・玄関前・犬走りの草刈り作業です。場所に合わせて刈払機と草抜き工具を使い分け、細かく残った草には除草剤を散布して、完全に枯らす処置をしています。</p>
+            <p>犬走りには、抜くには大きすぎる草も生えていました。無理に抜根すると犬走りやブロック塀を傷める恐れがあるため、切り株にキリで穴を空けて除草剤の原液を注入し、根まで完全に枯らす処置を行いました。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">刈払機＋手作業の草抜き</span>
+            <span class="case-tag">除草剤で再発防止</span>
+            <span class="case-tag">駐車場・玄関前・犬走り</span>
+          </div>
+          <div class="case-point">
+            <div class="case-point-title">担当者より</div>
+            <p>大きくなった草や木は、刈るだけだと切り口からまた元気に生えてきます。「切る＋根を枯らす」までがワンセット。とよサポでは、再発防止まで見据えた処置を標準で行っています。</p>
+          </div>
+          <div class="case-link">
+            <a href="mowing.html">草刈り・除草剤散布の詳細はこちら ❯</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 04 蜂の巣駆除 -->
+      <div class="case-card">
+        <div class="case-header">
+          <span class="case-num">CASE 04｜蜂の巣駆除</span>
+          <h3>棚の裏に隠れていたアシナガバチの巣を駆除</h3>
+        </div>
+        <div class="case-body">
+          <figure class="single-photo">
+            <img src="images/works/hachinosu-1.jpg" alt="屋外の棚の裏にできていたアシナガバチの巣。多数の蜂が巣に集まっている">
+            <figcaption>屋外の棚の裏にできていたアシナガバチの巣</figcaption>
+          </figure>
+          <div class="case-desc">
+            <p>蜂の巣の駆除作業です。場所は屋外の棚の裏。普段あまり動かさない物の陰に、アシナガバチが巣を作っていました。</p>
+            <p>蜂の巣は「雨風がしのげて、人が普段見ない場所」にできやすく、軒下やベランダの天井、物置や外の棚の裏、エアコン室外機のまわりなどが要注意。気づいたときには、写真くらいの大きさになっています。特に8月の巣は蜂の数が増えていて、巣に気づかず物を動かした拍子に刺されるケースが多い時期です。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">蜂の巣駆除</span>
+            <span class="case-tag">アシナガバチ</span>
+            <span class="case-tag">棚の裏・物陰</span>
+          </div>
+          <div class="case-point">
+            <div class="case-point-title">担当者より</div>
+            <p>蜂の巣を見つけたら、まず近づかず、巣を刺激しないようにしてください。巣が大きいもの・高い場所・スズメバチと思われるものは、ご自身で無理をなさらないでください。「これって蜂の巣？」という段階でも構いません。写真を送っていただければ、対応をご相談できます。</p>
           </div>
           <div class="case-link">
             <a href="price.html">料金表はこちら ❯</a>
