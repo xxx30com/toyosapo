@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GL91VF9PT1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GL91VF9PT1');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メールマガジン登録 | 下関市豊浦町の便利屋「とよサポ」</title>
+  <meta name="description" content="下関市豊浦町の便利屋「とよサポ」のメールマガジン登録ページ。暮らしに役立つ情報やお得なお知らせをメールでお届けします。">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/style.css?v=20260728">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <style>
+    .newsletter-hero {
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--primary-color);
+    }
+    .newsletter-hero h1 {
+      color: var(--primary-color);
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .newsletter-hero p {
+      font-size: 17px;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: bold;
+      line-height: 1.6;
+    }
+    .newsletter-box {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      border: 1px solid var(--border-color);
+      max-width: 560px;
+      margin: 40px auto;
+    }
+    .newsletter-box label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    .newsletter-box input[type="email"] {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border: 2px solid var(--border-color, #ddd);
+      border-radius: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+    .newsletter-box .cf-turnstile {
+      margin-bottom: 16px;
+    }
+    .newsletter-box button[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: 900;
+      color: #fff;
+      background: var(--primary-color, #2e7d32);
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+    }
+    .newsletter-box button[type="submit"]:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+    #rondo-status {
+      margin-top: 16px;
+      font-weight: bold;
+      line-height: 1.6;
+    }
+    .newsletter-note {
+      font-size: 13px;
+      color: #666;
+      margin-top: 20px;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="とよサポ" class="header-logo">
+        <div class="header-text-group">
+          <span class="header-site-name">とよサポ</span>
+          <span class="header-site-sub">豊浦暮らしサポート</span>
+        </div>
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#services">作業内容</a></li>
+        <li><a href="works.html">作業事例</a></li>
+        <li><a href="index.html#price">料金</a></li>
+        <li><a href="index.html#flow">ご依頼の流れ</a></li>
+        <li><a href="index.html#about">当社について</a></li>
+        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="newsletter-hero">
+    <h1>メールマガジン登録</h1>
+    <p>暮らしに役立つ情報やとよサポからのお知らせを<br>メールでお届けします。</p>
+  </section>
+
+  <div class="container">
+    <div class="newsletter-box">
+      <form id="rondo-subscribe">
+        <label for="rondo-email">メールアドレス</label>
+        <input
+          id="rondo-email"
+          name="email"
+          type="email"
+          inputmode="email"
+          autocomplete="email"
+          spellcheck="false"
+          placeholder="例）example@gmail.com"
+          required
+        >
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAEQeqLye4ZENVLgG"></div>
+        <div aria-hidden="true" style="position:absolute;left:-10000px">
+          <label for="rondo-website">Website</label>
+          <input id="rondo-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit">登録確認メールを受け取る</button>
+        <p id="rondo-status" role="status" aria-live="polite"></p>
+      </form>
+      <p class="newsletter-note">
+        ご登録いただいたメールアドレスは、メールマガジンの配信のみに使用します。
+        配信はいつでもメール内のリンクから解除できます。
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
+        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
+        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
+          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
+          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>地域の困りごと相談窓口</p>
+        <p>代表：森脇靖斗</p>
+      </div>
+      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const form = document.getElementById('rondo-subscribe');
+      const status = document.getElementById('rondo-status');
+      const button = form.querySelector('button[type="submit"]');
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const cfToken = data.get('cf-turnstile-response');
+        if (!cfToken) {
+          status.textContent = 'bot確認を完了してから、もう一度お試しください。';
+          return;
+        }
+        button.disabled = true;
+        button.textContent = '送信中…';
+        status.textContent = '';
+        try {
+          const response = await fetch('https://rondo.ai-hisho-worker.workers.dev/api/subscribe', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({
+              email: data.get('email'),
+              website: data.get('website'),
+              cfToken,
+              source: 'web',
+            }),
+          });
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          form.reset();
+          status.textContent = '確認メールを送りました。受信箱のリンクを開いて登録を完了してください。';
+        } catch {
+          status.textContent = '送信できませんでした。通信状態を確認し、bot確認をやり直してください。';
+          if (window.turnstile) window.turnstile.reset();
+        } finally {
+          button.disabled = false;
+          button.textContent = '登録確認メールを受け取る';
+        }
+      });
+    })();
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
