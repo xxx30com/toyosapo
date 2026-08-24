@@ -66,3 +66,47 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// お知らせ欄（js/news.json を読み込んで表示。読み込めない場合はセクションごと非表示のまま）
+(function () {
+  const section = document.getElementById('news');
+  const list = document.getElementById('newsList');
+  if (!section || !list) return;
+
+  fetch('js/news.json?v=' + Date.now())
+    .then(res => { if (!res.ok) throw new Error(res.status); return res.json(); })
+    .then(items => {
+      if (!Array.isArray(items) || items.length === 0) return;
+      items.slice(0, 5).forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'news-item';
+        const inner = item.url
+          ? Object.assign(document.createElement('a'), { href: item.url })
+          : document.createElement('div');
+        inner.className = 'news-item-inner';
+
+        const date = document.createElement('time');
+        date.className = 'news-date';
+        date.dateTime = item.date;
+        date.textContent = String(item.date).replace(/-/g, '.');
+        inner.appendChild(date);
+
+        if (item.tag) {
+          const tag = document.createElement('span');
+          tag.className = 'news-tag';
+          tag.textContent = item.tag;
+          inner.appendChild(tag);
+        }
+
+        const title = document.createElement('span');
+        title.className = 'news-title';
+        title.textContent = item.title;
+        inner.appendChild(title);
+
+        li.appendChild(inner);
+        list.appendChild(li);
+      });
+      section.hidden = false;
+    })
+    .catch(() => { /* file://直開きや読み込み失敗時は非表示のまま */ });
+})();
