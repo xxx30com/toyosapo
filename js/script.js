@@ -101,6 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const title = document.createElement('span');
         title.className = 'news-title';
         title.textContent = item.title;
+        if (item.url) {
+          const more = document.createElement('span');
+          more.className = 'news-more';
+          more.textContent = '詳しくはこちら ❯';
+          title.appendChild(more);
+        }
         inner.appendChild(title);
 
         li.appendChild(inner);
