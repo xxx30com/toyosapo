@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GL91VF9PT1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GL91VF9PT1');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作業内容一覧 | 下関市豊浦町の便利屋「とよサポ」</title>
+  <meta name="description" content="下関市豊浦町の便利屋「とよサポ」の作業内容一覧。草刈り・剪定・蜂の巣駆除・不用品整理・エアコン処分・電球交換・空き家管理・墓掃除代行からホームページ制作まで、暮らしの困りごとを幅広くサポートします。">
+  <link rel="stylesheet" href="css/style.css?v=20260824">
+  <style>
+    /* 作業内容ページ専用スタイル */
+    .svc-hero {
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--primary-color);
+    }
+    .svc-hero h1 {
+      color: var(--primary-color);
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .svc-hero p {
+      font-size: 18px;
+      color: #333;
+      max-width: 640px;
+      margin: 0 auto;
+      font-weight: bold;
+      line-height: 1.6;
+    }
+    .breadcrumb {
+      padding: 12px 20px;
+      background: #f9f9f9;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .breadcrumb a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .breadcrumb span { margin: 0 8px; color: #999; }
+
+    .svc-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .svc-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border-color);
+    }
+    .svc-photo {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+    .svc-icon-tile {
+      width: 100%;
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary-pale) 0%, #d4ecdf 100%);
+    }
+    .svc-icon-tile span {
+      font-size: 96px;
+      line-height: 1;
+      filter: drop-shadow(0 6px 10px rgba(15, 40, 30, 0.18));
+    }
+    .svc-body {
+      padding: 24px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .svc-body h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    .svc-body p {
+      font-size: 16px;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .svc-price {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--accent-pale);
+      color: var(--accent-color);
+      font-weight: 900;
+      font-size: 20px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .svc-price small {
+      font-size: 13px;
+      font-weight: 700;
+      color: #a05a2c;
+    }
+    .svc-link {
+      display: block;
+      text-align: center;
+      background: var(--primary-color);
+      color: #fff;
+      font-weight: 900;
+      font-size: 17px;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 12px;
+      transition: background 0.2s;
+    }
+    .svc-link:hover { background: #0f5f3a; }
+    .svc-link.svc-link-sub {
+      background: #fff;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+    }
+    .svc-link.svc-link-sub:hover { background: var(--primary-pale); }
+
+    /* Webサイト制作の特設パネル */
+    .svc-web {
+      margin-top: 56px;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, #14563a 100%);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      color: #fff;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+    .svc-web .svc-new-badge {
+      display: inline-block;
+      background: var(--accent-color);
+      color: #fff;
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .svc-web h3 {
+      color: #fff;
+      font-size: 30px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .svc-web > p {
+      font-size: 16px;
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+    .svc-web-plans {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 720px;
+      margin: 0 auto 20px;
+      text-align: left;
+    }
+    .svc-plan {
+      background: #fff;
+      color: var(--text-color);
+      border-radius: 14px;
+      padding: 26px 24px;
+    }
+    .svc-plan.svc-plan-osusume {
+      border: 3px solid var(--accent-color);
+      position: relative;
+    }
+    .svc-plan-osusume::before {
+      content: "おすすめ";
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-color);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+      padding: 4px 16px;
+      border-radius: 999px;
+    }
+    .svc-plan h4 {
+      font-size: 20px;
+      color: var(--primary-color);
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .svc-plan .svc-plan-price {
+      text-align: center;
+      font-family: var(--font-heading);
+      font-weight: 900;
+      font-size: 34px;
+      color: var(--accent-color);
+      margin-bottom: 14px;
+    }
+    .svc-plan .svc-plan-price small {
+      font-size: 15px;
+      color: var(--text-color);
+    }
+    .svc-plan ul {
+      list-style: none;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .svc-plan ul li {
+      padding: 6px 0 6px 26px;
+      position: relative;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    .svc-plan ul li:last-child { border-bottom: none; }
+    .svc-plan ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 2px;
+      color: var(--primary-color);
+      font-weight: 900;
+    }
+    .svc-web-note {
+      font-size: 13px;
+      color: #cfe5d8;
+      max-width: 640px;
+      margin: 0 auto 28px;
+      text-align: left;
+      line-height: 1.8;
+    }
+    .svc-web-cta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .svc-web-cta a {
+      display: inline-block;
+      font-weight: 900;
+      font-size: 18px;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 999px;
+    }
+    .svc-web-cta .cta-line { background: #06C755; color: #fff; }
+    .svc-web-cta .cta-tel { background: #fff; color: var(--primary-dark); }
+
+    @media (max-width: 768px) {
+      .svc-grid { grid-template-columns: 1fr; }
+      .svc-web-plans { grid-template-columns: 1fr; }
+      .svc-hero h1 { font-size: 26px; }
+      .svc-body h3 { font-size: 22px; }
+      .svc-web h3 { font-size: 24px; }
+      .svc-web { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="とよサポ" class="header-logo">
+        <div class="header-text-group">
+          <span class="header-site-name">とよサポ</span>
+          <span class="header-site-sub">豊浦暮らしサポート</span>
+        </div>
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="services.html">作業内容</a></li>
+        <li><a href="works.html">作業事例</a></li>
+        <li><a href="index.html#price">料金</a></li>
+        <li><a href="index.html#flow">ご依頼の流れ</a></li>
+        <li><a href="index.html#about">当社について</a></li>
+        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container" style="padding: 0;">
+      <a href="index.html">ホーム</a><span>❯</span>作業内容一覧
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="svc-hero">
+    <h1>作業内容一覧</h1>
+    <p>草刈りからホームページ制作まで。<br>豊浦町の「誰に頼めばいいの？」に、とよサポが幅広くお応えします。</p>
+  </section>
+
+  <!-- Services -->
+  <section class="section" style="background: linear-gradient(180deg, #FFFFFF 0%, var(--primary-pale) 100%);">
+    <div class="svc-container">
+      <h2><span class="sec-en">SERVICE</span>暮らしのお手伝い</h2>
+
+      <div class="svc-grid">
+
+        <div class="svc-card">
+          <img src="images/works/mowing-after.jpg" alt="草刈り作業後のきれいになったお庭" class="svc-photo">
+          <div class="svc-body">
+            <h3>🌾 草刈り・草むしり</h3>
+            <p>伸び放題のお庭・空き地・駐車場をスッキリ綺麗に。除草剤散布（5,500円〜）や刈草の回収までおまかせください。</p>
+            <span class="svc-price">7,700円<small>（税込）〜</small></span>
+            <a href="mowing.html" class="svc-link">詳しく見る ❯</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <img src="images/works/pruning-after.jpg" alt="剪定作業後の植木" class="svc-photo">
+          <div class="svc-body">
+            <h3>🌲 植木の伐採・剪定</h3>
+            <p>大きくなりすぎた庭木、隣にはみ出しそうな枝。切った枝の処分まで含めて、まとめてお引き受けします。</p>
+            <span class="svc-price">7,700円<small>（税込）〜</small></span>
+            <a href="works.html" class="svc-link svc-link-sub">作業事例を見る ❯</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <img src="images/works/hachinosu-1.jpg" alt="蜂の巣駆除の様子" class="svc-photo">
+          <div class="svc-body">
+            <h3>🐝 蜂の巣駆除</h3>
+            <p>軒下や庭木にできた蜂の巣を安全に駆除します。巣の大きさ・場所で料金が変わるので、まずは写真をLINEでお送りください。</p>
+            <span class="svc-price">6,600円<small>（税込）〜</small></span>
+            <a href="works.html" class="svc-link svc-link-sub">作業事例を見る ❯</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon-tile"><span>📦</span></div>
+          <div class="svc-body">
+            <h3>不用品整理・片付け</h3>
+            <p>長年たまった家財や家電をまとめて片付け。分別から搬出、処分まで一括対応。空き家の片付けもご相談ください。</p>
+            <span class="svc-price">5,500円<small>（税込）〜</small></span>
+            <a href="disposal.html" class="svc-link">詳しく見る ❯</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon-tile"><span>❄️</span></div>
+          <div class="svc-body">
+            <h3>エアコン撤去・処分</h3>
+            <p>使わなくなった古いエアコンの取り外しから運び出し、リサイクル処分までまとめて対応します。</p>
+            <span class="svc-price">6,600円<small>（税込）〜</small></span>
+            <a href="aircon.html" class="svc-link">詳しく見る ❯</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <img src="images/light.png" alt="電球交換の作業" class="svc-photo">
+          <div class="svc-body">
+            <h3>💡 電球交換・電気のこと</h3>
+            <p>高い天井の電球交換、照明器具・コンセント・スイッチの交換や増設まで。脚立に乗るのが怖い作業は私たちにおまかせを。</p>
+            <span class="svc-price">5,500円<small>（税込）〜</small></span>
+            <a href="lightbulb.html" class="svc-link">詳しく見る ❯</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon-tile"><span>🛋️</span></div>
+          <div class="svc-body">
+            <h3>家具の移動・組立・処分</h3>
+            <p>タンスやベッドなど、ひとりでは動かせない重い家具の移動・模様替え・組み立て・処分をお手伝いします。</p>
+            <span class="svc-price">5,500円<small>（税込）〜</small></span>
+            <a href="furniture.html" class="svc-link">詳しく見る ❯</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon-tile"><span>🛒</span></div>
+          <div class="svc-body">
+            <h3>買い物代行・付き添い</h3>
+            <p>スーパーや薬局への買い物を代わりに。ご希望があれば付き添いも。車がなくても、暑い日も雨の日も安心です。</p>
+            <span class="svc-price">5,500円<small>（税込）〜</small></span>
+            <a href="shopping.html" class="svc-link">詳しく見る ❯</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <img src="images/empty_house.png" alt="空き家の巡回点検" class="svc-photo">
+          <div class="svc-body">
+            <h3>🏠 空き家管理</h3>
+            <p>遠方にお住まいでも安心。換気・通水・庭木チェックなどの定期巡回を行い、写真付き報告書をお届けします。</p>
+            <span class="svc-price">5,500円<small>（税込）〜</small></span>
+            <a href="akiya.html" class="svc-link">詳しく見る ❯</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon-tile"><span>📱</span></div>
+          <div class="svc-body">
+            <h3>スマホ相談</h3>
+            <p>「使い方がわからない」「料金プランが高い気がする」を一緒に解決。ゆっくり丁寧にご説明します。</p>
+            <span class="svc-price">5,500円<small>（税込）〜</small></span>
+            <a href="smartphone.html" class="svc-link">詳しく見る ❯</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <img src="images/zouka2_grave.webp" alt="墓参り代行でお供えする造花" class="svc-photo">
+          <div class="svc-body">
+            <h3>🙏 墓掃除・墓参り代行</h3>
+            <p>遠方でお墓参りに行けない方の代わりに、清掃・草抜き・お供え・合掌まで心を込めて。写真でご報告します。</p>
+            <span class="svc-price">11,000円<small>（税込）〜</small></span>
+            <a href="grave.html" class="svc-link">詳しく見る ❯</a>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <img src="images/obaasan.png" alt="お庭の困りごとに悩む様子" class="svc-photo">
+          <div class="svc-body">
+            <h3>🤝 その他の困りごと</h3>
+            <p>「これは頼めるのかな？」と思ったら、まずはご相談ください。地域の相談窓口として、できる限りお力になります。</p>
+            <span class="svc-price">お見積り無料</span>
+            <a href="index.html#contact" class="svc-link svc-link-sub">相談してみる ❯</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Webサイト制作 -->
+      <div class="svc-web" id="web">
+        <span class="svc-new-badge">NEW</span>
+        <h3>お店・会社のホームページ制作</h3>
+        <p>「ホームページがない」「作ったきり止まっている」小さなお店・会社のために、制作から日々の更新までまとめて引き受ける月額制のサービスをはじめました。初期費用は0円です。</p>
+
+        <div class="svc-web-plans">
+          <div class="svc-plan">
+            <h4>おまかせプラン</h4>
+            <div class="svc-plan-price">月額 5,500円<small>（税込）</small></div>
+            <ul>
+              <li>1ページのホームページ</li>
+              <li>更新は月1回まで</li>
+              <li>スマホ対応・地図掲載</li>
+            </ul>
+          </div>
+          <div class="svc-plan svc-plan-osusume">
+            <h4>まるごとプラン</h4>
+            <div class="svc-plan-price">月額 8,800円<small>（税込）</small></div>
+            <ul>
+              <li>5ページまでのホームページ</li>
+              <li>更新はほぼ無制限</li>
+              <li>お知らせ欄つき</li>
+              <li>Googleマップの運用サポート</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="svc-web-note">※最低契約期間は6ヶ月、お支払いは6ヶ月ごとの前払いです。※写真撮影をご希望の場合は別途5,500円／回。※詳しい内容はお気軽にお問い合わせください。</p>
+
+        <div class="svc-web-cta">
+          <a href="https://lin.ee/s2UKpeO" class="cta-line">LINEで相談する</a>
+          <a href="#" data-tel class="cta-tel">📞 <span class="js-tel-num"></span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section text-center">
+    <div class="container">
+      <div class="cta-panel">
+        <h2><span class="sec-en" style="color: #FFD9A8;">CONTACT</span>ひとりで悩まず、<br>まずはご相談ください。</h2>
+        <p style="margin-bottom: 32px; font-weight: bold;">困った時の相談先として、<br>とよサポがお手伝いします。</p>
+
+        <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px; max-width: 420px;">
+          📞 <span class="js-tel-num"></span>
+          <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜17:00)</span>
+        </a>
+        <br>
+        <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 0; max-width: 420px;">
+          LINEで相談する
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
+        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
+        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
+          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
+          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>地域の困りごと相談窓口</p>
+        <p>代表：森脇靖斗</p>
+      </div>
+      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Fixed Bottom Bar -->
+  <div class="fixed-bottom">
+    <a href="#" data-tel class="btn btn-phone">📞 <span class="js-tel-num"></span></a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  </div>
+
+  <script src="js/script.js?v=20260824"></script>
+<script src="js/contact.js" defer></script>
+</body>
+</html>
