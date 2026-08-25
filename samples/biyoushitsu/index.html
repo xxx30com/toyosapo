@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="a">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>美容室 ひより | 下関市豊浦町・川棚の美容室</title>
+<meta name="description" content="田んぼと家並みのあいだにある、古い平屋を直した小さな美容室です。予約はおひとりずつお取りしていますので、まわりを気にせずお過ごしいただけます。髪のこと、白髪のこと、これからどうしていきたいか。まずはゆっくりお聞かせください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* biyoushitsu（美容室）— 参照: uka（awesome-design-md-jp）。白と静かなグレーの余白主導 */
+:root[data-theme="a"]{--brand:#333333;--brand-dark:#1f1f1f;--text:#333333;--muted:#7b7b7b;--bg:#ffffff;--surface:#f4f4f2;--line:#e3e3e0;--soft:#faf9f7}
+:root[data-theme="b"]{--brand:#8a7768;--brand-dark:#6b5a4d;--text:#3d352e;--muted:#8b8178;--bg:#ffffff;--surface:#f6f3ef;--line:#e7e0d8;--soft:#fbf9f6}
+:root[data-theme="c"]{--brand:#5f7361;--brand-dark:#47584a;--text:#33403a;--muted:#7e8a80;--bg:#ffffff;--surface:#f2f5f1;--line:#dfe6dd;--soft:#f9fbf8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--text);background:var(--bg);font-size:16px;line-height:2;letter-spacing:.06em;line-break:strict;overflow-wrap:break-word;word-break:normal;padding-bottom:60px;font-feature-settings:"palt" 1}
+img{max-width:100%;display:block}
+.container{max-width:920px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+.sec-en{font-family:"Instrument Sans",sans-serif;font-size:12px;font-weight:500;letter-spacing:.28em;color:var(--muted);text-align:center;text-transform:uppercase}
+h2{font-size:24px;font-weight:500;line-height:1.6;letter-spacing:.1em;text-align:center;margin:10px 0 40px}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.header-in{max-width:920px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:18px;font-weight:500;letter-spacing:.16em}
+.header-tel{font-family:"Instrument Sans",sans-serif;font-size:12px;letter-spacing:.14em;color:var(--muted)}
+/* hero — 左に言葉、右に写真の分割型 */
+.hero{display:grid;grid-template-columns:1fr;background:var(--bg)}
+.hero-photo{width:100%;aspect-ratio:4/3;object-fit:cover}
+.hero-in{padding:48px 24px 56px;text-align:center}
+.hero-kana{font-size:12px;letter-spacing:.28em;color:var(--muted);display:block;margin-bottom:20px}
+.hero h1{font-size:clamp(24px,5.4vw,34px);font-weight:500;line-height:1.9;letter-spacing:.14em}
+.hero p{margin-top:22px;font-size:14px;color:var(--muted);line-height:2}
+@media(min-width:840px){
+  .hero{grid-template-columns:1fr 1.15fr;align-items:center;min-height:78vh}
+  .hero-in{text-align:left;padding:0 56px}
+  .hero-photo{aspect-ratio:auto;height:78vh}
+  .hero-order{order:2}
+}
+/* lead */
+.lead{max-width:600px;margin:0 auto;text-align:center;font-size:15px}
+/* points */
+.points{background:var(--soft)}
+.point-grid{display:grid;gap:40px}
+@media(min-width:720px){.point-grid{grid-template-columns:repeat(3,1fr);gap:36px}}
+.point{text-align:center}
+.point .num{font-family:"Instrument Sans",sans-serif;font-size:13px;letter-spacing:.24em;color:var(--muted)}
+.point h3{font-size:17px;font-weight:500;margin:14px 0 12px;letter-spacing:.1em}
+.point .bar{width:28px;height:1px;background:var(--line);margin:0 auto 12px}
+.point p{font-size:14px;color:var(--muted);text-align:left}
+@media(min-width:720px){.point p{text-align:center}}
+/* items(menu) */
+.menu-list{max-width:620px;margin:0 auto}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 2px;border-bottom:1px solid var(--line)}
+.menu-item:first-child{border-top:1px solid var(--line)}
+.menu-item .name{font-size:16px;font-weight:500;letter-spacing:.08em}
+.menu-item .desc{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.9}
+.menu-item .price{white-space:nowrap;font-family:"Instrument Sans",sans-serif;font-size:16px;letter-spacing:.04em}
+.menu-note{text-align:center;font-size:12px;color:var(--muted);margin-top:24px;line-height:1.9}
+/* gallery */
+.gallery{background:var(--surface)}
+.g-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:720px){.g-grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+.g-grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
+/* info */
+.info-table{width:100%;max-width:620px;margin:0 auto;border-collapse:collapse}
+.info-table th{width:7em;text-align:left;vertical-align:top;padding:18px 4px;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:500;letter-spacing:.1em}
+.info-table td{padding:18px 4px;border-bottom:1px solid var(--line);font-size:15px}
+.map{margin-top:36px;overflow:hidden}
+.map iframe{width:100%;height:320px;border:0;display:block}
+/* cta */
+.cta{text-align:center}
+.cta > .container > p{font-size:15px;color:var(--muted)}
+.cta-btns{display:flex;flex-direction:column;gap:14px;max-width:380px;margin:32px auto 0}
+.btn{display:block;padding:18px;font-size:15px;font-weight:500;text-decoration:none;letter-spacing:.12em}
+.btn-tel{background:var(--brand);color:#fff}
+.btn-line{background:#06c755;color:#fff}
+.cta-note{font-size:12px;color:var(--muted);margin-top:18px;line-height:1.9}
+/* fixed bar */
+.fixbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;background:#fff;border-top:1px solid var(--line)}
+.fixbar a{flex:1;text-align:center;padding:14px 8px;font-size:13px;font-weight:500;letter-spacing:.1em;text-decoration:none;color:#fff}
+.fixbar .f-tel{background:var(--brand)}
+.fixbar .f-line{background:#06c755}
+@media(min-width:840px){.fixbar{display:none}body{padding-bottom:0}}
+/* footer */
+footer{background:var(--soft);color:var(--muted);text-align:center;padding:48px 24px;font-size:12px;line-height:2;border-top:1px solid var(--line)}
+footer .fname{font-size:15px;letter-spacing:.16em;color:var(--text);margin-bottom:10px}
+footer .no-sales{margin-top:12px}
+</style>
+<style>
+.toyosapo-sample-note{background:#0C3B2A;color:#fff;font-size:13px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em;font-family:"Zen Kaku Gothic New",sans-serif}
+.toyosapo-sample-note a{color:#FFD9A8;font-weight:700}
+@media(max-width:600px){.toyosapo-sample-note{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="toyosapo-sample-note">これは<a href="https://toyosapo.net/web-works.html">とよサポ</a>が制作したホームページのサンプルです。架空のお店のため、実在しません（電話・LINEはつながりません）。</div>
+
+<header>
+  <div class="header-in">
+    <div class="logo">美容室 ひより</div>
+    <div class="header-tel">TEL <span class="js-tel-num"></span></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-in">
+    <span class="hero-kana">川棚の小さな一軒家の美容室</span>
+    <h1>髪をゆだねる、<br>静かな時間を。</h1>
+    <p>セット面3席、予約はおひとりずつ。ゆっくりお過ごしいただける一軒家の美容室です</p>
+  </div>
+  <img src="photos/hero.jpg" alt="美容室 ひよりの店内" class="hero-photo hero-order">
+</div>
+
+<section>
+  <div class="container">
+    <div class="sec-en">About</div>
+    <h2>ごあいさつ</h2>
+    <p class="lead">田んぼと家並みのあいだにある、古い平屋を直した小さな美容室です。予約はおひとりずつお取りしていますので、まわりを気にせずお過ごしいただけます。髪のこと、白髪のこと、これからどうしていきたいか。まずはゆっくりお聞かせください。</p>
+  </div>
+</section>
+
+<section class="points">
+  <div class="container">
+    <div class="sec-en">Feature</div>
+    <h2>ひよりの三つのお約束</h2>
+    <div class="point-grid">
+      
+      <div class="point">
+        <div class="num">01</div>
+        <h3>おひとりずつのご予約</h3>
+        <div class="bar"></div>
+        <p>同じ時間に他のお客様のご予約は入れていません。待ち時間がなく、話し声が気になることもありません。</p>
+      </div>
+      
+      <div class="point">
+        <div class="num">02</div>
+        <h3>髪と地肌にやさしく</h3>
+        <div class="bar"></div>
+        <p>しみにくい薬剤を選んでいます。頭皮が弱い方、以前しみて痛かった方は、ご予約のときにお申しつけください。</p>
+      </div>
+      
+      <div class="point">
+        <div class="num">03</div>
+        <h3>通いやすい一軒家</h3>
+        <div class="bar"></div>
+        <p>駐車場は3台。入口に段差がなく、車椅子や杖の方もそのままお入りいただけます。</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-en">Menu</div>
+    <h2>メニュー・料金</h2>
+    <div class="menu-list">
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">カット</div>
+          <div class="desc">シャンプー・ブロー込み</div>
+        </div>
+        <div class="price">4,400円</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">カット＋カラー</div>
+          <div class="desc">白髪染め・おしゃれ染めどちらも</div>
+        </div>
+        <div class="price">9,900円〜</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">カラー リタッチ</div>
+          <div class="desc">根元のみ・カットなし</div>
+        </div>
+        <div class="price">5,500円</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">パーマ</div>
+          <div class="desc">カット込み。デジタルパーマは別料金</div>
+        </div>
+        <div class="price">9,350円〜</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">縮毛矯正</div>
+          <div class="desc">カット込み。髪の長さにより変わります</div>
+        </div>
+        <div class="price">15,400円〜</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">トリートメント</div>
+          <div class="desc">他メニューと一緒に</div>
+        </div>
+        <div class="price">2,200円〜</div>
+      </div>
+      
+    </div>
+    <p class="menu-note">※価格はすべて税込です。髪の長さ・状態により変わる場合がありますので、ご不安なときは事前にお尋ねください。</p>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="container">
+    <div class="sec-en">Gallery</div>
+    <h2>店内のようす</h2>
+    <div class="g-grid">
+      
+      <img src="photos/g1.jpg" alt="鏡とカウンターのセット面" loading="lazy">
+      
+      <img src="photos/g2.jpg" alt="シャンプー台" loading="lazy">
+      
+      <img src="photos/g3.jpg" alt="カットの様子" loading="lazy">
+      
+      <img src="photos/g4.jpg" alt="入口の待合スペース" loading="lazy">
+      
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-en">Information</div>
+    <h2>店舗情報</h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>美容室 ひより</td></tr>
+      <tr><th>住所</th><td>山口県下関市豊浦町大字川棚0000-0</td></tr>
+      <tr><th>営業時間</th><td>9:00〜18:00（最終受付 17:00）</td></tr>
+      <tr><th>定休日</th><td>毎週月曜・第2火曜</td></tr>
+      <tr><th>アクセス</th><td>JR川棚温泉駅から車で5分・駐車場3台</td></tr>
+      <tr><th>お電話</th><td><span class="js-tel-num"></span></td></tr>
+    </table>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E4%B8%8B%E9%96%A2%E5%B8%82%E8%B1%8A%E6%B5%A6%E7%94%BA%E5%A4%A7%E5%AD%97%E5%B7%9D%E6%A3%9A%20%E5%B7%9D%E6%A3%9A%E6%B8%A9%E6%B3%89&output=embed" loading="lazy" title="地図"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="sec-en">Reservation</div>
+    <h2>ご予約</h2>
+    <p>ご予約・ご相談は、お電話かLINEでどうぞ。<br>はじめての方も、髪のお悩みだけのご相談も歓迎します。</p>
+    <div class="cta-btns">
+      <a href="#" data-tel class="btn btn-tel">電話で予約する</a>
+      <a href="#" class="btn btn-line">LINEで予約する</a>
+    </div>
+    <p class="cta-note">受付時間: 9:00〜18:00（最終受付 17:00）（毎週月曜・第2火曜を除く）</p>
+  </div>
+</section>
+
+<div class="fixbar">
+  <a href="#" data-tel class="f-tel">電話で予約</a>
+  <a href="#" class="f-line">LINEで予約</a>
+</div>
+
+<footer>
+  <div class="fname">美容室 ひより</div>
+  <div>山口県下関市豊浦町大字川棚0000-0</div>
+  <div class="no-sales">※営業のお電話は固くお断りしています</div>
+  <div style="margin-top:16px">&copy; 美容室 ひより</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var disp='0000-0000-090'.split('').reverse().join('');
+  var raw=disp.replace(/-/g,'');
+  document.querySelectorAll('a[data-tel]').forEach(function(a){a.setAttribute('href','tel:'+raw)});
+  document.querySelectorAll('.js-tel-num').forEach(function(el){el.textContent=disp});
+});
+</script>
+</body>
+</html>
