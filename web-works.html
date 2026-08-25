@@ -72,6 +72,7 @@
       box-shadow: var(--shadow-md);
       overflow: hidden;
     }
+    .wk-card + .wk-card { margin-top: 40px; }
 
     /* ブラウザ枠風のスクリーンショット */
     .wk-shot {
@@ -131,6 +132,7 @@
       border-radius: 999px;
     }
     .wk-label-live { background: var(--primary-color); color: #fff; }
+    .wk-label-sample { background: #6b746e; color: #fff; }
     .wk-label-type { background: var(--primary-pale); color: var(--primary-color); }
     .wk-body h3 {
       font-size: 26px;
@@ -293,13 +295,42 @@
         </div>
       </div>
 
+      <!-- 居酒屋のサンプル -->
+      <div class="wk-card">
+        <div class="wk-shot">
+          <div class="wk-browser">
+            <div class="wk-bar">
+              <span class="wk-dot"></span><span class="wk-dot"></span><span class="wk-dot"></span>
+              <span class="wk-url">toyosapo.net/samples/izakaya/</span>
+            </div>
+            <img src="images/web-works/izakaya.jpg" alt="架空の居酒屋のサンプルサイト トップページ" loading="lazy">
+          </div>
+        </div>
+        <div class="wk-body">
+          <div class="wk-labels">
+            <span class="wk-label wk-label-sample">サンプル（架空のお店）</span>
+            <span class="wk-label wk-label-type">飲食店・居酒屋</span>
+          </div>
+          <h3>湯あがり酒場 ゆのじ</h3>
+          <p class="wk-sub">川棚温泉の路地の居酒屋（架空）</p>
+          <p>「うちの店だと、どんな感じになるの？」にお答えするために作ったサンプルです。川棚温泉にありそうな小さな居酒屋を想定して、写真・お品書き・店舗情報まで一通り入れています。実在するお店ではありません。</p>
+          <ul class="wk-points">
+            <li>1ページですべてが分かる構成（おまかせプランの形）</li>
+            <li>スマホでは画面下に電話・LINEのボタンが常に表示</li>
+            <li>お品書きは価格つき。仕入れで変わる旨も明記</li>
+            <li>営業時間・定休日・駐車場・地図を1か所にまとめて掲載</li>
+            <li>写真はすべて自前で用意（他店の写真は使いません）</li>
+          </ul>
+          <a href="samples/izakaya/" class="wk-visit" target="_blank" rel="noopener">サンプルを見る ❯</a>
+        </div>
+      </div>
+
       <!-- 準備中 -->
       <div class="wk-coming">
-        <h3>サンプルサイトを準備中です</h3>
-        <p>「うちの店だとどんな感じになるの？」が分かるように、<br>川棚エリアのお店を想定したサンプルサイトを制作しています。</p>
+        <h3>ほかの業種も準備中です</h3>
+        <p>同じように、川棚エリアのお店を想定したサンプルを制作しています。</p>
         <div class="wk-coming-list">
           <span class="wk-coming-item">🍰 ケーキ屋さん</span>
-          <span class="wk-coming-item">🍶 居酒屋</span>
           <span class="wk-coming-item">💇 美容室</span>
         </div>
       </div>

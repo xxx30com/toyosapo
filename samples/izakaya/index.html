@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="a">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>湯あがり酒場 ゆのじ | 川棚温泉の居酒屋</title>
+<meta name="description" content="川棚温泉の細い路地で、築五十年の古い家を直して営んでいる居酒屋です。魚は響灘であがったものを、その日に仕入れた分だけ。串は備長炭で一本ずつ焼きます。湯あがりに一杯だけの方も、仕事帰りに腰を据える方も、どうぞのれんをくぐってください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root[data-theme="a"]{--brand:#b71c1c;--brand-dark:#8e1414;--text:#503211;--muted:#8a7358;--bg:#fdf9f2;--surface:#ffffff;--accent:#e1d7a5;--dark:#2b1d10}
+:root[data-theme="b"]{--brand:#e08e0b;--brand-dark:#b57108;--text:#3f4a2e;--muted:#7c8468;--bg:#fbfaf3;--surface:#ffffff;--accent:#d9e3c2;--dark:#28301b}
+:root[data-theme="c"]{--brand:#26418f;--brand-dark:#1b306c;--text:#2e3440;--muted:#6b7280;--bg:#f7f8fb;--surface:#ffffff;--accent:#ccd6ee;--dark:#1c2333}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--text);background:var(--bg);font-size:16px;line-height:1.9;letter-spacing:.05em;line-break:strict;overflow-wrap:break-word;padding-bottom:64px}
+img{max-width:100%;display:block}
+.container{max-width:960px;margin:0 auto;padding:0 20px}
+h2{font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-size:26px;line-height:1.4;letter-spacing:.04em;font-feature-settings:"palt" 1;text-align:center;margin-bottom:8px}
+.sec-sub{text-align:center;color:var(--brand);font-size:13px;font-weight:700;letter-spacing:.2em;margin-bottom:32px}
+section{padding:56px 0}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);border-bottom:1px solid var(--accent);backdrop-filter:blur(4px)}
+.header-in{max-width:960px;margin:0 auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:"Noto Serif JP",serif;font-weight:700;font-size:20px}
+.header-tel{font-size:13px;color:var(--muted)}
+/* hero */
+.hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:url('photos/hero.jpg') center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(20,10,0,.45)}
+.hero-in{position:relative;padding:40px 20px}
+.hero h1{font-family:"Noto Serif JP",serif;font-size:clamp(28px,6vw,44px);line-height:1.5;letter-spacing:.08em;font-feature-settings:"palt" 1;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.hero p{margin-top:16px;font-size:15px;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.hero-shop{display:inline-block;margin-bottom:14px;padding:6px 18px;border:1px solid rgba(255,255,255,.7);border-radius:99px;font-size:14px;letter-spacing:.2em}
+/* lead */
+.lead{text-align:center;max-width:640px;margin:0 auto}
+/* points */
+.points{background:var(--surface)}
+.point-grid{display:grid;gap:20px}
+@media(min-width:720px){.point-grid{grid-template-columns:repeat(3,1fr)}}
+.point{background:var(--bg);border-radius:12px;padding:28px 22px;box-shadow:0 4px 8px rgba(0,0,0,.06)}
+.point .num{color:var(--brand);font-family:"Noto Serif JP",serif;font-size:30px;font-weight:700;line-height:1}
+.point h3{font-size:18px;margin:10px 0 8px;line-height:1.5}
+.point p{font-size:14px;color:var(--muted)}
+/* items(menu) */
+.menu-list{max-width:640px;margin:0 auto}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 4px;border-bottom:1px dashed var(--accent)}
+.menu-item .name{font-weight:700;font-size:17px}
+.menu-item .desc{font-size:13px;color:var(--muted);margin-top:2px}
+.menu-item .price{white-space:nowrap;font-family:"Noto Serif JP",serif;font-size:18px;color:var(--brand-dark)}
+.menu-note{text-align:center;font-size:12px;color:var(--muted);margin-top:20px}
+/* gallery */
+.gallery{background:var(--dark);color:#fff}
+.gallery h2{color:#fff}
+.gallery .sec-sub{color:var(--accent)}
+.g-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:720px){.g-grid{grid-template-columns:repeat(4,1fr)}}
+.g-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px}
+/* info */
+.info-table{width:100%;max-width:640px;margin:0 auto;border-collapse:collapse}
+.info-table th{width:7em;text-align:left;vertical-align:top;padding:14px 8px;border-bottom:1px solid var(--accent);color:var(--brand-dark);font-size:14px}
+.info-table td{padding:14px 8px;border-bottom:1px solid var(--accent);font-size:15px}
+.map{margin-top:28px;border-radius:12px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,.08)}
+.map iframe{width:100%;height:320px;border:0;display:block}
+/* cta */
+.cta{background:var(--surface);text-align:center}
+.cta-btns{display:flex;flex-direction:column;gap:14px;max-width:420px;margin:24px auto 0}
+.btn{display:block;padding:18px;border-radius:99px;font-size:17px;font-weight:700;text-decoration:none;letter-spacing:.06em}
+.btn-tel{background:var(--brand);color:#fff;box-shadow:0 4px 8px rgba(0,0,0,.15)}
+.btn-line{background:#06c755;color:#fff;box-shadow:0 4px 8px rgba(0,0,0,.15)}
+.cta-note{font-size:12px;color:var(--muted);margin-top:14px}
+/* fixed bar */
+.fixbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;background:#fff;border-top:1px solid var(--accent)}
+.fixbar a{flex:1;text-align:center;padding:15px 8px;font-size:14px;font-weight:700;text-decoration:none;color:#fff}
+.fixbar .f-tel{background:var(--brand)}
+.fixbar .f-line{background:#06c755}
+@media(min-width:720px){.fixbar{display:none}body{padding-bottom:0}}
+/* footer */
+footer{background:var(--dark);color:#cbb9a6;text-align:center;padding:32px 20px;font-size:12px}
+footer .fname{font-family:"Noto Serif JP",serif;font-size:16px;color:#fff;margin-bottom:8px}
+footer .no-sales{margin-top:10px;opacity:.8}
+</style>
+<style>
+.toyosapo-sample-note{background:#0C3B2A;color:#fff;font-size:13px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em}
+.toyosapo-sample-note a{color:#FFD9A8;font-weight:700}
+@media(max-width:600px){.toyosapo-sample-note{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="toyosapo-sample-note">これは<a href="https://toyosapo.net/web-works.html">とよサポ</a>が制作したホームページのサンプルです。架空のお店のため、実在しません（電話・LINEはつながりません）。</div>
+
+<header>
+  <div class="header-in">
+    <div class="logo">湯あがり酒場 ゆのじ</div>
+    <div class="header-tel">TEL <span class="js-tel-num"></span></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-in">
+    <span class="hero-shop">川棚温泉の路地の居酒屋</span>
+    <h1>湯あがりの一杯を、<br>この路地で。</h1>
+    <p>響灘の地魚と炭火の串焼き、山口の地酒。カウンター8席と小上がりだけの小さな店です</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <h2>ごあいさつ</h2>
+    <div class="sec-sub">ABOUT</div>
+    <p class="lead">川棚温泉の細い路地で、築五十年の古い家を直して営んでいる居酒屋です。魚は響灘であがったものを、その日に仕入れた分だけ。串は備長炭で一本ずつ焼きます。湯あがりに一杯だけの方も、仕事帰りに腰を据える方も、どうぞのれんをくぐってください。</p>
+  </div>
+</section>
+
+<section class="points">
+  <div class="container">
+    <h2>ゆのじの三つのこだわり</h2>
+    <div class="sec-sub">POINT</div>
+    <div class="point-grid">
+      
+      <div class="point">
+        <div class="num">01</div>
+        <h3>響灘の地魚</h3>
+        <p>その日に揚がった魚だけを仕入れています。刺身の盛り合わせは日によって中身が変わりますので、黒板をご覧ください。</p>
+      </div>
+      
+      <div class="point">
+        <div class="num">02</div>
+        <h3>備長炭の串焼き</h3>
+        <p>鶏は県内産のものを、朝に仕込んで一本ずつ手打ちしています。焼きは備長炭。塩かタレかはお好みでどうぞ。</p>
+      </div>
+      
+      <div class="point">
+        <div class="num">03</div>
+        <h3>山口の地酒</h3>
+        <p>県内の蔵の酒を常時八種ほど。冷やも燗もお出しします。日本酒が苦手な方には焼酎と地ビールもございます。</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>お品書き</h2>
+    <div class="sec-sub">MENU</div>
+    <div class="menu-list">
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">本日の刺身盛り合わせ</div>
+          <div class="desc">響灘の地魚を三種。仕入れにより内容が変わります</div>
+        </div>
+        <div class="price">1,280円</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">串焼き五本盛り</div>
+          <div class="desc">もも・つくね・ねぎま・皮・砂ずり</div>
+        </div>
+        <div class="price">980円</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">のどぐろの塩焼き</div>
+          <div class="desc">一尾。数に限りがあります</div>
+        </div>
+        <div class="price">1,980円</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">瓦そば</div>
+          <div class="desc">川棚名物。二人前から承ります（一人前あたり）</div>
+        </div>
+        <div class="price">1,300円</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">ふく皮の湯引き</div>
+          <div class="desc">冬季限定</div>
+        </div>
+        <div class="price">680円</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">山口の地酒（一合）</div>
+          <div class="desc">常時八種。冷や・燗どちらも</div>
+        </div>
+        <div class="price">580円〜</div>
+      </div>
+      
+    </div>
+    <p class="menu-note">※価格はすべて税込です。仕入れ状況により内容が変わることがあります。</p>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="container">
+    <h2>お店の風景</h2>
+    <div class="sec-sub">GALLERY</div>
+    <div class="g-grid">
+      
+      <img src="photos/g1.jpg" alt="カウンター席の店内" loading="lazy">
+      
+      <img src="photos/g2.jpg" alt="本日の刺身盛り合わせ" loading="lazy">
+      
+      <img src="photos/g3.jpg" alt="備長炭で焼く串焼き" loading="lazy">
+      
+      <img src="photos/g4.jpg" alt="小上がりの座敷" loading="lazy">
+      
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>店舗情報</h2>
+    <div class="sec-sub">INFO</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>湯あがり酒場 ゆのじ</td></tr>
+      <tr><th>住所</th><td>山口県下関市豊浦町大字川棚0000-0</td></tr>
+      <tr><th>営業時間</th><td>17:00〜23:00（料理L.O. 22:00／ドリンクL.O. 22:30）</td></tr>
+      <tr><th>定休日</th><td>毎週火曜・第3水曜</td></tr>
+      <tr><th>アクセス</th><td>JR川棚温泉駅から徒歩5分・駐車場4台</td></tr>
+      <tr><th>お電話</th><td><span class="js-tel-num"></span></td></tr>
+    </table>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E4%B8%8B%E9%96%A2%E5%B8%82%E8%B1%8A%E6%B5%A6%E7%94%BA%E5%A4%A7%E5%AD%97%E5%B7%9D%E6%A3%9A%20%E5%B7%9D%E6%A3%9A%E6%B8%A9%E6%B3%89&output=embed" loading="lazy" title="地図"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>ご予約・お問い合わせ</h2>
+    <div class="sec-sub">CONTACT</div>
+    <p>お席のご予約、貸切のご相談など、お気軽にどうぞ。</p>
+    <div class="cta-btns">
+      <a href="#" data-tel class="btn btn-tel">📞 電話をかける</a>
+      <a href="#" class="btn btn-line">LINEで問い合わせる</a>
+    </div>
+    <p class="cta-note">受付時間: 17:00〜23:00（料理L.O. 22:00／ドリンクL.O. 22:30）（毎週火曜・第3水曜を除く）</p>
+  </div>
+</section>
+
+<div class="fixbar">
+  <a href="#" data-tel class="f-tel">📞 電話する</a>
+  <a href="#" class="f-line">LINEで相談</a>
+</div>
+
+<footer>
+  <div class="fname">湯あがり酒場 ゆのじ</div>
+  <div>山口県下関市豊浦町大字川棚0000-0</div>
+  <div class="no-sales">※営業のお電話は固くお断りしています</div>
+  <div style="margin-top:14px">&copy; 湯あがり酒場 ゆのじ</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var disp='0000-0000-090'.split('').reverse().join('');
+  var raw=disp.replace(/-/g,'');
+  document.querySelectorAll('a[data-tel]').forEach(function(a){a.setAttribute('href','tel:'+raw)});
+  document.querySelectorAll('.js-tel-num').forEach(function(el){el.textContent=disp});
+});
+</script>
+</body>
+</html>
