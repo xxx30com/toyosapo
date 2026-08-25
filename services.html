@@ -270,6 +270,7 @@
       text-decoration: none;
       padding: 17px 38px;
       border-radius: 999px;
+      white-space: nowrap;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
       animation: works-float 3.6s ease-in-out infinite;
       transition: transform 0.2s, box-shadow 0.2s;
@@ -306,6 +307,22 @@
       0%   { left: -60%; }
       18%  { left: 120%; }
       100% { left: 120%; }
+    }
+    /* スマホでは1行に収める（「を見る」だけ改行されるのを防ぐ） */
+    @media (max-width: 480px) {
+      .svc-web-works-lead { font-size: 13px; }
+      .svc-web-works {
+        font-size: 16px;
+        padding: 15px 26px;
+        gap: 8px;
+      }
+    }
+    @media (max-width: 359px) {
+      .svc-web-works {
+        font-size: 15px;
+        padding: 14px 18px;
+      }
+      .svc-web-works .ico { display: none; }
     }
     /* 動きが苦手な方の設定を尊重する */
     @media (prefers-reduced-motion: reduce) {
@@ -543,7 +560,7 @@
 
         <div class="svc-web-works-wrap">
           <p class="svc-web-works-lead">実際に制作したホームページを公開しています</p>
-          <a href="web-works.html" class="svc-web-works">💻 制作したホームページを見る<span class="arw">❯</span></a>
+          <a href="web-works.html" class="svc-web-works"><span class="ico">💻</span>制作したホームページを見る<span class="arw">❯</span></a>
         </div>
 
         <div class="svc-web-cta">
