@@ -246,22 +246,72 @@
       text-align: left;
       line-height: 1.8;
     }
+    /* 制作事例へのボタン（気づかれないと意味がないので、控えめに動かして視線を集める） */
+    .svc-web-works-wrap {
+      margin: 4px 0 28px;
+    }
+    .svc-web-works-lead {
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFD9A8;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
     .svc-web-works {
-      display: inline-block;
-      background: transparent;
-      border: 2px solid #fff;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+      background: var(--accent-color);
       color: #fff;
       font-weight: 900;
-      font-size: 17px;
+      font-size: 18px;
       text-decoration: none;
-      padding: 14px 32px;
+      padding: 17px 38px;
       border-radius: 999px;
-      margin-bottom: 20px;
-      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+      animation: works-float 3.6s ease-in-out infinite;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    /* 光が横切る（5秒に一度・0.9秒だけ） */
+    .svc-web-works::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -60%;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.32) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-18deg);
+      animation: works-shine 5s ease-in-out infinite;
+    }
+    .svc-web-works .arw {
+      font-size: 15px;
+      animation: works-arrow 3.6s ease-in-out infinite;
     }
     .svc-web-works:hover {
-      background: #fff;
-      color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.34);
+    }
+    @keyframes works-float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-5px); }
+    }
+    @keyframes works-arrow {
+      0%, 100% { transform: translateX(0); }
+      50%      { transform: translateX(4px); }
+    }
+    @keyframes works-shine {
+      0%   { left: -60%; }
+      18%  { left: 120%; }
+      100% { left: 120%; }
+    }
+    /* 動きが苦手な方の設定を尊重する */
+    @media (prefers-reduced-motion: reduce) {
+      .svc-web-works,
+      .svc-web-works .arw,
+      .svc-web-works::after { animation: none; }
     }
     .svc-web-cta {
       display: flex;
@@ -491,7 +541,10 @@
 
         <p class="svc-web-note">※最低契約期間は6ヶ月、お支払いは6ヶ月ごとの前払いです。※写真撮影をご希望の場合は別途5,500円／回。※詳しい内容はお気軽にお問い合わせください。</p>
 
-        <a href="web-works.html" class="svc-web-works">💻 制作したホームページを見る ❯</a>
+        <div class="svc-web-works-wrap">
+          <p class="svc-web-works-lead">実際に制作したホームページを公開しています</p>
+          <a href="web-works.html" class="svc-web-works">💻 制作したホームページを見る<span class="arw">❯</span></a>
+        </div>
 
         <div class="svc-web-cta">
           <a href="https://lin.ee/s2UKpeO" class="cta-line">LINEで相談する</a>
