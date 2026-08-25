@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GL91VF9PT1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GL91VF9PT1');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ホームページ制作事例 | 下関市豊浦町の便利屋「とよサポ」</title>
+  <meta name="description" content="とよサポが制作・運用しているホームページの事例集。実際に公開中の企業サイトと、川棚のケーキ屋・居酒屋・美容室を想定したサンプルサイトをご覧いただけます。初期費用0円・月額5,500円から。">
+  <link rel="stylesheet" href="css/style.css?v=20260824">
+  <style>
+    /* 制作事例ページ専用スタイル */
+    .wk-hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, #14563a 100%);
+      padding: 50px 20px;
+      text-align: center;
+      color: #fff;
+    }
+    .wk-hero .wk-hero-badge {
+      display: inline-block;
+      background: var(--accent-color);
+      color: #fff;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .wk-hero h1 {
+      color: #fff;
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .wk-hero p {
+      font-size: 17px;
+      max-width: 640px;
+      margin: 0 auto;
+      font-weight: bold;
+      line-height: 1.8;
+    }
+    .breadcrumb {
+      padding: 12px 20px;
+      background: #f9f9f9;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .breadcrumb a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .breadcrumb span { margin: 0 8px; color: #999; }
+
+    .wk-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .wk-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    /* ブラウザ枠風のスクリーンショット */
+    .wk-shot {
+      background: #e9edea;
+      padding: 14px 14px 0;
+    }
+    .wk-browser {
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+      box-shadow: 0 -2px 14px rgba(15, 40, 30, 0.12);
+      background: #fff;
+    }
+    .wk-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #dfe4e0;
+      padding: 8px 12px;
+    }
+    .wk-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #b9c2bc;
+      flex-shrink: 0;
+    }
+    .wk-url {
+      flex-grow: 1;
+      background: #fff;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #6b746e;
+      padding: 3px 12px;
+      margin-left: 8px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-weight: bold;
+    }
+    .wk-browser img {
+      width: 100%;
+      display: block;
+      border-top: 1px solid #dfe4e0;
+    }
+
+    .wk-body { padding: 28px 28px 32px; }
+    .wk-labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .wk-label {
+      font-size: 13px;
+      font-weight: 900;
+      padding: 5px 14px;
+      border-radius: 999px;
+    }
+    .wk-label-live { background: var(--primary-color); color: #fff; }
+    .wk-label-type { background: var(--primary-pale); color: var(--primary-color); }
+    .wk-body h3 {
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+    .wk-body .wk-sub {
+      font-size: 15px;
+      color: #6b746e;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    .wk-body p { font-size: 16px; margin-bottom: 20px; }
+
+    .wk-points {
+      list-style: none;
+      background: var(--light-gray);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 24px;
+    }
+    .wk-points li {
+      font-size: 15px;
+      font-weight: 700;
+      padding: 6px 0 6px 26px;
+      position: relative;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    .wk-points li:last-child { border-bottom: none; }
+    .wk-points li::before {
+      content: "✔";
+      position: absolute;
+      left: 2px;
+      color: var(--primary-color);
+      font-weight: 900;
+    }
+
+    .wk-visit {
+      display: inline-block;
+      background: var(--primary-color);
+      color: #fff;
+      font-weight: 900;
+      font-size: 17px;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 999px;
+      transition: background 0.2s;
+    }
+    .wk-visit:hover { background: #0f5f3a; }
+
+    /* 準備中カード */
+    .wk-coming {
+      background: #fff;
+      border: 2px dashed var(--border-color);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .wk-coming h3 { font-size: 22px; margin-bottom: 10px; }
+    .wk-coming p { font-size: 16px; color: #555; margin-bottom: 20px; }
+    .wk-coming-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .wk-coming-item {
+      background: var(--primary-pale);
+      color: var(--primary-color);
+      font-weight: 900;
+      font-size: 15px;
+      padding: 10px 20px;
+      border-radius: 999px;
+    }
+
+    @media (max-width: 768px) {
+      .wk-hero h1 { font-size: 25px; }
+      .wk-hero p { font-size: 15px; }
+      .wk-body { padding: 22px 20px 26px; }
+      .wk-body h3 { font-size: 21px; }
+      .wk-shot { padding: 10px 10px 0; }
+      .wk-visit { display: block; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="とよサポ" class="header-logo">
+        <div class="header-text-group">
+          <span class="header-site-name">とよサポ</span>
+          <span class="header-site-sub">豊浦暮らしサポート</span>
+        </div>
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="services.html">作業内容</a></li>
+        <li><a href="works.html">作業事例</a></li>
+        <li><a href="index.html#price">料金</a></li>
+        <li><a href="index.html#flow">ご依頼の流れ</a></li>
+        <li><a href="index.html#about">当社について</a></li>
+        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container" style="padding: 0;">
+      <a href="index.html">ホーム</a><span>❯</span><a href="services.html">作業内容</a><span>❯</span>ホームページ制作事例
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="wk-hero">
+    <span class="wk-hero-badge">WEB WORKS</span>
+    <h1>ホームページ制作事例</h1>
+    <p>とよサポが実際に制作・運用しているホームページと、<br>「うちの店ならこうなる」が分かるサンプルサイトをご紹介します。</p>
+  </section>
+
+  <!-- Works -->
+  <section class="section" style="background: linear-gradient(180deg, #FFFFFF 0%, var(--primary-pale) 100%);">
+    <div class="wk-container">
+
+      <!-- ひかり産業株式会社 -->
+      <div class="wk-card">
+        <div class="wk-shot">
+          <div class="wk-browser">
+            <div class="wk-bar">
+              <span class="wk-dot"></span><span class="wk-dot"></span><span class="wk-dot"></span>
+              <span class="wk-url">https://hikarisangyo-inc.com/</span>
+            </div>
+            <img src="images/web-works/hikarisangyo.jpg" alt="ひかり産業株式会社のホームページ トップページ" loading="lazy">
+          </div>
+        </div>
+        <div class="wk-body">
+          <div class="wk-labels">
+            <span class="wk-label wk-label-live">公開中</span>
+            <span class="wk-label wk-label-type">不動産・賃貸管理</span>
+          </div>
+          <h3>ひかり産業株式会社</h3>
+          <p class="wk-sub">北九州市・下関市／賃貸物件の運営・管理</p>
+          <p>「会社のホームページがなく、物件を紹介するときに困る」というご相談から制作したサイトです。会社の紹介・管理物件の一覧・空室情報・お問い合わせを5ページにまとめ、募集状況が変わるたびに情報を差し替えて運用しています。</p>
+          <ul class="wk-points">
+            <li>5ページ構成（ホーム／管理物件一覧／空室情報／会社概要／お問い合わせ）</li>
+            <li>スマホでも読みやすいレイアウト</li>
+            <li>空室情報は募集状況に合わせてその都度更新</li>
+            <li>トップページに「お知らせ」欄を設置</li>
+            <li>写真・間取り図つきの物件ページ</li>
+          </ul>
+          <a href="https://hikarisangyo-inc.com/" class="wk-visit" target="_blank" rel="noopener">サイトを見る ❯</a>
+        </div>
+      </div>
+
+      <!-- 準備中 -->
+      <div class="wk-coming">
+        <h3>サンプルサイトを準備中です</h3>
+        <p>「うちの店だとどんな感じになるの？」が分かるように、<br>川棚エリアのお店を想定したサンプルサイトを制作しています。</p>
+        <div class="wk-coming-list">
+          <span class="wk-coming-item">🍰 ケーキ屋さん</span>
+          <span class="wk-coming-item">🍶 居酒屋</span>
+          <span class="wk-coming-item">💇 美容室</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section text-center">
+    <div class="container">
+      <div class="cta-panel">
+        <h2><span class="sec-en" style="color: #FFD9A8;">CONTACT</span>ホームページのこと、<br>まずはご相談ください。</h2>
+        <p style="margin-bottom: 32px; font-weight: bold;">初期費用0円・月額5,500円から。<br>「何から決めればいいか分からない」の状態で大丈夫です。</p>
+
+        <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px; max-width: 420px;">
+          📞 <span class="js-tel-num"></span>
+          <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜17:00)</span>
+        </a>
+        <br>
+        <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 0; max-width: 420px;">
+          LINEで相談する
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
+        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
+        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
+          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
+          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>地域の困りごと相談窓口</p>
+        <p>代表：森脇靖斗</p>
+      </div>
+      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Fixed Bottom Bar -->
+  <div class="fixed-bottom">
+    <a href="#" data-tel class="btn btn-phone">📞 <span class="js-tel-num"></span></a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  </div>
+
+  <script src="js/script.js?v=20260824"></script>
+<script src="js/contact.js" defer></script>
+</body>
+</html>
