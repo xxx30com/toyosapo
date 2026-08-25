@@ -531,11 +531,12 @@ header {
 }
 
 .problem-text {
+  flex: 1;
+  min-width: 0;
   font-size: 17px;
   font-weight: 700;
   color: var(--secondary-color);
   line-height: 1.5;
-  word-break: keep-all;
 }
 
 .problem-arrow {
