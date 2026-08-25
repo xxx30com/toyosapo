@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="a">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>洋菓子店 こもれび | 下関市豊浦町・川棚の洋菓子店</title>
+<meta name="description" content="住宅と畑のあいだにある、三坪ほどの小さな菓子店です。夫婦ふたりで、その日に売れる分だけを朝から焼いています。ケーキは常時六種類ほど、棚には焼き菓子を少しだけ。夕方には空になる日もありますが、それくらいがちょうどよいと思っています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* youkashi（洋菓子店）— 参照: BAKE INC.（awesome-design-md-jp）。紙のクリーム地＋明朝本文＋大きな欧文 */
+:root[data-theme="a"]{--brand:#9c5a3c;--brand-dark:#7d4429;--text:#2f2620;--muted:#857a6d;--bg:#f2ede3;--surface:#faf7f1;--line:#ddd5c7}
+:root[data-theme="b"]{--brand:#6f7f5c;--brand-dark:#55663f;--text:#2b2f26;--muted:#7d8474;--bg:#f1f0e6;--surface:#fafaf3;--line:#d8dbcb}
+:root[data-theme="c"]{--brand:#b0505a;--brand-dark:#8d3b45;--text:#33262a;--muted:#8a7a7c;--bg:#f5ece9;--surface:#fdf8f6;--line:#e4d3d1}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;color:var(--text);background:var(--bg);font-size:16px;line-height:2.1;letter-spacing:.09em;line-break:strict;overflow-wrap:break-word;word-break:normal;font-feature-settings:"palt" 1;padding-bottom:60px}
+img{max-width:100%;display:block}
+.container{max-width:880px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+.sec-en{font-family:"Jost",sans-serif;font-weight:300;font-size:clamp(30px,7vw,46px);line-height:1;letter-spacing:.1em;color:var(--brand);text-align:center}
+h2{font-size:17px;font-weight:400;letter-spacing:.24em;text-align:center;margin:14px 0 44px;color:var(--muted)}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(242,237,227,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.header-in{max-width:880px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:19px;font-weight:600;letter-spacing:.14em}
+.header-tel{font-family:"Jost",sans-serif;font-size:13px;letter-spacing:.12em;color:var(--muted)}
+/* hero — 紙面型（言葉が先、写真は帯で下に） */
+.hero-in{text-align:center;padding:64px 24px 56px}
+.hero-en{font-family:"Jost",sans-serif;font-weight:300;font-size:12px;letter-spacing:.4em;color:var(--brand);text-transform:uppercase}
+.hero h1{font-size:clamp(24px,6vw,38px);font-weight:600;line-height:1.9;letter-spacing:.14em;margin:20px 0 0}
+.hero p{margin-top:22px;font-size:14px;color:var(--muted);line-height:2}
+.hero-band{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media(min-width:800px){.hero-band{aspect-ratio:21/9}.hero-in{padding:88px 24px 72px}}
+/* lead */
+.lead{max-width:620px;margin:0 auto;text-align:center;font-size:16px}
+/* points */
+.points{background:var(--surface)}
+.point-grid{display:grid;gap:48px}
+@media(min-width:760px){.point-grid{grid-template-columns:repeat(3,1fr);gap:40px}}
+.point{text-align:center}
+.point .num{font-family:"Jost",sans-serif;font-weight:300;font-size:34px;line-height:1;color:var(--brand)}
+.point h3{font-size:18px;font-weight:600;margin:16px 0 12px;letter-spacing:.12em}
+.point p{font-size:14px;color:var(--muted);text-align:left;line-height:2}
+@media(min-width:760px){.point p{text-align:center}}
+/* items(menu) */
+.menu-list{max-width:600px;margin:0 auto}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 2px;border-bottom:1px solid var(--line)}
+.menu-item:first-child{border-top:1px solid var(--line)}
+.menu-item .name{font-size:17px;font-weight:600;letter-spacing:.1em}
+.menu-item .desc{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.9;letter-spacing:.06em}
+.menu-item .price{white-space:nowrap;font-family:"Jost",sans-serif;font-size:17px;letter-spacing:.06em;color:var(--brand-dark)}
+.menu-note{text-align:center;font-size:12px;color:var(--muted);margin-top:26px;line-height:2}
+/* gallery */
+.g-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:760px){.g-grid{grid-template-columns:repeat(2,1fr);gap:28px}}
+.g-grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
+/* info */
+.info{background:var(--surface)}
+.info-table{width:100%;max-width:600px;margin:0 auto;border-collapse:collapse}
+.info-table th{width:7em;text-align:left;vertical-align:top;padding:18px 4px;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:400;letter-spacing:.14em}
+.info-table td{padding:18px 4px;border-bottom:1px solid var(--line);font-size:15px}
+.map{margin-top:36px;overflow:hidden}
+.map iframe{width:100%;height:320px;border:0;display:block}
+/* cta */
+.cta{text-align:center}
+.cta > .container > p{font-size:15px;color:var(--muted)}
+.cta-btns{display:flex;flex-direction:column;gap:14px;max-width:380px;margin:32px auto 0}
+.btn{display:block;padding:18px;font-size:15px;font-weight:600;text-decoration:none;letter-spacing:.14em;border-radius:2px}
+.btn-tel{background:var(--brand);color:#fff}
+.btn-line{background:#06c755;color:#fff}
+.cta-note{font-size:12px;color:var(--muted);margin-top:18px;line-height:2}
+/* fixed bar */
+.fixbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;background:var(--surface);border-top:1px solid var(--line)}
+.fixbar a{flex:1;text-align:center;padding:14px 8px;font-size:13px;font-weight:600;letter-spacing:.12em;text-decoration:none;color:#fff}
+.fixbar .f-tel{background:var(--brand)}
+.fixbar .f-line{background:#06c755}
+@media(min-width:800px){.fixbar{display:none}body{padding-bottom:0}}
+/* footer */
+footer{background:var(--surface);color:var(--muted);text-align:center;padding:52px 24px;font-size:12px;line-height:2.1;border-top:1px solid var(--line)}
+footer .fname{font-size:16px;letter-spacing:.16em;color:var(--text);margin-bottom:10px}
+footer .no-sales{margin-top:12px}
+</style>
+<style>
+.toyosapo-sample-note{background:#0C3B2A;color:#fff;font-size:13px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em;font-family:"Shippori Mincho",serif}
+.toyosapo-sample-note a{color:#FFD9A8;font-weight:600}
+@media(max-width:600px){.toyosapo-sample-note{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="toyosapo-sample-note">これは<a href="https://toyosapo.net/web-works.html">とよサポ</a>が制作したホームページのサンプルです。架空のお店のため、実在しません（電話・LINEはつながりません）。</div>
+
+<header>
+  <div class="header-in">
+    <div class="logo">洋菓子店 こもれび</div>
+    <div class="header-tel">TEL <span class="js-tel-num"></span></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-in">
+    <span class="hero-en">川棚の小さな洋菓子店</span>
+    <h1>その日の分だけ、<br>焼いています。</h1>
+    <p>生ケーキと焼き菓子を少しずつ。夫婦ふたりで営む、持ち帰り専門の小さな店です</p>
+  </div>
+  <img src="photos/hero.jpg" alt="洋菓子店 こもれびのショーケース" class="hero-band">
+</div>
+
+<section>
+  <div class="container">
+    <div class="sec-en">About</div>
+    <h2>ごあいさつ</h2>
+    <p class="lead">住宅と畑のあいだにある、三坪ほどの小さな菓子店です。夫婦ふたりで、その日に売れる分だけを朝から焼いています。ケーキは常時六種類ほど、棚には焼き菓子を少しだけ。夕方には空になる日もありますが、それくらいがちょうどよいと思っています。</p>
+  </div>
+</section>
+
+<section class="points">
+  <div class="container">
+    <div class="sec-en">Our Sweets</div>
+    <h2>こもれびのお菓子</h2>
+    <div class="point-grid">
+      
+      <div class="point">
+        <div class="num">01</div>
+        <h3>その日の分だけ</h3>
+        <p>朝いちばんから焼きはじめ、売り切れたらその日は終いです。冷凍のものは置いていません。</p>
+      </div>
+      
+      <div class="point">
+        <div class="num">02</div>
+        <h3>地元の卵と季節の果物</h3>
+        <p>卵は近くの養鶏場から、果物はその季節にいちばんおいしいものを使います。旬が過ぎたら、そのケーキは並びません。</p>
+      </div>
+      
+      <div class="point">
+        <div class="num">03</div>
+        <h3>手土産の詰め合わせ</h3>
+        <p>焼き菓子の箱詰めは、ご予算に合わせてお作りします。のし・包装も承りますので、お気軽にご相談ください。</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-en">Menu</div>
+    <h2>お菓子とお値段</h2>
+    <div class="menu-list">
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">いちごのショートケーキ</div>
+          <div class="desc">いちごの時期のみ。ほかの季節は旬の果物で</div>
+        </div>
+        <div class="price">480円</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">ベイクドチーズケーキ</div>
+          <div class="desc">しっかり焼いた、少し重めのタイプ</div>
+        </div>
+        <div class="price">450円</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">モンブラン</div>
+          <div class="desc">秋から冬にかけての定番</div>
+        </div>
+        <div class="price">520円</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">季節のフルーツタルト</div>
+          <div class="desc">その日の果物でお作りします</div>
+        </div>
+        <div class="price">580円</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">フィナンシェ・クッキー</div>
+          <div class="desc">1個から。詰め合わせもできます</div>
+        </div>
+        <div class="price">180円〜</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">焼き菓子の詰め合わせ</div>
+          <div class="desc">箱入り。のし・包装承ります</div>
+        </div>
+        <div class="price">1,500円〜</div>
+      </div>
+      
+      <div class="menu-item">
+        <div>
+          <div class="name">ホールケーキ（4号・12cm）</div>
+          <div class="desc">3日前までにご予約ください</div>
+        </div>
+        <div class="price">3,200円〜</div>
+      </div>
+      
+    </div>
+    <p class="menu-note">※価格はすべて税込です。その日に焼いた分だけを並べていますので、売り切れの際はご容赦ください。</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-en">Gallery</div>
+    <h2>お店のようす</h2>
+    <div class="g-grid">
+      
+      <img src="photos/g1.jpg" alt="いちごのショートケーキ" loading="lazy">
+      
+      <img src="photos/g2.jpg" alt="木のトレイに並ぶ焼き菓子" loading="lazy">
+      
+      <img src="photos/g3.jpg" alt="小さな売り場とショーケース" loading="lazy">
+      
+      <img src="photos/g4.jpg" alt="お店の外観" loading="lazy">
+      
+    </div>
+  </div>
+</section>
+
+<section class="info">
+  <div class="container">
+    <div class="sec-en">Information</div>
+    <h2>店舗情報</h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>洋菓子店 こもれび</td></tr>
+      <tr><th>住所</th><td>山口県下関市豊浦町大字川棚0000-0</td></tr>
+      <tr><th>営業時間</th><td>10:00〜18:00（売り切れ次第終了）</td></tr>
+      <tr><th>定休日</th><td>毎週水曜・木曜</td></tr>
+      <tr><th>アクセス</th><td>JR川棚温泉駅から車で6分・駐車場3台</td></tr>
+      <tr><th>お電話</th><td><span class="js-tel-num"></span></td></tr>
+    </table>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E4%B8%8B%E9%96%A2%E5%B8%82%E8%B1%8A%E6%B5%A6%E7%94%BA%E5%A4%A7%E5%AD%97%E5%B7%9D%E6%A3%9A%20%E5%B7%9D%E6%A3%9A%E6%B8%A9%E6%B3%89&output=embed" loading="lazy" title="地図"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="sec-en">Order</div>
+    <h2>ご予約・お問い合わせ</h2>
+    <p>ホールケーキのご予約、贈り物の詰め合わせのご相談は<br>お電話かLINEでどうぞ。</p>
+    <div class="cta-btns">
+      <a href="#" data-tel class="btn btn-tel">電話で相談する</a>
+      <a href="#" class="btn btn-line">LINEで相談する</a>
+    </div>
+    <p class="cta-note">受付時間: 10:00〜18:00（売り切れ次第終了）（毎週水曜・木曜を除く）</p>
+  </div>
+</section>
+
+<div class="fixbar">
+  <a href="#" data-tel class="f-tel">電話する</a>
+  <a href="#" class="f-line">LINEで相談</a>
+</div>
+
+<footer>
+  <div class="fname">洋菓子店 こもれび</div>
+  <div>山口県下関市豊浦町大字川棚0000-0</div>
+  <div class="no-sales">※営業のお電話は固くお断りしています</div>
+  <div style="margin-top:16px">&copy; 洋菓子店 こもれび</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var disp='0000-0000-090'.split('').reverse().join('');
+  var raw=disp.replace(/-/g,'');
+  document.querySelectorAll('a[data-tel]').forEach(function(a){a.setAttribute('href','tel:'+raw)});
+  document.querySelectorAll('.js-tel-num').forEach(function(el){el.textContent=disp});
+});
+</script>
+</body>
+</html>
