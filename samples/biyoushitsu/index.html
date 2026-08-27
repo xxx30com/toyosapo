@@ -74,6 +74,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdro
 /* cta */
 .cta{text-align:center}
 .cta > .container > p{font-size:15px;color:var(--muted)}
+.yoyaku-box{max-width:560px;margin:28px auto 10px;text-align:left}
 .cta-btns{display:flex;flex-direction:column;gap:14px;max-width:380px;margin:32px auto 0}
 .btn{display:block;padding:18px;font-size:15px;font-weight:500;text-decoration:none;letter-spacing:.12em}
 .btn-tel{background:var(--brand);color:#fff}
@@ -97,7 +98,7 @@ footer .no-sales{margin-top:12px}
 </style>
 </head>
 <body>
-<div class="toyosapo-sample-note">これは<a href="https://toyosapo.net/web-works.html">とよサポ</a>が制作したホームページのサンプルです。架空のお店のため、実在しません（電話・LINEはつながりません）。</div>
+<div class="toyosapo-sample-note">これは<a href="https://toyosapo.net/web-works.html">とよサポ</a>が制作したホームページのサンプルです。架空のお店のため実在しません（電話・LINEはつながりません）。<b>ネット予約は実際に動きます</b>ので、どうぞお試しください。</div>
 
 <header>
   <div class="header-in">
@@ -253,7 +254,14 @@ footer .no-sales{margin-top:12px}
   <div class="container">
     <div class="sec-en">Reservation</div>
     <h2>ご予約</h2>
-    <p>ご予約・ご相談は、お電話かLINEでどうぞ。<br>はじめての方も、髪のお悩みだけのご相談も歓迎します。</p>
+    <p>ネットで24時間ご予約いただけます。<br>お電話・LINEでも承ります。はじめての方も、髪のお悩みだけのご相談も歓迎します。</p>
+
+    <div class="yoyaku-box">
+      <script src="https://yoyaku.ai-hisho-worker.workers.dev/widget.js?shop=hiyori"></script>
+    </div>
+    <p class="cta-note" style="margin-bottom:26px">※このサンプルの予約データは、毎晩0時に自動で消去されます。<br>お店側の管理画面もご覧になれます →
+      <a href="https://yoyaku.ai-hisho-worker.workers.dev/a/hiyori" target="_blank" rel="noopener">予約管理画面</a>（パスワード <b>demo1234</b>）</p>
+
     <div class="cta-btns">
       <a href="#" data-tel class="btn btn-tel">電話で予約する</a>
       <a href="#" class="btn btn-line">LINEで予約する</a>
