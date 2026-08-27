@@ -30,8 +30,12 @@ nav.gnav a{color:var(--muted);text-decoration:none;padding:4px 0}
 nav.gnav a.current{color:var(--text);border-bottom:1px solid var(--text)}
 /* 上部の帯 — 写真の上に言葉を置く */
 .yhead{position:relative}
-.yhead img{width:100%;height:clamp(190px,30vw,290px);object-fit:cover;object-position:center 55%}
-.yhead .yhead-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(to right,rgba(255,255,255,.82),rgba(255,255,255,.58))}
+.yhead img{width:100%;height:clamp(190px,30vw,290px);object-fit:cover;object-position:center center}
+.yhead .yhead-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(to right,rgba(255,255,255,.5),rgba(255,255,255,.78))}
+/* 写真は左にチェア、右が余白。広い画面では文字を右の余白に寄せて、チェアを隠さない */
+@media(min-width:760px){
+  .yhead .yhead-in{align-items:flex-end;padding-right:10%;background:linear-gradient(to right,rgba(255,255,255,0) 18%,rgba(255,255,255,.7) 52%)}
+}
 .yhead .sec-en{margin-bottom:6px}
 .yhead h1{font-size:clamp(22px,4.4vw,28px);font-weight:500;letter-spacing:.16em;line-height:1.8}
 .yhead p{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.9;padding:0 24px}
@@ -94,10 +98,8 @@ footer .no-sales{margin-top:12px}
   </div>
 </header>
 
-<!-- 写真は Codex 生成待ち。届いたら yoyaku-hero.jpg / y-parking.jpg / y-entrance.jpg に差し替える
-     （プロンプトは web site work/shops/sample-biyoushitsu/画像プロンプト_予約ページ.md） -->
 <div class="yhead">
-  <img src="photos/g1.jpg" alt="美容室 ひよりのセット面">
+  <img src="photos/yoyaku-hero.jpg" alt="誰も座っていないセット面のチェア">
   <div class="yhead-in">
     <div class="sec-en">Reservation</div>
     <h1>ご予約</h1>
@@ -130,14 +132,13 @@ footer .no-sales{margin-top:12px}
     <div class="sec-en">Access</div>
     <h2>お越しになる前に</h2>
     <div class="b-grid">
-      <!-- 駐車場・入口の写真は Codex 生成待ち（y-parking.jpg / y-entrance.jpg）。
-           手持ちの店内写真を当てると見出しと中身が食い違うので、届くまでは文章だけにしておく。
-           届いたら各 .b-item の先頭に <img src="photos/y-parking.jpg" alt="店の前の駐車スペース" loading="lazy"> を戻す -->
       <div class="b-item">
+        <img src="photos/y-parking.jpg" alt="店の前の駐車スペース。白線で3台ぶんに区切られている" loading="lazy">
         <h3>駐車場は3台</h3>
         <p>お店の敷地に停められます。前の道は細いので、対向車にお気をつけてお越しください。JR川棚温泉駅から車で5分です。</p>
       </div>
       <div class="b-item">
+        <img src="photos/y-entrance.jpg" alt="段差のない入口。敷石から床まで平らにつながっている" loading="lazy">
         <h3>入口に段差はありません</h3>
         <p>車椅子や杖の方も、そのままお入りいただけます。お手伝いが必要なときは、ご予約のときにお書き添えください。</p>
       </div>
