@@ -74,15 +74,17 @@ nav.gnav a.current{color:var(--text);border-bottom:1px solid var(--text)}
 footer{background:var(--soft);color:var(--muted);text-align:center;padding:48px 24px;font-size:12px;line-height:2;border-top:1px solid var(--line)}
 footer .fname{font-size:15px;letter-spacing:.16em;color:var(--text);margin-bottom:10px}
 footer .no-sales{margin-top:12px}
+/* 文節単位でしか折り返さない（<wbr>の位置でのみ改行） */
+.kp{word-break:keep-all;overflow-wrap:anywhere}
 </style>
 <style>
-.toyosapo-sample-note{background:#0C3B2A;color:#fff;font-size:13px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em;font-family:"Zen Kaku Gothic New",sans-serif}
+.toyosapo-sample-note{background:#0C3B2A;color:#fff;font-size:13px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em;font-family:"Zen Kaku Gothic New",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 .toyosapo-sample-note a{color:#FFD9A8;font-weight:700}
 @media(max-width:600px){.toyosapo-sample-note{font-size:12px}}
 </style>
 </head>
 <body>
-<div class="toyosapo-sample-note">これは<a href="https://toyosapo.net/web-works.html">とよサポ</a>が制作したホームページのサンプルです。架空のお店のため実在しません（電話・LINEはつながりません）。<b>ネット予約は実際に動きます</b>ので、どうぞお試しください。</div>
+<div class="toyosapo-sample-note">これは<a href="https://toyosapo.net/web-works.html">とよサポ</a>が制作した<wbr>ホームページの<wbr>サンプルです。<wbr>架空のお店のため<wbr>実在しません<wbr>（電話・LINEは<wbr>つながりません）。<wbr><b>ネット予約は実際に動きます</b>ので、<wbr>どうぞお試しください。</div>
 
 <header>
   <div class="header-in">
@@ -100,7 +102,7 @@ footer .no-sales{margin-top:12px}
   <div class="mhead-in">
     <div class="sec-en">Menu</div>
     <h1>メニュー・料金</h1>
-    <p>すべて税込・シャンプーとブロー込みの価格です</p>
+    <p class="kp">すべて税込・<wbr>シャンプーと<wbr>ブロー込みの価格です</p>
   </div>
 </div>
 
@@ -112,7 +114,7 @@ footer .no-sales{margin-top:12px}
       <div class="grp-body">
         <div class="grp-en">Cut</div>
         <h3>カット</h3>
-        <p class="grp-lead">くせや生え方を見てから、乾かすだけでまとまる形にととのえます。伸びてきたときの変わり方まで考えてお切りします。</p>
+        <p class="grp-lead kp">くせや生え方を<wbr>見てから、<wbr>乾かすだけで<wbr>まとまる形に<wbr>ととのえます。<wbr>伸びてきたときの<wbr>変わり方まで<wbr>考えてお切りします。</p>
         <div class="rows">
           <div class="row">
             <div>
@@ -130,7 +132,7 @@ footer .no-sales{margin-top:12px}
       <div class="grp-body">
         <div class="grp-en">Color</div>
         <h3>カラー</h3>
-        <p class="grp-lead">白髪染めもおしゃれ染めも、しみにくい薬剤を選んでいます。以前しみて痛かった方は、ご予約のときにお申しつけください。</p>
+        <p class="grp-lead kp">白髪染めも<wbr>おしゃれ染めも、<wbr>しみにくい薬剤を<wbr>選んでいます。<wbr>以前しみて痛かった方は、<wbr>ご予約のときに<wbr>お申しつけください。</p>
         <div class="rows">
           <div class="row">
             <div>
@@ -155,19 +157,19 @@ footer .no-sales{margin-top:12px}
       <div class="grp-body">
         <div class="grp-en">Perm</div>
         <h3>パーマ・縮毛矯正</h3>
-        <p class="grp-lead">かけっぱなしにせず、ご自宅でのお手入れの仕方までお伝えします。髪の傷みが気になる方は、まずご相談ください。</p>
+        <p class="grp-lead kp">かけっぱなしにせず、<wbr>ご自宅での<wbr>お手入れの仕方まで<wbr>お伝えします。<wbr>髪の傷みが気になる方は、<wbr>まずご相談ください。</p>
         <div class="rows">
           <div class="row">
             <div>
               <div class="name">パーマ</div>
-              <div class="desc">カット込み。デジタルパーマは別料金</div>
+              <div class="desc kp">カット込み。<wbr>デジタルパーマは<wbr>別料金</div>
             </div>
             <div class="price">9,350円〜<span class="min">約150分</span></div>
           </div>
           <div class="row">
             <div>
               <div class="name">縮毛矯正</div>
-              <div class="desc">カット込み。髪の長さにより変わります</div>
+              <div class="desc kp">カット込み。<wbr>髪の長さにより<wbr>変わります</div>
             </div>
             <div class="price">15,400円〜<span class="min">約180分</span></div>
           </div>
@@ -180,7 +182,7 @@ footer .no-sales{margin-top:12px}
       <div class="grp-body">
         <div class="grp-en">Treatment</div>
         <h3>トリートメント</h3>
-        <p class="grp-lead">その日の髪の状態を見てから配合を決めます。カラーやパーマと一緒にしていただくと、もちが変わります。</p>
+        <p class="grp-lead kp">その日の髪の状態を<wbr>見てから<wbr>配合を決めます。<wbr>カラーやパーマと<wbr>一緒にしていただくと、<wbr>もちが変わります。</p>
         <div class="rows">
           <div class="row">
             <div>
@@ -193,7 +195,7 @@ footer .no-sales{margin-top:12px}
       </div>
     </div>
 
-    <p class="menu-note">※価格はすべて税込です。髪の長さ・状態により変わる場合がありますので、ご不安なときは事前にお尋ねください。<br>※所要時間は目安です。仕上がりの時刻はご予約のときにお伝えします。</p>
+    <p class="menu-note kp">※価格はすべて税込です。<wbr>髪の長さ・状態により<wbr>変わる場合がありますので、<wbr>ご不安なときは<wbr>事前にお尋ねください。<br>※所要時間は目安です。<wbr>仕上がりの時刻は<wbr>ご予約のときにお伝えします。</p>
   </div>
 </section>
 
@@ -201,7 +203,7 @@ footer .no-sales{margin-top:12px}
   <div class="container">
     <div class="sec-en">Reservation</div>
     <h2>ご予約</h2>
-    <p>ネットで24時間ご予約いただけます。<br>メニューに迷われたら「カット」でご予約のうえ、当日ご相談ください。</p>
+    <p class="kp">ネットで24時間<wbr>ご予約いただけます。<br>メニューに迷われたら<wbr>「カット」でご予約のうえ、<wbr>当日ご相談ください。</p>
     <a href="yoyaku.html" class="btn btn-main">ご予約はこちら</a>
   </div>
 </section>

@@ -77,15 +77,17 @@ nav.gnav a.current{color:var(--text);border-bottom:1px solid var(--text)}
 footer{background:var(--soft);color:var(--muted);text-align:center;padding:48px 24px;font-size:12px;line-height:2;border-top:1px solid var(--line)}
 footer .fname{font-size:15px;letter-spacing:.16em;color:var(--text);margin-bottom:10px}
 footer .no-sales{margin-top:12px}
+/* 文節単位でしか折り返さない（<wbr>の位置でのみ改行） */
+.kp{word-break:keep-all;overflow-wrap:anywhere}
 </style>
 <style>
-.toyosapo-sample-note{background:#0C3B2A;color:#fff;font-size:13px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em;font-family:"Zen Kaku Gothic New",sans-serif}
+.toyosapo-sample-note{background:#0C3B2A;color:#fff;font-size:13px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em;font-family:"Zen Kaku Gothic New",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 .toyosapo-sample-note a{color:#FFD9A8;font-weight:700}
 @media(max-width:600px){.toyosapo-sample-note{font-size:12px}}
 </style>
 </head>
 <body>
-<div class="toyosapo-sample-note">これは<a href="https://toyosapo.net/web-works.html">とよサポ</a>が制作したホームページのサンプルです。架空のお店のため実在しません（電話・LINEはつながりません）。<b>ネット予約は実際に動きます</b>ので、どうぞお試しください。</div>
+<div class="toyosapo-sample-note">これは<a href="https://toyosapo.net/web-works.html">とよサポ</a>が制作した<wbr>ホームページの<wbr>サンプルです。<wbr>架空のお店のため<wbr>実在しません<wbr>（電話・LINEは<wbr>つながりません）。<wbr><b>ネット予約は実際に動きます</b>ので、<wbr>どうぞお試しください。</div>
 
 <header>
   <div class="header-in">
@@ -103,27 +105,27 @@ footer .no-sales{margin-top:12px}
   <div class="yhead-in">
     <div class="sec-en">Reservation</div>
     <h1>ご予約</h1>
-    <p>お席をご用意してお待ちしております</p>
+    <p class="kp">お席をご用意して<wbr>お待ちしております</p>
   </div>
 </div>
 
 <section class="cta">
   <div class="container">
-    <p>ネットで24時間ご予約いただけます。<br>はじめての方も、髪のお悩みだけのご相談も歓迎します。</p>
+    <p class="kp">ネットで24時間<wbr>ご予約いただけます。<br>はじめての方も、<wbr>髪のお悩みだけの<wbr>ご相談も歓迎します。</p>
     <p class="menu-link"><a href="menu.html">メニュー・料金を見る ❯</a></p>
 
     <div class="yoyaku-box">
       <script src="https://yoyaku.ai-hisho-worker.workers.dev/widget.js?shop=hiyori"></script>
     </div>
-    <p class="yoyaku-reset">※このサンプルの予約データは、毎晩0時に自動で消去されます。</p>
+    <p class="yoyaku-reset kp">※このサンプルの予約データは、<wbr>毎晩0時に自動で消去されます。</p>
 
     <div class="alt-head"><span>ネット以外でのご予約</span></div>
-    <p class="alt-lead">お電話かLINE、どちらか使いやすいほうでどうぞ。</p>
+    <p class="alt-lead kp">お電話かLINE、<wbr>どちらか使いやすいほうで<wbr>どうぞ。</p>
     <div class="cta-btns">
       <a href="#" data-tel class="btn btn-tel">電話で予約する</a>
       <a href="#" class="btn btn-line">LINEで予約する</a>
     </div>
-    <p class="cta-note">受付時間: 9:00〜18:00（最終受付 17:00）（毎週月曜・第2火曜を除く）</p>
+    <p class="cta-note kp">受付時間: 9:00〜18:00<wbr>（最終受付 17:00）<wbr>（毎週月曜・第2火曜を除く）</p>
   </div>
 </section>
 
@@ -131,8 +133,8 @@ footer .no-sales{margin-top:12px}
   <div class="container">
     <div class="owner-box">
       <span class="owner-chip">サンプルをご覧の方へ</span>
-      <h3>お店側の画面も、そのまま公開しています</h3>
-      <p>ここまでは<b>お客様が見る画面</b>です。上の予約フォームから入った予約が、<b>お店の人にはどう見えるのか</b>。実際の管理画面をご覧いただけます。予約の確認、お客様への電話、取り消し、臨時休業の設定まで、すべてスマホのブラウザだけで行えます。</p>
+      <h3 class="kp">お店側の画面も、<wbr>そのまま<wbr>公開しています</h3>
+      <p class="kp">ここまでは<b>お客様が見る画面</b>です。<wbr>上の予約フォームから<wbr>入った予約が、<wbr><b>お店の人には<wbr>どう見えるのか</b>。<wbr>実際の管理画面を<wbr>ご覧いただけます。<wbr>予約の確認、<wbr>お客様への電話、<wbr>取り消し、<wbr>臨時休業の設定まで、<wbr>すべてスマホの<wbr>ブラウザだけで行えます。</p>
       <a class="owner-btn" href="https://yoyaku.ai-hisho-worker.workers.dev/a/hiyori" target="_blank" rel="noopener">お店側の管理画面をひらく ❯</a>
       <p class="owner-pass">パスワード <b>demo1234</b></p>
     </div>
@@ -147,12 +149,12 @@ footer .no-sales{margin-top:12px}
       <div class="b-item">
         <img src="photos/y-parking.jpg" alt="店の前の駐車スペース。白線で3台ぶんに区切られている" loading="lazy">
         <h3>駐車場は3台</h3>
-        <p>お店の敷地に停められます。前の道は細いので、対向車にお気をつけてお越しください。JR川棚温泉駅から車で5分です。</p>
+        <p class="kp">お店の敷地に停められます。<wbr>前の道は細いので、<wbr>対向車に<wbr>お気をつけて<wbr>お越しください。<wbr>JR川棚温泉駅から<wbr>車で5分です。</p>
       </div>
       <div class="b-item">
         <img src="photos/y-entrance.jpg" alt="段差のない入口。敷石から床まで平らにつながっている" loading="lazy">
         <h3>入口に段差はありません</h3>
-        <p>車椅子や杖の方も、そのままお入りいただけます。お手伝いが必要なときは、ご予約のときにお書き添えください。</p>
+        <p class="kp">車椅子や杖の方も、<wbr>そのまま<wbr>お入りいただけます。<wbr>お手伝いが必要なときは、<wbr>ご予約のときに<wbr>お書き添えください。</p>
       </div>
     </div>
   </div>
