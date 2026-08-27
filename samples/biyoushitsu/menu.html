@@ -28,18 +28,33 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdro
 nav.gnav{display:flex;gap:22px;font-size:13px;letter-spacing:.12em}
 nav.gnav a{color:var(--muted);text-decoration:none;padding:4px 0}
 nav.gnav a.current{color:var(--text);border-bottom:1px solid var(--text)}
-/* page title */
-.page-head{padding:56px 0 0;text-align:center}
-.page-head .sec-en{margin-bottom:6px}
-.page-head h1{font-size:26px;font-weight:500;letter-spacing:.14em;line-height:1.8}
-/* items(menu) */
-.menu-list{max-width:620px;margin:0 auto}
-.menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 2px;border-bottom:1px solid var(--line)}
-.menu-item:first-child{border-top:1px solid var(--line)}
-.menu-item .name{font-size:16px;font-weight:500;letter-spacing:.08em}
-.menu-item .desc{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.9}
-.menu-item .price{white-space:nowrap;font-family:"Instrument Sans",sans-serif;font-size:16px;letter-spacing:.04em}
-.menu-note{text-align:center;font-size:12px;color:var(--muted);margin-top:24px;line-height:1.9}
+/* 上部の帯 — 写真の上に言葉を置く */
+.mhead{position:relative}
+.mhead img{width:100%;height:clamp(200px,34vw,320px);object-fit:cover;object-position:center 60%}
+.mhead .mhead-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(to right,rgba(255,255,255,.86),rgba(255,255,255,.62))}
+.mhead .sec-en{margin-bottom:6px}
+.mhead h1{font-size:clamp(22px,4.4vw,28px);font-weight:500;letter-spacing:.16em;line-height:1.8}
+.mhead p{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.9;padding:0 24px}
+/* 施術ごとの群 — 写真と料金を左右に組む */
+.grp{display:grid;gap:26px;margin-bottom:64px}
+.grp:last-of-type{margin-bottom:0}
+@media(min-width:760px){
+  .grp{grid-template-columns:1fr 1.05fr;gap:44px;align-items:center}
+  .grp:nth-child(even) .grp-photo{order:2}
+}
+.grp-photo{width:100%;aspect-ratio:3/2;object-fit:cover}
+.grp-body{min-width:0}
+.grp-en{font-family:"Instrument Sans",sans-serif;font-size:11px;font-weight:500;letter-spacing:.26em;color:var(--muted);text-transform:uppercase}
+.grp-body h3{font-size:20px;font-weight:500;letter-spacing:.12em;margin:8px 0 12px}
+.grp-body .grp-lead{font-size:14px;color:var(--muted);line-height:1.95;margin-bottom:22px}
+/* 料金の行 */
+.rows{border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:16px 2px;border-bottom:1px solid var(--line)}
+.row .name{font-size:16px;font-weight:500;letter-spacing:.08em}
+.row .desc{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.8}
+.row .price{white-space:nowrap;font-family:"Instrument Sans",sans-serif;font-size:16px;letter-spacing:.04em;text-align:right}
+.row .min{display:block;font-size:11px;color:var(--muted);letter-spacing:.1em;margin-top:2px}
+.menu-note{text-align:center;font-size:12px;color:var(--muted);margin-top:56px;line-height:1.9;padding-top:28px;border-top:1px solid var(--line)}
 /* cta */
 .cta{text-align:center;background:var(--soft)}
 .cta p{font-size:15px;color:var(--muted)}
@@ -49,7 +64,7 @@ nav.gnav a.current{color:var(--text);border-bottom:1px solid var(--text)}
 .fixbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;background:#fff;border-top:1px solid var(--line)}
 .fixbar a{flex:1;text-align:center;padding:14px 8px;font-size:13px;font-weight:500;letter-spacing:.1em;text-decoration:none;color:#fff}
 .fixbar .f-yoyaku{background:var(--brand)}
-.fixbar .f-tel{background:#06c755}
+.fixbar .f-line{background:#06c755}
 @media(min-width:840px){.fixbar{display:none}body{padding-bottom:0}}
 /* footer */
 footer{background:var(--soft);color:var(--muted);text-align:center;padding:48px 24px;font-size:12px;line-height:2;border-top:1px solid var(--line)}
@@ -76,65 +91,107 @@ footer .no-sales{margin-top:12px}
   </div>
 </header>
 
-<div class="page-head">
-  <div class="sec-en">Menu</div>
-  <h1>メニュー・料金</h1>
+<!-- 写真は Codex 生成待ち。届いたら menu-hero.jpg / m-cut.jpg / m-color.jpg / m-perm.jpg / m-treatment.jpg に差し替える
+     （プロンプトは web site work/shops/sample-biyoushitsu/画像プロンプト_メニューページ.md） -->
+<div class="mhead">
+  <img src="photos/g4.jpg" alt="美容室 ひよりの待合スペース">
+  <div class="mhead-in">
+    <div class="sec-en">Menu</div>
+    <h1>メニュー・料金</h1>
+    <p>すべて税込・シャンプーとブロー込みの価格です</p>
+  </div>
 </div>
 
 <section>
   <div class="container">
-    <div class="menu-list">
 
-      <div class="menu-item">
-        <div>
-          <div class="name">カット</div>
-          <div class="desc">シャンプー・ブロー込み</div>
+    <div class="grp">
+      <img src="photos/g3.jpg" alt="カットの様子" class="grp-photo" loading="lazy">
+      <div class="grp-body">
+        <div class="grp-en">Cut</div>
+        <h3>カット</h3>
+        <p class="grp-lead">くせや生え方を見てから、乾かすだけでまとまる形にととのえます。伸びてきたときの変わり方まで考えてお切りします。</p>
+        <div class="rows">
+          <div class="row">
+            <div>
+              <div class="name">カット</div>
+              <div class="desc">シャンプー・ブロー込み</div>
+            </div>
+            <div class="price">4,400円<span class="min">約60分</span></div>
+          </div>
         </div>
-        <div class="price">4,400円</div>
       </div>
-
-      <div class="menu-item">
-        <div>
-          <div class="name">カット＋カラー</div>
-          <div class="desc">白髪染め・おしゃれ染めどちらも</div>
-        </div>
-        <div class="price">9,900円〜</div>
-      </div>
-
-      <div class="menu-item">
-        <div>
-          <div class="name">カラー リタッチ</div>
-          <div class="desc">根元のみ・カットなし</div>
-        </div>
-        <div class="price">5,500円</div>
-      </div>
-
-      <div class="menu-item">
-        <div>
-          <div class="name">パーマ</div>
-          <div class="desc">カット込み。デジタルパーマは別料金</div>
-        </div>
-        <div class="price">9,350円〜</div>
-      </div>
-
-      <div class="menu-item">
-        <div>
-          <div class="name">縮毛矯正</div>
-          <div class="desc">カット込み。髪の長さにより変わります</div>
-        </div>
-        <div class="price">15,400円〜</div>
-      </div>
-
-      <div class="menu-item">
-        <div>
-          <div class="name">トリートメント</div>
-          <div class="desc">他メニューと一緒に</div>
-        </div>
-        <div class="price">2,200円〜</div>
-      </div>
-
     </div>
-    <p class="menu-note">※価格はすべて税込です。髪の長さ・状態により変わる場合がありますので、ご不安なときは事前にお尋ねください。</p>
+
+    <div class="grp">
+      <img src="photos/g1.jpg" alt="鏡とカウンターのセット面" class="grp-photo" loading="lazy">
+      <div class="grp-body">
+        <div class="grp-en">Color</div>
+        <h3>カラー</h3>
+        <p class="grp-lead">白髪染めもおしゃれ染めも、しみにくい薬剤を選んでいます。以前しみて痛かった方は、ご予約のときにお申しつけください。</p>
+        <div class="rows">
+          <div class="row">
+            <div>
+              <div class="name">カット＋カラー</div>
+              <div class="desc">白髪染め・おしゃれ染めどちらも</div>
+            </div>
+            <div class="price">9,900円〜<span class="min">約150分</span></div>
+          </div>
+          <div class="row">
+            <div>
+              <div class="name">カラー リタッチ</div>
+              <div class="desc">根元のみ・カットなし</div>
+            </div>
+            <div class="price">5,500円<span class="min">約90分</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grp">
+      <img src="photos/hero.jpg" alt="美容室 ひよりの店内" class="grp-photo" loading="lazy">
+      <div class="grp-body">
+        <div class="grp-en">Perm</div>
+        <h3>パーマ・縮毛矯正</h3>
+        <p class="grp-lead">かけっぱなしにせず、ご自宅でのお手入れの仕方までお伝えします。髪の傷みが気になる方は、まずご相談ください。</p>
+        <div class="rows">
+          <div class="row">
+            <div>
+              <div class="name">パーマ</div>
+              <div class="desc">カット込み。デジタルパーマは別料金</div>
+            </div>
+            <div class="price">9,350円〜<span class="min">約150分</span></div>
+          </div>
+          <div class="row">
+            <div>
+              <div class="name">縮毛矯正</div>
+              <div class="desc">カット込み。髪の長さにより変わります</div>
+            </div>
+            <div class="price">15,400円〜<span class="min">約180分</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grp">
+      <img src="photos/g2.jpg" alt="シャンプー台" class="grp-photo" loading="lazy">
+      <div class="grp-body">
+        <div class="grp-en">Treatment</div>
+        <h3>トリートメント</h3>
+        <p class="grp-lead">その日の髪の状態を見てから配合を決めます。カラーやパーマと一緒にしていただくと、もちが変わります。</p>
+        <div class="rows">
+          <div class="row">
+            <div>
+              <div class="name">トリートメント</div>
+              <div class="desc">他メニューと一緒に</div>
+            </div>
+            <div class="price">2,200円〜<span class="min">約30分</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="menu-note">※価格はすべて税込です。髪の長さ・状態により変わる場合がありますので、ご不安なときは事前にお尋ねください。<br>※所要時間は目安です。仕上がりの時刻はご予約のときにお伝えします。</p>
   </div>
 </section>
 
@@ -149,7 +206,7 @@ footer .no-sales{margin-top:12px}
 
 <div class="fixbar">
   <a href="yoyaku.html" class="f-yoyaku">ネットで予約</a>
-  <a href="#" class="f-tel">LINEで予約</a>
+  <a href="#" class="f-line">LINEで予約</a>
 </div>
 
 <footer>
