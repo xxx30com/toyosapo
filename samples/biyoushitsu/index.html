@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* biyoushitsu（美容室）— 参照: uka（awesome-design-md-jp）。白と静かなグレーの余白主導 */
-:root[data-theme="a"]{--brand:#333333;--brand-dark:#1f1f1f;--text:#333333;--muted:#7b7b7b;--bg:#ffffff;--surface:#f4f4f2;--line:#e3e3e0;--soft:#faf9f7}
+:root[data-theme="a"]{--brand:#333333;--brand-dark:#1f1f1f;--text:#333333;--muted:#4A544D;--bg:#ffffff;--surface:#f4f4f2;--line:#e3e3e0;--soft:#faf9f7}
 :root[data-theme="b"]{--brand:#8a7768;--brand-dark:#6b5a4d;--text:#3d352e;--muted:#8b8178;--bg:#ffffff;--surface:#f6f3ef;--line:#e7e0d8;--soft:#fbf9f6}
 :root[data-theme="c"]{--brand:#5f7361;--brand-dark:#47584a;--text:#33403a;--muted:#7e8a80;--bg:#ffffff;--surface:#f2f5f1;--line:#dfe6dd;--soft:#f9fbf8}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -23,11 +23,11 @@ section{padding:72px 0}
 .sec-en{font-family:"Instrument Sans",sans-serif;font-size:12px;font-weight:500;letter-spacing:.28em;color:var(--muted);text-align:center;text-transform:uppercase}
 h2{font-size:24px;font-weight:500;line-height:1.6;letter-spacing:.1em;text-align:center;margin:10px 0 40px}
 /* header */
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:20;background:rgba(250,249,247,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .header-in{max-width:920px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .logo{font-size:18px;font-weight:500;letter-spacing:.16em}
 .logo a{color:var(--text);text-decoration:none}
-nav.gnav{display:flex;gap:22px;font-size:13px;letter-spacing:.12em}
+nav.gnav{display:flex;gap:22px;font-size:14px;letter-spacing:.12em}
 nav.gnav a{color:var(--muted);text-decoration:none;padding:4px 0}
 nav.gnav a.current{color:var(--text);border-bottom:1px solid var(--text)}
 /* hero — 左に言葉、右に写真の分割型 */
@@ -50,7 +50,7 @@ nav.gnav a.current{color:var(--text);border-bottom:1px solid var(--text)}
 .point-grid{display:grid;gap:40px}
 @media(min-width:720px){.point-grid{grid-template-columns:repeat(3,1fr);gap:36px}}
 .point{text-align:center}
-.point .num{font-family:"Instrument Sans",sans-serif;font-size:13px;letter-spacing:.24em;color:var(--muted)}
+.point .num{font-family:"Instrument Sans",sans-serif;font-size:12px;letter-spacing:.24em;color:var(--muted)}
 .point h3{font-size:17px;font-weight:500;margin:14px 0 12px;letter-spacing:.1em}
 .point .bar{width:28px;height:1px;background:var(--line);margin:0 auto 12px}
 .point p{font-size:14px;color:var(--muted);text-align:left}
@@ -75,19 +75,19 @@ nav.gnav a.current{color:var(--text);border-bottom:1px solid var(--text)}
 .btn-menu{background:#fff;color:var(--text);border:1px solid var(--line)}
 /* fixed bar */
 .fixbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;background:#fff;border-top:1px solid var(--line)}
-.fixbar a{flex:1;text-align:center;padding:14px 8px;font-size:13px;font-weight:500;letter-spacing:.1em;text-decoration:none;color:#fff}
+.fixbar a{flex:1;text-align:center;padding:14px 8px;font-size:14px;font-weight:500;letter-spacing:.1em;text-decoration:none;color:#fff}
 .fixbar .f-tel{background:var(--brand)}
 .fixbar .f-menu{background:#fff;color:var(--text)}
 @media(min-width:840px){.fixbar{display:none}body{padding-bottom:0}}
 /* footer */
 footer{background:var(--soft);color:var(--muted);text-align:center;padding:48px 24px;font-size:12px;line-height:2;border-top:1px solid var(--line)}
-footer .fname{font-size:15px;letter-spacing:.16em;color:var(--text);margin-bottom:10px}
+footer .fname{font-size:16px;letter-spacing:.16em;color:var(--text);margin-bottom:10px}
 footer .no-sales{margin-top:12px}
 /* 文節単位でしか折り返さない（<wbr>の位置でのみ改行） */
 .kp{word-break:keep-all;overflow-wrap:anywhere}
 </style>
 <style>
-.toyosapo-sample-note{background:#0C3B2A;color:#fff;font-size:13px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em;font-family:"Zen Kaku Gothic New",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+.toyosapo-sample-note{background:#0C3B2A;color:#fff;font-size:12px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em;font-family:"Zen Kaku Gothic New",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 .toyosapo-sample-note a{color:#FFD9A8;font-weight:700}
 @media(max-width:600px){.toyosapo-sample-note{font-size:12px}}
 </style>
@@ -119,7 +119,7 @@ footer .no-sales{margin-top:12px}
   <div class="container">
     <div class="sec-en">About</div>
     <h2>ごあいさつ</h2>
-    <p class="lead kp">田んぼと家並みの<wbr>あいだにある、<wbr>古い平屋を直した<wbr>小さな美容室です。<wbr>予約は<wbr>おひとりずつ<wbr>お取りしていますので、<wbr>まわりを気にせず<wbr>お過ごしいただけます。<wbr>髪のこと、<wbr>白髪のこと、<wbr>これから<wbr>どうしていきたいか。<wbr>まずはゆっくり<wbr>お聞かせください。</p>
+    <p class="lead kp">田んぼと家並みの<wbr>あいだにある、<wbr>古い平屋を直した<wbr>小さな美容室です。<br>予約は<wbr>おひとりずつ<wbr>お取りしていますので、<wbr>まわりを気にせず<wbr>お過ごしいただけます。<br>髪のこと、<wbr>白髪のこと、<wbr>これから<wbr>どうしていきたいか。<wbr>まずはゆっくり<wbr>お聞かせください。</p>
   </div>
 </section>
 
