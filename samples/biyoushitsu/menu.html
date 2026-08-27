@@ -30,8 +30,12 @@ nav.gnav a{color:var(--muted);text-decoration:none;padding:4px 0}
 nav.gnav a.current{color:var(--text);border-bottom:1px solid var(--text)}
 /* 上部の帯 — 写真の上に言葉を置く */
 .mhead{position:relative}
-.mhead img{width:100%;height:clamp(200px,34vw,320px);object-fit:cover;object-position:center 60%}
-.mhead .mhead-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(to right,rgba(255,255,255,.86),rgba(255,255,255,.62))}
+.mhead img{width:100%;height:clamp(200px,34vw,320px);object-fit:cover;object-position:center center}
+.mhead .mhead-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(to right,rgba(255,255,255,.5),rgba(255,255,255,.78))}
+/* 写真は左に道具、右が余白。広い画面では文字を右の余白に寄せて、道具を隠さない */
+@media(min-width:760px){
+  .mhead .mhead-in{align-items:flex-end;padding-right:10%;background:linear-gradient(to right,rgba(255,255,255,0) 18%,rgba(255,255,255,.7) 52%)}
+}
 .mhead .sec-en{margin-bottom:6px}
 .mhead h1{font-size:clamp(22px,4.4vw,28px);font-weight:500;letter-spacing:.16em;line-height:1.8}
 .mhead p{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.9;padding:0 24px}
@@ -91,10 +95,8 @@ footer .no-sales{margin-top:12px}
   </div>
 </header>
 
-<!-- 写真は Codex 生成待ち。届いたら menu-hero.jpg / m-cut.jpg / m-color.jpg / m-perm.jpg / m-treatment.jpg に差し替える
-     （プロンプトは web site work/shops/sample-biyoushitsu/画像プロンプト_メニューページ.md） -->
 <div class="mhead">
-  <img src="photos/g4.jpg" alt="美容室 ひよりの待合スペース">
+  <img src="photos/menu-hero.jpg" alt="セット面のカウンターに置かれたハサミとタオル">
   <div class="mhead-in">
     <div class="sec-en">Menu</div>
     <h1>メニュー・料金</h1>
@@ -106,7 +108,7 @@ footer .no-sales{margin-top:12px}
   <div class="container">
 
     <div class="grp">
-      <img src="photos/g3.jpg" alt="カットの様子" class="grp-photo" loading="lazy">
+      <img src="photos/m-cut.jpg" alt="カウンターに並べたハサミとコーム" class="grp-photo" loading="lazy">
       <div class="grp-body">
         <div class="grp-en">Cut</div>
         <h3>カット</h3>
@@ -124,7 +126,7 @@ footer .no-sales{margin-top:12px}
     </div>
 
     <div class="grp">
-      <img src="photos/g1.jpg" alt="鏡とカウンターのセット面" class="grp-photo" loading="lazy">
+      <img src="photos/m-color.jpg" alt="カラー剤を調合しているところ" class="grp-photo" loading="lazy">
       <div class="grp-body">
         <div class="grp-en">Color</div>
         <h3>カラー</h3>
@@ -149,7 +151,7 @@ footer .no-sales{margin-top:12px}
     </div>
 
     <div class="grp">
-      <img src="photos/hero.jpg" alt="美容室 ひよりの店内" class="grp-photo" loading="lazy">
+      <img src="photos/m-perm.jpg" alt="サイズごとに並べたパーマ用のロッド" class="grp-photo" loading="lazy">
       <div class="grp-body">
         <div class="grp-en">Perm</div>
         <h3>パーマ・縮毛矯正</h3>
@@ -174,7 +176,7 @@ footer .no-sales{margin-top:12px}
     </div>
 
     <div class="grp">
-      <img src="photos/g2.jpg" alt="シャンプー台" class="grp-photo" loading="lazy">
+      <img src="photos/m-treatment.jpg" alt="シャンプー台の脇の棚" class="grp-photo" loading="lazy">
       <div class="grp-body">
         <div class="grp-en">Treatment</div>
         <h3>トリートメント</h3>
