@@ -33,6 +33,27 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);border-
 .hero h1{font-family:"Noto Serif JP",serif;font-size:clamp(28px,6vw,44px);line-height:1.5;letter-spacing:.08em;font-feature-settings:"palt" 1;text-shadow:0 2px 12px rgba(0,0,0,.5)}
 .hero p{margin-top:16px;font-size:15px;text-shadow:0 1px 8px rgba(0,0,0,.6)}
 .hero-shop{display:inline-block;margin-bottom:14px;padding:6px 18px;border:1px solid rgba(255,255,255,.7);border-radius:99px;font-size:14px;letter-spacing:.2em}
+/* notice（お知らせ） */
+.notice{background:var(--surface)}
+.n-alert{display:flex;gap:14px;align-items:flex-start;max-width:640px;margin:0 auto 26px;padding:18px 20px;border-radius:12px;background:#fdf1ec;border:1px solid #eec9bd}
+.n-tag{flex:none;margin-top:4px;padding:4px 12px;border-radius:99px;background:var(--brand);color:#fff;font-size:12px;font-weight:700;letter-spacing:.12em;white-space:nowrap}
+.n-alert p{font-size:15px;line-height:1.85}
+.deal{max-width:640px;margin:0 auto 34px;border-radius:12px;overflow:hidden;background:var(--dark);color:#fff;box-shadow:0 4px 10px rgba(0,0,0,.18)}
+.deal-head{padding:16px 20px;border-bottom:1px dashed rgba(225,215,165,.35);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.deal-name{font-family:"Noto Serif JP",serif;font-size:21px;font-weight:700;color:var(--accent);letter-spacing:.08em}
+.deal-time{font-size:14px;color:#e6d9c6;white-space:nowrap}
+.deal-body{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:20px}
+.deal-item{font-size:18px;font-weight:700}
+.deal-price{white-space:nowrap;font-family:"Noto Serif JP",serif;color:var(--accent)}
+.deal-price s{font-size:15px;color:#bfae98;margin-right:12px}
+.deal-price b{font-size:40px;line-height:1;font-weight:700}
+.deal-note{padding:0 20px 20px;font-size:13px;color:#cbbca7;line-height:1.8}
+.news{max-width:640px;margin:0 auto}
+.news-item{padding:20px 4px;border-bottom:1px dashed var(--accent)}
+.news-item:first-child{border-top:1px dashed var(--accent)}
+.news-item time{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--brand)}
+.news-item h3{font-size:17px;line-height:1.6;margin:4px 0 6px}
+.news-item p{font-size:14px}
 /* lead */
 .lead{text-align:center;max-width:640px;margin:0 auto}
 /* points */
@@ -104,6 +125,52 @@ footer .no-sales{margin-top:10px;opacity:.8}
     <p>響灘の地魚と炭火の串焼き、山口の地酒。カウンター8席と小上がりだけの小さな店です</p>
   </div>
 </div>
+
+<section class="notice">
+  <div class="container">
+    <h2>お知らせ</h2>
+    <div class="sec-sub">NEWS</div>
+
+    <div class="n-alert">
+      <span class="n-tag">臨時休業</span>
+      <p>9月3日（水）は貸切のため、終日お休みをいただきます。<br>9月4日（木）からは通常どおり営業します。</p>
+    </div>
+
+    <div class="deal">
+      <div class="deal-head">
+        <span class="deal-name">湯あがり割</span>
+        <span class="deal-time">17:00 〜 19:00 にご入店の方</span>
+      </div>
+      <div class="deal-body">
+        <div class="deal-item">生ビール</div>
+        <div class="deal-price"><s>通常 580円</s><b>290</b>円</div>
+      </div>
+      <p class="deal-note">湯あがりに一杯だけ、という方もどうぞ。おひとり様3杯まで／ほかの割引との併用はできません</p>
+    </div>
+
+    <div class="news">
+
+      <article class="news-item">
+        <time>2026.08.26</time>
+        <h3>さんまの炭火焼き、はじめました</h3>
+        <p>今年のさんまは脂がよく乗っています。備長炭で一尾ずつ焼いて、すだちを添えてお出しします。仕入れた分だけですので、売り切れの節はご容赦ください。</p>
+      </article>
+
+      <article class="news-item">
+        <time>2026.08.18</time>
+        <h3>9月3日（水）は貸切のため休業します</h3>
+        <p>この日は貸切のご予約をいただいており、終日お休みをいただきます。ご不便をおかけしますが、よろしくお願いいたします。</p>
+      </article>
+
+      <article class="news-item">
+        <time>2026.08.05</time>
+        <h3>小上がりの座敷、4名様からご予約を承ります</h3>
+        <p>奥の小上がりは4名様から8名様までお使いいただけます。お子様連れでも気兼ねなくお過ごしいただけますので、お電話かLINEでご相談ください。</p>
+      </article>
+
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="container">
