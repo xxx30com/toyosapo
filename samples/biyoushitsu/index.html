@@ -55,11 +55,22 @@ nav.gnav a.current{color:var(--text);border-bottom:1px solid var(--text)}
 .point .bar{width:28px;height:1px;background:var(--line);margin:0 auto 12px}
 .point p{font-size:14px;color:var(--muted);text-align:left}
 @media(min-width:720px){.point p{text-align:center}}
-/* gallery */
-.gallery{background:var(--surface)}
-.g-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(min-width:720px){.g-grid{grid-template-columns:repeat(4,1fr);gap:16px}}
-.g-grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
+/* works */
+.works{background:var(--surface)}
+.w-list{display:grid;gap:44px}
+.w-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.w-pair img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.w-text{margin-top:16px}
+.w-cat{font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.w-text h3{font-size:17px;font-weight:500;margin:10px 0 10px;letter-spacing:.1em}
+.w-text p{font-size:14px;color:var(--muted)}
+@media(min-width:720px){
+  .w-list{gap:56px}
+  .work{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:36px;align-items:center}
+  .w-text{margin-top:0}
+}
+/* shop photo band */
+.band{display:block;width:100%;aspect-ratio:16/6;object-fit:cover}
 /* info */
 .info-table{width:100%;max-width:620px;margin:0 auto;border-collapse:collapse}
 .info-table th{width:7em;text-align:left;vertical-align:top;padding:18px 4px;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:500;letter-spacing:.1em}
@@ -154,23 +165,53 @@ footer .no-sales{margin-top:12px}
   </div>
 </section>
 
-<section class="gallery">
+<section class="works">
   <div class="container">
-    <div class="sec-en">Gallery</div>
-    <h2>店内のようす</h2>
-    <div class="g-grid">
-      
-      <img src="photos/g1.jpg" alt="鏡とカウンターのセット面" loading="lazy">
-      
-      <img src="photos/g2.jpg" alt="シャンプー台" loading="lazy">
-      
-      <img src="photos/g3.jpg" alt="カットの様子" loading="lazy">
-      
-      <img src="photos/g4.jpg" alt="入口の待合スペース" loading="lazy">
-      
+    <div class="sec-en">Style</div>
+    <h2>仕上がりの作例</h2>
+    <div class="w-list">
+
+      <div class="work">
+        <div class="w-pair">
+          <img src="photos/w1-back.jpg" alt="カットの仕上がりを後ろから見たところ" loading="lazy">
+          <img src="photos/w1-side.jpg" alt="カットの仕上がりの毛先" loading="lazy">
+        </div>
+        <div class="w-text">
+          <div class="w-cat">カット　4,400円</div>
+          <h3>肩につくボブ</h3>
+          <p class="kp">毛先を内に入れて、<wbr>後ろに丸みを出しました。<wbr>襟足は短く整えて<wbr>います。</p>
+        </div>
+      </div>
+
+      <div class="work">
+        <div class="w-pair">
+          <img src="photos/w2-back.jpg" alt="カラーの仕上がりを後ろから見たところ" loading="lazy">
+          <img src="photos/w2-side.jpg" alt="カラーの仕上がりの色みの寄り" loading="lazy">
+        </div>
+        <div class="w-text">
+          <div class="w-cat">カット＋カラー　9,900円〜</div>
+          <h3>白髪をなじませたブラウン</h3>
+          <p class="kp">真っ黒に<wbr>染めつぶさず、<wbr>根元に明るさを<wbr>残しています。<wbr>伸びても<wbr>目立ちにくい色です。</p>
+        </div>
+      </div>
+
+      <div class="work">
+        <div class="w-pair">
+          <img src="photos/w3-back.jpg" alt="縮毛矯正の仕上がりを後ろから見たところ" loading="lazy">
+          <img src="photos/w3-side.jpg" alt="縮毛矯正の仕上がりの表面の寄り" loading="lazy">
+        </div>
+        <div class="w-text">
+          <div class="w-cat">縮毛矯正　15,400円〜</div>
+          <h3>くせをおさえたストレート</h3>
+          <p class="kp">まっすぐにしすぎず、<wbr>根元の丸みを<wbr>残しました。<wbr>毛先はぱさつかせて<wbr>いません。</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
+<img class="band" src="photos/g1.jpg" alt="鏡とカウンターのセット面" loading="lazy">
 
 <section>
   <div class="container">
