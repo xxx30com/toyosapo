@@ -33,6 +33,13 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);border-
 .hero h1{font-family:"Noto Serif JP",serif;font-size:clamp(28px,6vw,44px);line-height:1.5;letter-spacing:.08em;font-feature-settings:"palt" 1;text-shadow:0 2px 12px rgba(0,0,0,.5)}
 .hero p{margin-top:16px;font-size:15px;text-shadow:0 1px 8px rgba(0,0,0,.6)}
 .hero-shop{display:inline-block;margin-bottom:14px;padding:6px 18px;border:1px solid rgba(255,255,255,.7);border-radius:99px;font-size:14px;letter-spacing:.2em}
+.owner-box{max-width:640px;margin:34px auto 0;border:2px dashed #c9b28a;background:#fbf7ee;border-radius:12px;padding:24px 20px}
+.owner-chip{display:inline-block;background:#0C3B2A;color:#fff;font-size:12px;letter-spacing:.14em;padding:5px 14px;border-radius:999px;margin-bottom:12px}
+.owner-box h3{font-size:17px;line-height:1.6;color:#0C3B2A;margin-bottom:8px}
+.owner-box p{font-size:14px}
+.owner-btn{display:inline-block;margin-top:14px;background:#0C3B2A;color:#fff;text-decoration:none;font-size:15px;font-weight:700;padding:13px 22px;border-radius:8px}
+.owner-pass{font-size:13px;margin-top:10px}
+.owner-pass b{background:#fff;border:1px solid #e0d4bd;border-radius:6px;padding:2px 8px;letter-spacing:.06em}
 /* notice（お知らせ） */
 .notice{background:var(--surface)}
 .n-alert{display:flex;gap:14px;align-items:flex-start;max-width:640px;margin:0 auto 26px;padding:18px 20px;border-radius:12px;background:#fdf1ec;border:1px solid #eec9bd}
@@ -131,7 +138,8 @@ footer .no-sales{margin-top:10px;opacity:.8}
     <h2>お知らせ</h2>
     <div class="sec-sub">NEWS</div>
 
-    <div class="n-alert">
+    <div id="oshirase">
+<div class="n-alert">
       <span class="n-tag">臨時休業</span>
       <p>9月3日（水）は貸切のため、終日お休みをいただきます。<br>9月4日（木）からは通常どおり営業します。</p>
     </div>
@@ -168,6 +176,15 @@ footer .no-sales{margin-top:10px;opacity:.8}
         <p>奥の小上がりは4名様から8名様までお使いいただけます。お子様連れでも気兼ねなくお過ごしいただけますので、お電話かLINEでご相談ください。</p>
       </article>
 
+    </div>
+    </div>
+
+    <div class="owner-box">
+      <span class="owner-chip">サンプルをご覧の方へ</span>
+      <h3>このお知らせは、お店の方がご自分で書き換えます</h3>
+      <p>臨時休業も、期間限定の割引も、お店のスマホから書き換えられます。<b>「いつまで出すか」を入れておけば、その日を過ぎたら自分で消さなくても引っ込みます。</b><br>実際の管理画面を、そのまま公開しています。書き換えるとこのページにそのまま出ますので、どうぞお試しください（毎晩0時にもとに戻ります）。</p>
+      <a class="owner-btn" href="https://oshirase.ai-hisho-worker.workers.dev/a/yunoji" target="_blank" rel="noopener">お店側の管理画面をひらく ❯</a>
+      <p class="owner-pass">パスワード <b>demo1234</b></p>
     </div>
   </div>
 </section>
@@ -336,5 +353,6 @@ document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.js-tel-num').forEach(function(el){el.textContent=disp});
 });
 </script>
+<script src="https://oshirase.ai-hisho-worker.workers.dev/widget.js?shop=yunoji" defer></script>
 </body>
 </html>
