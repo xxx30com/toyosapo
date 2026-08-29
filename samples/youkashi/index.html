@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* youkashi（洋菓子店）— 参照: BAKE INC.（awesome-design-md-jp）。紙のクリーム地＋明朝本文＋大きな欧文 */
-:root[data-theme="a"]{--brand:#9c5a3c;--brand-dark:#7d4429;--text:#2f2620;--muted:#857a6d;--bg:#f2ede3;--surface:#faf7f1;--line:#ddd5c7}
+:root[data-theme="a"]{--brand:#9c5a3c;--brand-dark:#7d4429;--text:#2f2620;--muted:#6a6257;--bg:#f2ede3;--surface:#faf7f1;--line:#ddd5c7}
 :root[data-theme="b"]{--brand:#6f7f5c;--brand-dark:#55663f;--text:#2b2f26;--muted:#7d8474;--bg:#f1f0e6;--surface:#fafaf3;--line:#d8dbcb}
 :root[data-theme="c"]{--brand:#b0505a;--brand-dark:#8d3b45;--text:#33262a;--muted:#8a7a7c;--bg:#f5ece9;--surface:#fdf8f6;--line:#e4d3d1}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -25,11 +25,11 @@ h2{font-size:17px;font-weight:400;letter-spacing:.24em;text-align:center;margin:
 /* header */
 header{position:sticky;top:0;z-index:20;background:rgba(242,237,227,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .header-in{max-width:880px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:19px;font-weight:600;letter-spacing:.14em}
+.logo{font-size:17px;font-weight:600;letter-spacing:.14em}
 .header-tel{font-family:"Jost",sans-serif;font-size:13px;letter-spacing:.12em;color:var(--muted)}
 /* hero — 紙面型（言葉が先、写真は帯で下に） */
 .hero-in{text-align:center;padding:64px 24px 56px}
-.hero-en{font-family:"Jost",sans-serif;font-weight:300;font-size:12px;letter-spacing:.4em;color:var(--brand);text-transform:uppercase}
+.hero-en{font-family:"Jost",sans-serif;font-weight:300;font-size:13px;letter-spacing:.4em;color:var(--brand);text-transform:uppercase}
 .hero h1{font-size:clamp(24px,6vw,38px);font-weight:600;line-height:1.9;letter-spacing:.14em;margin:20px 0 0}
 .hero p{margin-top:22px;font-size:14px;color:var(--muted);line-height:2}
 .hero-band{width:100%;aspect-ratio:4/3;object-fit:cover}
@@ -37,32 +37,33 @@ header{position:sticky;top:0;z-index:20;background:rgba(242,237,227,.94);backdro
 /* notice（お知らせ）— 紙面らしく、罫線と明朝で組む */
 .notice{background:var(--surface)}
 .n-alert{display:flex;gap:16px;align-items:flex-start;max-width:600px;margin:0 auto 34px;padding:20px 22px;border:1px solid var(--brand);background:var(--bg)}
-.n-tag{flex:none;margin-top:5px;padding:4px 14px;background:var(--brand);color:#fff;font-size:12px;letter-spacing:.16em;white-space:nowrap}
+.n-tag{flex:none;margin-top:5px;padding:4px 14px;background:var(--brand);color:var(--surface);font-size:13px;letter-spacing:.16em;white-space:nowrap}
 .n-alert p{font-size:15px;line-height:2}
 .deal{max-width:600px;margin:0 auto 38px;border:1px solid var(--line);background:var(--bg)}
 .deal-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;padding:18px 22px;border-bottom:1px solid var(--line)}
-.deal-name{font-size:18px;font-weight:600;letter-spacing:.16em}
-.deal-time{font-size:13px;color:var(--text);letter-spacing:.1em;white-space:nowrap}
+.deal-name{font-size:17px;font-weight:600;letter-spacing:.16em}
+.deal-time{font-size:13px;color:var(--muted);letter-spacing:.1em;white-space:nowrap}
 .deal-body{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:22px}
-.deal-item{font-size:16px;font-weight:600;letter-spacing:.1em}
-.deal-price{white-space:nowrap;color:var(--brand-dark)}
-.deal-price s{font-family:"Jost",sans-serif;font-size:14px;color:var(--text);margin-right:12px;letter-spacing:.04em}
-.deal-price b{font-family:"Jost",sans-serif;font-size:38px;font-weight:300;line-height:1;letter-spacing:.02em}
-.deal-note{padding:0 22px 22px;font-size:13px;color:var(--text);line-height:2}
+.deal-item{font-size:17px;font-weight:600;letter-spacing:.1em}
+.deal-price{white-space:nowrap;font-size:17px;color:var(--brand-dark)}
+.deal-price s{font-family:"Jost",sans-serif;font-size:13px;color:var(--muted);margin-right:12px;letter-spacing:.04em}
+.deal-price b{font-family:"Jost",sans-serif;font-size:34px;font-weight:300;line-height:1;letter-spacing:.02em}
+.deal-note{padding:0 22px 22px;font-size:14px;color:var(--muted);line-height:2}
 .news{max-width:600px;margin:0 auto}
 .news-item{padding:24px 2px;border-bottom:1px solid var(--line)}
 .news-item:first-child{border-top:1px solid var(--line)}
 .news-item time{font-family:"Jost",sans-serif;font-size:13px;letter-spacing:.14em;color:var(--brand)}
 .news-item h3{font-size:17px;font-weight:600;letter-spacing:.12em;margin:8px 0 10px;line-height:1.8}
-.news-item p{font-size:14px;color:var(--text);line-height:2}
+.news-item p{font-size:14px;color:var(--muted);line-height:2}
 /* サンプルをご覧の方向けの注記。お客様の導線とは別物であることを見た目で分ける */
 .owner-box{max-width:600px;margin:38px auto 0;border:2px dashed #b8a98d;background:var(--bg);padding:26px 22px;text-align:left}
-.owner-chip{display:inline-block;background:#0C3B2A;color:#fff;font-size:12px;letter-spacing:.16em;padding:5px 14px;margin-bottom:14px}
+.owner-chip{display:inline-block;background:#0C3B2A;color:var(--surface);font-size:12px;letter-spacing:.16em;padding:5px 14px;margin-bottom:14px}
 .owner-box h3{font-size:17px;font-weight:600;letter-spacing:.1em;margin-bottom:10px;color:#0C3B2A;line-height:1.8}
 .owner-box p{font-size:14px;line-height:2;color:var(--text)}
 .owner-btn{display:inline-block;margin-top:16px;background:#0C3B2A;color:#fff;text-decoration:none;font-size:15px;font-weight:600;letter-spacing:.08em;padding:14px 24px;border-radius:2px}
 .owner-pass{font-size:13px;margin-top:12px}
 .owner-pass b{background:var(--surface);border:1px solid var(--line);padding:2px 10px;letter-spacing:.08em}
+@media(max-width:520px){.n-alert{flex-direction:column;gap:10px}.n-tag{margin-top:0}}
 /* lead */
 .lead{max-width:620px;margin:0 auto;text-align:center;font-size:16px}
 /* points */
@@ -81,7 +82,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(242,237,227,.94);backdro
 .menu-item .name{font-size:17px;font-weight:600;letter-spacing:.1em}
 .menu-item .desc{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.9;letter-spacing:.06em}
 .menu-item .price{white-space:nowrap;font-family:"Jost",sans-serif;font-size:17px;letter-spacing:.06em;color:var(--brand-dark)}
-.menu-note{text-align:center;font-size:12px;color:var(--muted);margin-top:26px;line-height:2}
+.menu-note{text-align:center;font-size:14px;color:var(--muted);margin-top:26px;line-height:2}
 /* gallery */
 .g-grid{display:grid;grid-template-columns:1fr;gap:20px}
 @media(min-width:760px){.g-grid{grid-template-columns:repeat(2,1fr);gap:28px}}
@@ -89,7 +90,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(242,237,227,.94);backdro
 /* info */
 .info{background:var(--surface)}
 .info-table{width:100%;max-width:600px;margin:0 auto;border-collapse:collapse}
-.info-table th{width:7em;text-align:left;vertical-align:top;padding:18px 4px;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:400;letter-spacing:.14em}
+.info-table th{width:7em;text-align:left;vertical-align:top;padding:18px 4px;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px;font-weight:400;letter-spacing:.14em}
 .info-table td{padding:18px 4px;border-bottom:1px solid var(--line);font-size:15px}
 .map{margin-top:36px;overflow:hidden}
 .map iframe{width:100%;height:320px;border:0;display:block}
@@ -99,13 +100,13 @@ header{position:sticky;top:0;z-index:20;background:rgba(242,237,227,.94);backdro
 .cta-btns{display:flex;flex-direction:column;gap:14px;max-width:380px;margin:32px auto 0}
 .btn{display:block;padding:18px;font-size:15px;font-weight:600;text-decoration:none;letter-spacing:.14em;border-radius:2px}
 .btn-tel{background:var(--brand);color:#fff}
-.btn-line{background:#06c755;color:#fff}
-.cta-note{font-size:12px;color:var(--muted);margin-top:18px;line-height:2}
+.btn-line{background:#048237;color:#fff}
+.cta-note{font-size:14px;color:var(--muted);margin-top:18px;line-height:2}
 /* fixed bar */
 .fixbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;background:var(--surface);border-top:1px solid var(--line)}
 .fixbar a{flex:1;text-align:center;padding:14px 8px;font-size:13px;font-weight:600;letter-spacing:.12em;text-decoration:none;color:#fff}
 .fixbar .f-tel{background:var(--brand)}
-.fixbar .f-line{background:#06c755}
+.fixbar .f-line{background:#048237}
 @media(min-width:800px){.fixbar{display:none}body{padding-bottom:0}}
 /* footer */
 footer{background:var(--surface);color:var(--muted);text-align:center;padding:52px 24px;font-size:12px;line-height:2.1;border-top:1px solid var(--line)}
@@ -113,7 +114,7 @@ footer .fname{font-size:16px;letter-spacing:.16em;color:var(--text);margin-botto
 footer .no-sales{margin-top:12px}
 </style>
 <style>
-.toyosapo-sample-note{background:#0C3B2A;color:#fff;font-size:13px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em;font-family:"Shippori Mincho",serif}
+.toyosapo-sample-note{background:#0C3B2A;color:#faf7f1;font-size:13px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em;font-family:"Shippori Mincho",serif}
 .toyosapo-sample-note a{color:#FFD9A8;font-weight:600}
 @media(max-width:600px){.toyosapo-sample-note{font-size:12px}}
 </style>
@@ -185,7 +186,7 @@ footer .no-sales{margin-top:12px}
   <div class="container">
     <div class="sec-en">About</div>
     <h2>ごあいさつ</h2>
-    <p class="lead">住宅と畑のあいだにある、三坪ほどの小さな菓子店です。夫婦ふたりで、その日に売れる分だけを朝から焼いています。ケーキは常時六種類ほど、棚には焼き菓子を少しだけ。夕方には空になる日もありますが、それくらいがちょうどよいと思っています。</p>
+    <p class="lead">住宅と畑のあいだにある、三坪ほどの小さな菓子店です。<br>夫婦ふたりで、その日に売れる分だけを朝から焼いています。ケーキは常時六種類ほど、棚には焼き菓子を少しだけ。<br>夕方には空になる日もありますが、それくらいがちょうどよいと思っています。</p>
   </div>
 </section>
 
