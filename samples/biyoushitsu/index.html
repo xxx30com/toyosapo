@@ -55,6 +55,35 @@ nav.gnav a.current{color:var(--text);border-bottom:1px solid var(--text)}
 .point .bar{width:28px;height:1px;background:var(--line);margin:0 auto 12px}
 .point p{font-size:14px;color:var(--muted);text-align:left}
 @media(min-width:720px){.point p{text-align:center}}
+/* notice（お知らせ）— 罫線と余白だけで組む。角は丸めない */
+.notice{background:var(--soft)}
+.n-alert{display:flex;gap:14px;align-items:flex-start;max-width:620px;margin:0 auto 30px;padding:18px 20px;border:1px solid var(--line);background:#fff}
+.n-tag{flex:none;margin-top:3px;padding:3px 12px;background:var(--brand);color:#fff;font-size:12px;letter-spacing:.16em;white-space:nowrap}
+.n-alert p{font-size:14px;line-height:1.95}
+.deal{max-width:620px;margin:0 auto 34px;border:1px solid var(--line);background:#fff}
+.deal-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.deal-name{font-size:17px;letter-spacing:.14em}
+.deal-time{font-size:13px;color:var(--muted);white-space:nowrap}
+.deal-body{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:20px}
+.deal-item{font-size:16px;letter-spacing:.1em}
+.deal-price{white-space:nowrap;letter-spacing:.04em}
+.deal-price s{font-size:13px;color:var(--muted);margin-right:12px}
+.deal-price b{font-family:"Instrument Sans",sans-serif;font-size:34px;font-weight:500;line-height:1}
+.deal-note{padding:0 20px 20px;font-size:13px;color:var(--muted);line-height:1.9}
+.news{max-width:620px;margin:0 auto}
+.news-item{padding:22px 2px;border-bottom:1px solid var(--line)}
+.news-item:first-child{border-top:1px solid var(--line)}
+.news-item time{font-family:"Instrument Sans",sans-serif;font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.news-item h3{font-size:16px;font-weight:500;letter-spacing:.1em;margin:6px 0 8px;line-height:1.7}
+.news-item p{font-size:14px;color:var(--muted);line-height:1.95}
+/* サンプルをご覧の方向けの注記。お客様の導線とは別物であることを見た目で分ける */
+.owner-box{max-width:560px;margin:36px auto 0;border:2px dashed #9db3a7;background:#f3f7f4;border-radius:10px;padding:26px 22px;text-align:left}
+.owner-chip{display:inline-block;background:#0C3B2A;color:#fff;font-size:12px;letter-spacing:.16em;padding:5px 14px;border-radius:999px;margin-bottom:14px}
+.owner-box h3{font-size:17px;font-weight:500;letter-spacing:.08em;margin-bottom:10px;color:#0C3B2A}
+.owner-box p{font-size:14px;line-height:1.9;color:#4a544d}
+.owner-btn{display:inline-block;margin-top:16px;background:#0C3B2A;color:#fff;text-decoration:none;font-size:15px;font-weight:700;letter-spacing:.06em;padding:13px 24px;border-radius:6px}
+.owner-pass{font-size:13px;margin-top:12px;color:#4a544d}
+.owner-pass b{background:#fff;border:1px solid #cfdbd4;border-radius:6px;padding:2px 8px;letter-spacing:.08em}
 /* works */
 .works{background:var(--surface)}
 .w-list{display:grid;gap:44px}
@@ -125,6 +154,50 @@ footer .no-sales{margin-top:12px}
   </div>
   <img src="photos/hero.jpg" alt="美容室 ひよりの店内" class="hero-photo hero-order">
 </div>
+
+<section class="notice">
+  <div class="container">
+    <div class="sec-en">News</div>
+    <h2>お知らせ</h2>
+    <div id="oshirase">
+
+      <div class="n-alert"><span class="n-tag">臨時休業</span><p>9月10日（木）は研修のため、お休みをいただきます。<br>9月11日（金）から通常どおり営業します。</p></div>
+
+      <div class="deal">
+        <div class="deal-head"><span class="deal-name">平日午前のご予約</span><span class="deal-time">火〜金 9:00〜12:00 のご来店</span></div>
+        <div class="deal-body"><div class="deal-item">トリートメント</div><div class="deal-price"><s>通常 2,200円〜</s><b>1,100</b>円</div></div>
+        <p class="deal-note">カットまたはカラーとご一緒に。ご予約のときにお申しつけください</p>
+      </div>
+
+      <div class="news">
+        <article class="news-item">
+          <time>2026.08.27</time>
+          <h3>ネットでのご予約をはじめました</h3>
+          <p>お電話がつながらない時間でも、ご予約のページから24時間お取りいただけます。空いている時間がそのまま出ますので、お好きな枠をお選びください。</p>
+        </article>
+        <article class="news-item">
+          <time>2026.08.24</time>
+          <h3>秋のトリートメントに切り替えました</h3>
+          <p>空気が乾いてくる季節に合わせて、しっとりまとまるものへ入れ替えました。夏の日差しで傷んだ毛先が気になる方は、ご相談ください。</p>
+        </article>
+        <article class="news-item">
+          <time>2026.08.08</time>
+          <h3>駐車場の停め方について</h3>
+          <p>敷地に3台分ございます。奥から詰めて停めていただけると、あとからお越しの方も入りやすくなります。ご協力をお願いいたします。</p>
+        </article>
+      </div>
+
+    </div>
+
+    <div class="owner-box">
+      <span class="owner-chip">サンプルをご覧の方へ</span>
+      <h3>このお知らせは、お店の方がご自分で書き換えます</h3>
+      <p>臨時休業も、期間限定のご案内も、お店のスマホから書き換えられます。<b>「いつまで出すか」を入れておけば、その日を過ぎたら自分で消さなくても引っ込みます。</b><br>実際の管理画面を、そのまま公開しています。書き換えるとこのページにそのまま出ますので、どうぞお試しください（毎晩0時にもとに戻ります）。</p>
+      <a class="owner-btn" href="https://oshirase.ai-hisho-worker.workers.dev/a/hiyori" target="_blank" rel="noopener">お知らせの管理画面をひらく ❯</a>
+      <p class="owner-pass">パスワード <b>demo1234</b></p>
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="container">
@@ -263,5 +336,6 @@ document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.js-tel-num').forEach(function(el){el.textContent=disp});
 });
 </script>
+<script src="https://oshirase.ai-hisho-worker.workers.dev/widget.js?shop=hiyori" defer></script>
 </body>
 </html>

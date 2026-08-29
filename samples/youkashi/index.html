@@ -34,6 +34,35 @@ header{position:sticky;top:0;z-index:20;background:rgba(242,237,227,.94);backdro
 .hero p{margin-top:22px;font-size:14px;color:var(--muted);line-height:2}
 .hero-band{width:100%;aspect-ratio:4/3;object-fit:cover}
 @media(min-width:800px){.hero-band{aspect-ratio:21/9}.hero-in{padding:88px 24px 72px}}
+/* notice（お知らせ）— 紙面らしく、罫線と明朝で組む */
+.notice{background:var(--surface)}
+.n-alert{display:flex;gap:16px;align-items:flex-start;max-width:600px;margin:0 auto 34px;padding:20px 22px;border:1px solid var(--brand);background:var(--bg)}
+.n-tag{flex:none;margin-top:5px;padding:4px 14px;background:var(--brand);color:#fff;font-size:12px;letter-spacing:.16em;white-space:nowrap}
+.n-alert p{font-size:15px;line-height:2}
+.deal{max-width:600px;margin:0 auto 38px;border:1px solid var(--line);background:var(--bg)}
+.deal-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.deal-name{font-size:18px;font-weight:600;letter-spacing:.16em}
+.deal-time{font-size:13px;color:var(--text);letter-spacing:.1em;white-space:nowrap}
+.deal-body{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:22px}
+.deal-item{font-size:16px;font-weight:600;letter-spacing:.1em}
+.deal-price{white-space:nowrap;color:var(--brand-dark)}
+.deal-price s{font-family:"Jost",sans-serif;font-size:14px;color:var(--text);margin-right:12px;letter-spacing:.04em}
+.deal-price b{font-family:"Jost",sans-serif;font-size:38px;font-weight:300;line-height:1;letter-spacing:.02em}
+.deal-note{padding:0 22px 22px;font-size:13px;color:var(--text);line-height:2}
+.news{max-width:600px;margin:0 auto}
+.news-item{padding:24px 2px;border-bottom:1px solid var(--line)}
+.news-item:first-child{border-top:1px solid var(--line)}
+.news-item time{font-family:"Jost",sans-serif;font-size:13px;letter-spacing:.14em;color:var(--brand)}
+.news-item h3{font-size:17px;font-weight:600;letter-spacing:.12em;margin:8px 0 10px;line-height:1.8}
+.news-item p{font-size:14px;color:var(--text);line-height:2}
+/* サンプルをご覧の方向けの注記。お客様の導線とは別物であることを見た目で分ける */
+.owner-box{max-width:600px;margin:38px auto 0;border:2px dashed #b8a98d;background:var(--bg);padding:26px 22px;text-align:left}
+.owner-chip{display:inline-block;background:#0C3B2A;color:#fff;font-size:12px;letter-spacing:.16em;padding:5px 14px;margin-bottom:14px}
+.owner-box h3{font-size:17px;font-weight:600;letter-spacing:.1em;margin-bottom:10px;color:#0C3B2A;line-height:1.8}
+.owner-box p{font-size:14px;line-height:2;color:var(--text)}
+.owner-btn{display:inline-block;margin-top:16px;background:#0C3B2A;color:#fff;text-decoration:none;font-size:15px;font-weight:600;letter-spacing:.08em;padding:14px 24px;border-radius:2px}
+.owner-pass{font-size:13px;margin-top:12px}
+.owner-pass b{background:var(--surface);border:1px solid var(--line);padding:2px 10px;letter-spacing:.08em}
 /* lead */
 .lead{max-width:620px;margin:0 auto;text-align:center;font-size:16px}
 /* points */
@@ -107,6 +136,50 @@ footer .no-sales{margin-top:12px}
   </div>
   <img src="photos/hero.jpg" alt="洋菓子店 こもれびのショーケース" class="hero-band">
 </div>
+
+<section class="notice">
+  <div class="container">
+    <div class="sec-en">News</div>
+    <h2>お知らせ</h2>
+    <div id="oshirase">
+
+      <div class="n-alert"><span class="n-tag">臨時休業</span><p>9月15日（火）は仕込みのため、お休みをいただきます。<br>翌16日（水）17日（木）は定休日ですので、9月18日（金）から通常どおり営業します。</p></div>
+
+      <div class="deal">
+        <div class="deal-head"><span class="deal-name">焼き菓子の日</span><span class="deal-time">毎週金曜</span></div>
+        <div class="deal-body"><div class="deal-item">焼き菓子の詰め合わせ</div><div class="deal-price"><s>通常 1,500円〜</s><b>1,200</b>円</div></div>
+        <p class="deal-note">金曜は詰め合わせを少し多めに焼いています。数に限りがありますので、お早めにどうぞ</p>
+      </div>
+
+      <div class="news">
+        <article class="news-item">
+          <time>2026.08.26</time>
+          <h3>栗のモンブランをはじめました</h3>
+          <p>今年も栗の季節になりました。渋皮煮から仕込んでいますので、数が作れません。夕方には無くなる日が多くなります。</p>
+        </article>
+        <article class="news-item">
+          <time>2026.08.19</time>
+          <h3>ホールケーキは3日前までにご予約ください</h3>
+          <p>4号（12cm）から承ります。プレートの文字入れもいたしますので、お申しつけください。お渡しの日と時間もあわせてお知らせください。</p>
+        </article>
+        <article class="news-item">
+          <time>2026.08.07</time>
+          <h3>保冷剤をお付けしています</h3>
+          <p>暑い日が続きますので、お持ち帰りの時間をお伺いして保冷剤を入れております。遠方の方は、お会計のときにお申しつけください。</p>
+        </article>
+      </div>
+
+    </div>
+
+    <div class="owner-box">
+      <span class="owner-chip">サンプルをご覧の方へ</span>
+      <h3>このお知らせは、お店の方がご自分で書き換えます</h3>
+      <p>臨時休業も、期間限定のご案内も、お店のスマホから書き換えられます。<b>「いつまで出すか」を入れておけば、その日を過ぎたら自分で消さなくても引っ込みます。</b><br>実際の管理画面を、そのまま公開しています。書き換えるとこのページにそのまま出ますので、どうぞお試しください（毎晩0時にもとに戻ります）。</p>
+      <a class="owner-btn" href="https://oshirase.ai-hisho-worker.workers.dev/a/komorebi" target="_blank" rel="noopener">お知らせの管理画面をひらく ❯</a>
+      <p class="owner-pass">パスワード <b>demo1234</b></p>
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="container">
@@ -280,5 +353,6 @@ document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.js-tel-num').forEach(function(el){el.textContent=disp});
 });
 </script>
+<script src="https://oshirase.ai-hisho-worker.workers.dev/widget.js?shop=komorebi" defer></script>
 </body>
 </html>
