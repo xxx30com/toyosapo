@@ -361,11 +361,12 @@
       .svc-web { padding: 40px 20px; }
     }
   </style>
+  <script src="https://rondo.ai-hisho-worker.workers.dev/heat.js" data-page="サービス一覧" defer></script>
 </head>
 <body>
 
   <!-- Header -->
-  <header>
+  <header data-rondo-click-sec="header">
     <div style="display: flex; align-items: center;">
       <a href="index.html" class="logo">
         <img src="images/logo.png" alt="とよサポ" class="header-logo">
@@ -399,13 +400,13 @@
   </div>
 
   <!-- Hero -->
-  <section class="svc-hero">
+  <section class="svc-hero" data-sec="svc-hero">
     <h1>作業内容一覧</h1>
     <p>草刈りからホームページ制作まで。<br>豊浦町の「誰に頼めばいいの？」に、とよサポが幅広くお応えします。</p>
   </section>
 
   <!-- Services -->
-  <section class="section" style="background: linear-gradient(180deg, #FFFFFF 0%, var(--primary-pale) 100%);">
+  <section class="section" style="background: linear-gradient(180deg, #FFFFFF 0%, var(--primary-pale) 100%);" data-sec="sec2">
     <div class="svc-container">
       <h2><span class="sec-en">SERVICE</span>暮らしのお手伝い</h2>
 
@@ -569,8 +570,8 @@
         </div>
 
         <div class="svc-web-cta">
-          <a href="https://lin.ee/s2UKpeO" class="cta-line">LINEで相談する</a>
-          <a href="#" data-tel class="cta-tel">📞 <span class="js-tel-num"></span></a>
+          <a href="https://lin.ee/s2UKpeO" class="cta-line" data-rondo-cta>LINEで相談する</a>
+          <a href="#" data-tel class="cta-tel" data-rondo-cta>📞 <span class="js-tel-num"></span></a>
         </div>
       </div>
 
@@ -578,18 +579,18 @@
   </section>
 
   <!-- CTA -->
-  <section class="section text-center">
+  <section class="section text-center" data-sec="sec3">
     <div class="container">
       <div class="cta-panel">
         <h2><span class="sec-en" style="color: #FFD9A8;">CONTACT</span>ひとりで悩まず、<br>まずはご相談ください。</h2>
         <p style="margin-bottom: 32px; font-weight: bold;">困った時の相談先として、<br>とよサポがお手伝いします。</p>
 
-        <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px; max-width: 420px;">
+        <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px; max-width: 420px;" data-rondo-cta>
           📞 <span class="js-tel-num"></span>
           <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜17:00)</span>
         </a>
         <br>
-        <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 0; max-width: 420px;">
+        <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 0; max-width: 420px;" data-rondo-cta>
           LINEで相談する
         </a>
       </div>
@@ -615,9 +616,9 @@
   </footer>
 
   <!-- Fixed Bottom Bar -->
-  <div class="fixed-bottom">
-    <a href="#" data-tel class="btn btn-phone">📞 <span class="js-tel-num"></span></a>
-    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  <div class="fixed-bottom" data-rondo-click-sec="cta-bar">
+    <a href="#" data-tel class="btn btn-phone" data-rondo-cta>📞 <span class="js-tel-num"></span></a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line" data-rondo-cta>LINE相談</a>
   </div>
 
   <script src="js/script.js?v=20260824"></script>

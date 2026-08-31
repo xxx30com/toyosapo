@@ -187,11 +187,12 @@
       }
     }
   </style>
+  <script src="https://rondo.ai-hisho-worker.workers.dev/heat.js" data-page="草刈り" defer></script>
 </head>
 <body>
 
   <!-- Header -->
-  <header>
+  <header data-rondo-click-sec="header">
     <div style="display: flex; align-items: center;">
       <a href="index.html" class="logo">
         <img src="images/logo.png" alt="とよサポ" class="header-logo">
@@ -225,7 +226,7 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="mowing-hero">
+  <section class="mowing-hero" data-sec="mowing-hero">
     <div class="container">
       <h1>草刈り・除草剤散布作業</h1>
       <p>伸び放題のお庭の草、とよサポがすっきり綺麗に解決します！</p>
@@ -233,7 +234,7 @@
   </section>
 
   <!-- Main Content Section -->
-  <section class="section bg-cool">
+  <section class="section bg-cool" data-sec="sec2">
     <div class="container">
       
       <!-- Intro Box -->
@@ -349,17 +350,17 @@
   </section>
 
   <!-- Final CTA Section -->
-  <section id="contact" class="section bg-light text-center" style="padding-bottom: 120px;">
+  <section id="contact" class="section bg-light text-center" style="padding-bottom: 120px;" data-sec="contact">
     <div class="container">
       <h2 style="color: var(--primary-color);">お庭の草むしり・草刈り、<br>まずはお気軽にご相談ください。</h2>
       <p style="margin-bottom: 32px; font-weight: bold;">地域の皆様を支える「とよサポ」が、<br>迅速・丁寧にスッキリ綺麗にいたします！</p>
       
-      <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;">
+      <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;" data-rondo-cta>
         📞 <span class="js-tel-num"></span>
         <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜17:00)</span>
       </a>
       
-      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;">
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;" data-rondo-cta>
         LINEで簡単見積り・相談
       </a>
     </div>
@@ -384,9 +385,9 @@
   </footer>
 
   <!-- Fixed Bottom Bar -->
-  <div class="fixed-bottom">
-    <a href="#" data-tel class="btn btn-phone">📞 <span class="js-tel-num"></span></a>
-    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  <div class="fixed-bottom" data-rondo-click-sec="cta-bar">
+    <a href="#" data-tel class="btn btn-phone" data-rondo-cta>📞 <span class="js-tel-num"></span></a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line" data-rondo-cta>LINE相談</a>
   </div>
 
   <script src="js/script.js"></script>

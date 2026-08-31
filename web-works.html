@@ -222,11 +222,12 @@
       .wk-visit { display: block; text-align: center; }
     }
   </style>
+  <script src="https://rondo.ai-hisho-worker.workers.dev/heat.js" data-page="HP制作" defer></script>
 </head>
 <body>
 
   <!-- Header -->
-  <header>
+  <header data-rondo-click-sec="header">
     <div style="display: flex; align-items: center;">
       <a href="index.html" class="logo">
         <img src="images/logo.png" alt="とよサポ" class="header-logo">
@@ -260,14 +261,14 @@
   </div>
 
   <!-- Hero -->
-  <section class="wk-hero">
+  <section class="wk-hero" data-sec="wk-hero">
     <span class="wk-hero-badge">SAMPLE</span>
     <h1>ホームページの見本</h1>
     <p>「うちのお店だと、どんなホームページになるの？」<br>その答えになる見本を、業種ごとにご用意しました。</p>
   </section>
 
   <!-- Works -->
-  <section class="section" style="background: linear-gradient(180deg, #FFFFFF 0%, var(--primary-pale) 100%);">
+  <section class="section" style="background: linear-gradient(180deg, #FFFFFF 0%, var(--primary-pale) 100%);" data-sec="sec2">
     <div class="wk-container">
 
       <!-- 居酒屋のサンプル -->
@@ -365,18 +366,18 @@
   </section>
 
   <!-- CTA -->
-  <section class="section text-center">
+  <section class="section text-center" data-sec="sec3">
     <div class="container">
       <div class="cta-panel">
         <h2><span class="sec-en" style="color: #FFD9A8;">CONTACT</span>ホームページのこと、<br>まずはご相談ください。</h2>
         <p style="margin-bottom: 32px; font-weight: bold;">初期費用0円・月額5,500円から。<br>「何から決めればいいか分からない」の状態で大丈夫です。</p>
 
-        <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px; max-width: 420px;">
+        <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px; max-width: 420px;" data-rondo-cta>
           📞 <span class="js-tel-num"></span>
           <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜17:00)</span>
         </a>
         <br>
-        <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 0; max-width: 420px;">
+        <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 0; max-width: 420px;" data-rondo-cta>
           LINEで相談する
         </a>
       </div>
@@ -402,9 +403,9 @@
   </footer>
 
   <!-- Fixed Bottom Bar -->
-  <div class="fixed-bottom">
-    <a href="#" data-tel class="btn btn-phone">📞 <span class="js-tel-num"></span></a>
-    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  <div class="fixed-bottom" data-rondo-click-sec="cta-bar">
+    <a href="#" data-tel class="btn btn-phone" data-rondo-cta>📞 <span class="js-tel-num"></span></a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line" data-rondo-cta>LINE相談</a>
   </div>
 
   <script src="js/script.js?v=20260824"></script>

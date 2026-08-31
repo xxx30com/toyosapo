@@ -187,11 +187,12 @@
       }
     }
   </style>
+  <script src="https://rondo.ai-hisho-worker.workers.dev/heat.js" data-page="スマホ相談" defer></script>
 </head>
 <body>
 
   <!-- Header -->
-  <header>
+  <header data-rondo-click-sec="header">
     <div style="display: flex; align-items: center;">
       <a href="index.html" class="logo">
         <img src="images/logo.png" alt="とよサポ" class="header-logo">
@@ -225,7 +226,7 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="smartphone-hero">
+  <section class="smartphone-hero" data-sec="smartphone-hero">
     <div class="container">
       <h1>スマホ操作・プラン見直しサポート</h1>
       <p>操作方法の優しく丁寧なレッスンから、高齢者モード設定、<br>スマホ代を抑えるプラン見直し、買い替え相談まで一挙にサポート！</p>
@@ -233,7 +234,7 @@
   </section>
 
   <!-- Main Content Section -->
-  <section class="section bg-cool">
+  <section class="section bg-cool" data-sec="sec2">
     <div class="container">
       
       <!-- Intro Box -->
@@ -370,17 +371,17 @@
   </section>
 
   <!-- Final CTA Section -->
-  <section id="contact" class="section bg-light text-center" style="padding-bottom: 120px;">
+  <section id="contact" class="section bg-light text-center" style="padding-bottom: 120px;" data-sec="contact">
     <div class="container">
       <h2 style="color: var(--primary-color);">スマホの操作、設定、プラン見直しや買い替えなど、<br>携帯電話の「困った」は何でもご相談ください！</h2>
       <p style="margin-bottom: 32px; font-weight: bold;">地域の便利屋「とよサポ」の優しいスタッフが、<br>どこよりも丁寧に、あなたのペースに合わせて徹底サポートいたします！</p>
       
-      <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;">
+      <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;" data-rondo-cta>
         📞 <span class="js-tel-num"></span>
         <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜17:00)</span>
       </a>
       
-      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;">
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;" data-rondo-cta>
         LINEで簡単申し込み・相談
       </a>
     </div>
@@ -405,9 +406,9 @@
   </footer>
 
   <!-- Fixed Bottom Bar -->
-  <div class="fixed-bottom">
-    <a href="#" data-tel class="btn btn-phone">📞 <span class="js-tel-num"></span></a>
-    <a href="https://lin.ee/s2UKpeO" class="btn btn-line">LINE相談</a>
+  <div class="fixed-bottom" data-rondo-click-sec="cta-bar">
+    <a href="#" data-tel class="btn btn-phone" data-rondo-cta>📞 <span class="js-tel-num"></span></a>
+    <a href="https://lin.ee/s2UKpeO" class="btn btn-line" data-rondo-cta>LINE相談</a>
   </div>
 
   <script src="js/script.js"></script>
