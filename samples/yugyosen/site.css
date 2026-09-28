@@ -1,0 +1,199 @@
+/* 遊漁船 潮騒丸（架空）— とよサポのホームページ制作見本
+   紺×白の力強い海。仕様は web site work/shops/sample-yugyosen/DESIGN.md */
+:root{
+  --navy:#0B2A4A;--deep:#061A30;--sea:#1C5D99;--foam:#F2F6FA;--line:#D6E0EA;
+  --text:#14202E;--muted:#4B5866;--sun:#F2A23A;--line-green:#06803A;
+  --jp:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",YuGothic,Meiryo,sans-serif;
+  --en:"Oswald","Zen Kaku Gothic New",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--jp);font-weight:500;color:var(--text);background:#fff;font-size:16px;line-height:1.9;letter-spacing:.04em;line-break:strict;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--sea)}
+.kp{word-break:keep-all;overflow-wrap:anywhere}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+@media(min-width:600px){.container{padding:0 32px}}
+section{padding:72px 0}
+@media(min-width:960px){section{padding:104px 0}}
+.bg-foam{background:var(--foam)}
+.en{font-family:var(--en);font-weight:500;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--sea)}
+h2{font-size:clamp(24px,5vw,34px);font-weight:900;line-height:1.5;letter-spacing:.06em;color:var(--navy);margin:8px 0 18px;font-feature-settings:"palt" 1}
+h3{font-size:19px;font-weight:700;line-height:1.6;letter-spacing:.04em;color:var(--navy);font-feature-settings:"palt" 1}
+.lead{font-size:16px;color:var(--muted);max-width:640px}
+.num{font-family:var(--en);font-weight:500;letter-spacing:.02em}
+
+/* サンプルの帯（とよサポ共通） */
+.toyosapo-sample-note{background:#0C3B2A;color:#fff;font-size:12px;line-height:1.7;text-align:center;padding:10px 16px;letter-spacing:.03em;font-family:"Zen Kaku Gothic New",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+.toyosapo-sample-note a{color:#FFD9A8;font-weight:700}
+
+/* ヘッダー */
+header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.h-in{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{text-decoration:none;color:var(--navy);display:flex;flex-direction:column;line-height:1.2}
+.logo b{font-size:20px;font-weight:900;letter-spacing:.08em}
+.logo span{font-family:var(--en);font-size:10px;letter-spacing:.3em;color:var(--sea);margin-top:3px}
+.gnav{display:none;gap:24px;font-size:14px;font-weight:700;letter-spacing:.06em}
+.gnav a{color:var(--navy);text-decoration:none;padding:6px 0}
+.gnav a.current{border-bottom:2px solid var(--navy)}
+@media(min-width:960px){.gnav{display:flex}}
+.h-cta{flex:0 0 auto;background:var(--sun);color:var(--deep);text-decoration:none;font-weight:900;font-size:14px;letter-spacing:.08em;padding:11px 18px;border-radius:4px}
+
+/* ボタン */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 28px;border-radius:4px;font-weight:900;font-size:16px;letter-spacing:.08em;text-decoration:none;font-family:inherit;border:0;cursor:pointer}
+.btn-sun{background:var(--sun);color:var(--deep)}
+.btn-line{background:var(--line-green);color:#fff}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.85)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-outline{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+
+/* ヒーロー */
+.hero{position:relative;min-height:clamp(560px,92vh,820px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--deep)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(6,26,48,.92) 0%,rgba(6,26,48,.55) 45%,rgba(6,26,48,.15) 75%)}
+.hero-in{position:relative;z-index:2;width:100%;max-width:1080px;margin:0 auto;padding:0 20px 56px}
+@media(min-width:600px){.hero-in{padding:0 32px 80px}}
+.hero .en{color:#9CC7F0}
+.hero h1{font-size:clamp(32px,8vw,60px);font-weight:900;line-height:1.35;letter-spacing:.06em;margin:10px 0 16px;font-feature-settings:"palt" 1;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero p{font-size:clamp(15px,2.4vw,18px);max-width:620px;line-height:1.9;color:#E6EEF6}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 26px}
+.chips span{font-size:13px;font-weight:700;border:1px solid rgba(255,255,255,.55);border-radius:99px;padding:5px 13px;background:rgba(6,26,48,.35)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px}
+@media(max-width:599px){.hero-btns .btn{width:100%}}
+
+/* 3つの約束 */
+.promise{display:grid;gap:18px;margin-top:34px}
+@media(min-width:800px){.promise{grid-template-columns:repeat(3,1fr);gap:24px}}
+.promise div{border-top:4px solid var(--navy);background:#fff;padding:22px 20px 24px;border-radius:0 0 4px 4px;box-shadow:0 1px 0 var(--line)}
+.promise .n{font-family:var(--en);font-size:36px;color:var(--sea);line-height:1}
+.promise h3{margin:10px 0 6px}
+.promise p{font-size:15px;color:var(--muted)}
+
+/* 便と料金 */
+.plans{display:grid;gap:18px;margin-top:30px}
+@media(min-width:800px){.plans{grid-template-columns:1fr 1fr;gap:24px}}
+.plan{background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.plan img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.plan-in{padding:20px 20px 24px}
+.plan .days{font-size:13px;font-weight:700;color:var(--sea);letter-spacing:.06em}
+.plan h3{font-size:22px;margin:4px 0 4px}
+.plan .time{font-family:var(--en);font-size:18px;color:var(--navy);letter-spacing:.04em}
+.plan dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin-top:14px;border-top:1px solid var(--line);padding-top:14px;align-items:baseline}
+.plan dt{font-size:13px;color:var(--muted)}
+.plan dd{font-family:var(--en);font-size:24px;color:var(--navy);text-align:right}
+.plan dd small{font-family:var(--jp);font-size:12px;color:var(--muted);margin-left:4px}
+.plan .fish{font-size:14px;color:var(--muted);margin-top:10px}
+.price-note{margin-top:20px;font-size:14px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:4px;padding:14px 18px}
+.price-note li{margin-left:1.2em}
+
+/* 予約から乗船まで（紺の帯） */
+.band{background:var(--navy);color:#fff}
+.band .en{color:#9CC7F0}
+.band h2{color:#fff}
+.band .lead{color:#D5E2EF}
+.flow-wrap{display:grid;gap:36px;margin-top:34px;align-items:start}
+@media(min-width:900px){.flow-wrap{grid-template-columns:1.1fr .9fr;gap:56px}}
+.flow{list-style:none;counter-reset:f}
+.flow li{position:relative;padding:0 0 26px 64px;counter-increment:f}
+.flow li::before{content:counter(f);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--navy);font-family:var(--en);font-size:20px;display:flex;align-items:center;justify-content:center}
+.flow li::after{content:"";position:absolute;left:21px;top:48px;bottom:4px;width:2px;background:rgba(255,255,255,.3)}
+.flow li:last-child::after{display:none}
+.flow h3{color:#fff;font-size:18px}
+.flow p{font-size:15px;color:#D5E2EF}
+.flow .tag{display:inline-block;font-size:11px;font-weight:700;background:var(--sun);color:var(--deep);border-radius:3px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+/* スマホの見本（LINE） */
+.phone{max-width:340px;margin:0 auto;background:#0d1117;border-radius:34px;padding:12px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.phone-top{color:#fff;font-size:13px;font-weight:700;text-align:center;padding:10px 0 8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.phone-top i{width:22px;height:22px;border-radius:50%;background:var(--sun);display:inline-block}
+.chat{background:#8CABD9;border-radius:22px;padding:14px 12px 6px;height:460px;overflow:hidden;position:relative}
+.chat .who{font-size:11px;color:#fff;margin:0 0 3px 4px}
+.bubble{background:#fff;color:#1d1d1d;border-radius:16px;border-top-left-radius:4px;padding:9px 12px;font-size:13px;line-height:1.65;white-space:pre-line;max-width:88%;margin-bottom:10px;letter-spacing:.02em}
+.bubble.me{background:#86E07A;margin-left:auto;border-top-left-radius:16px;border-top-right-radius:4px;max-width:66%}
+.bubble .t{display:block;text-align:right;font-size:10px;color:#777}
+.sample-tag{display:inline-block;background:var(--sun);color:var(--deep);font-size:11px;font-weight:900;border-radius:3px;padding:2px 8px;margin-bottom:10px}
+.phone-cap{text-align:center;font-size:13px;color:#D5E2EF;margin-top:14px}
+
+/* 船と船長 */
+.boat{display:grid;gap:28px;margin-top:30px;align-items:start}
+@media(min-width:860px){.boat{grid-template-columns:1fr 1fr;gap:44px}}
+.boat img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.spec{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+.spec th,.spec td{border-bottom:1px solid var(--line);padding:11px 4px;text-align:left;vertical-align:top}
+.spec th{width:7.5em;color:var(--muted);font-weight:500;font-size:14px}
+.captain{display:grid;gap:18px;margin-top:40px;align-items:center}
+@media(min-width:860px){.captain{grid-template-columns:.8fr 1.2fr;gap:40px}}
+.captain blockquote{font-size:17px;line-height:2;color:var(--navy);font-weight:700;border-left:4px solid var(--navy);padding-left:18px}
+.captain cite{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:10px;font-weight:500}
+
+/* こんな釣り */
+.gal{display:grid;gap:16px;margin-top:30px}
+@media(min-width:760px){.gal{grid-template-columns:repeat(3,1fr);gap:20px}}
+.gal figure{background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.gal figcaption{padding:14px 16px 18px;font-size:14px;color:var(--muted)}
+.gal figcaption b{display:block;color:var(--navy);font-size:16px;margin-bottom:2px}
+
+/* はじめての方 */
+.first{display:grid;gap:14px;margin-top:28px}
+@media(min-width:760px){.first{grid-template-columns:1fr 1fr;gap:18px}}
+.first div{background:#fff;border:1px solid var(--line);border-radius:4px;padding:18px 20px}
+.first h3{font-size:17px;margin-bottom:4px}
+.first p,.first li{font-size:15px;color:var(--muted)}
+.first ul{margin-left:1.2em}
+
+/* よくある質問 */
+.faq{margin-top:26px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 40px 18px 0;font-weight:700;color:var(--navy);position:relative;font-size:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";font-family:var(--en);color:var(--sea);margin-right:12px}
+.faq summary::after{content:"＋";position:absolute;right:6px;top:18px;color:var(--sea)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 18px 26px;color:var(--muted);font-size:15px}
+
+/* アクセス */
+.access{display:grid;gap:26px;margin-top:28px;align-items:start}
+@media(min-width:860px){.access{grid-template-columns:1fr 1fr;gap:44px}}
+.access img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+
+/* 最後の予約 */
+.final{position:relative;color:#fff;text-align:center;background:var(--deep);overflow:hidden}
+.final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}
+.final .container{position:relative}
+.final h2{color:#fff}
+.final p{color:#E6EEF6}
+.final .hero-btns{justify-content:center;margin-top:26px}
+
+footer{background:var(--deep);color:#AFC1D3;font-size:13px;line-height:2;padding:44px 20px 96px;text-align:center}
+footer b{display:block;color:#fff;font-size:18px;letter-spacing:.1em;margin-bottom:6px}
+@media(min-width:960px){footer{padding-bottom:44px}}
+
+/* スマホ下部の固定予約バー */
+.sp-bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line)}
+.sp-bar a{flex:1;min-height:50px;font-size:15px;padding:0 10px}
+@media(min-width:960px){.sp-bar{display:none}}
+
+/* 予約ページ */
+.yhead{position:relative;color:#fff;background:var(--deep)}
+.yhead img{width:100%;height:clamp(200px,32vw,320px);object-fit:cover;opacity:.7}
+.yhead-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 20px}
+.yhead h1{font-size:clamp(28px,6vw,44px);font-weight:900;letter-spacing:.1em;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.yhead p{color:#E6EEF6;margin-top:6px}
+.yoyaku-box{max-width:640px;margin:26px auto 8px;background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px 4px 4px}
+.yoyaku-reset{font-size:12px;color:var(--muted);text-align:center}
+.after{display:grid;gap:14px;margin-top:26px}
+@media(min-width:760px){.after{grid-template-columns:repeat(3,1fr)}}
+.after div{background:#fff;border:1px solid var(--line);border-radius:4px;padding:18px}
+.after h3{font-size:16px;margin-bottom:4px}
+.after p{font-size:14px;color:var(--muted)}
+.owner-box{max-width:640px;margin:0 auto;border:2px dashed #9db3a7;background:#f3f7f4;border-radius:10px;padding:26px 22px}
+.owner-chip{display:inline-block;background:#0C3B2A;color:#fff;font-size:12px;letter-spacing:.16em;padding:5px 14px;border-radius:999px;margin-bottom:14px}
+.owner-box h3{color:#0C3B2A;margin-bottom:8px}
+.owner-box p,.owner-box li{font-size:14px;line-height:1.9;color:#4a544d}
+.owner-box ul{margin:8px 0 0 1.2em}
+.owner-btn{display:inline-block;margin-top:16px;background:#0C3B2A;color:#fff;text-decoration:none;font-size:15px;font-weight:700;letter-spacing:.06em;padding:13px 24px;border-radius:6px}
+.owner-pass{font-size:13px;margin-top:12px;color:#4a544d}
+.owner-pass b{background:#fff;border:1px solid #cfdbd4;border-radius:6px;padding:2px 8px;letter-spacing:.08em}
+.alt{max-width:640px;margin:40px auto 0;text-align:center}
+.alt .hero-btns{justify-content:center;margin-top:14px}
+.alt p{font-size:13px;color:var(--muted)}
