@@ -53,8 +53,8 @@
     <div class="alt">
       <p class="kp">ネット以外でのご予約は、<wbr>お電話かLINEでどうぞ。</p>
       <div class="hero-btns">
-        <a class="btn btn-navy" href="#" onclick="return false">電話で予約する</a>
-        <a class="btn btn-line" href="#" onclick="return false">LINEで予約する</a>
+        <button type="button" class="btn btn-navy" data-demo="demo-tel">電話で予約する</button>
+        <button type="button" class="btn btn-line" data-demo="demo-line">LINEで予約する</button>
       </div>
       <p class="kp" style="margin-top:12px">受付 6:00〜20:00<wbr>（出船中はつながりにくいことがあります）</p>
     </div>
@@ -80,11 +80,54 @@
   </div>
 </section>
 
+<!-- 見本なので電話・LINEはつながらない。押したら「実際の船ではこう開く」を見せる -->
+<dialog class="demo-modal" id="demo-line" aria-labelledby="demo-line-h">
+  <div class="dm-head"><span class="sample-tag">見本</span><button type="button" class="dm-close" aria-label="閉じる">×</button></div>
+  <h3 id="demo-line-h" class="kp">実際の船では、<wbr>ここで<wbr>LINEが開きます</h3>
+  <p class="kp">ボタンを押すと、<wbr>スマホのLINEアプリが開き、<wbr>船のLINE公式アカウントとの<wbr>トーク画面になります。<wbr>友だち追加したときの<wbr>自動のあいさつも<wbr>設定できます。</p>
+  <div class="phone dm-phone" aria-label="LINEのトーク画面の見本">
+    <div class="phone-top"><i></i>遊漁船 潮騒丸</div>
+    <div class="chat">
+      <div class="who">遊漁船 潮騒丸</div>
+      <div class="bubble">友だち追加ありがとうございます。遊漁船 潮騒丸です。
+ご希望の日付・便・人数を送っていただければ、空きをお調べします。
+ネット予約なら24時間、席の空きがその場で分かります。<span class="t">自動のあいさつ</span></div>
+      <div class="bubble me">10/4(土)のタイラバ便、2名で空いていますか？</div>
+      <div class="who">遊漁船 潮騒丸</div>
+      <div class="bubble">お問い合わせありがとうございます。
+10/4(土)のSLJ・タイラバ便は、残り4席です。2名さまでお取りしますね。
+お名前と、当日つながるお電話番号を教えてください。<span class="t">船長</span></div>
+    </div>
+  </div>
+  <p class="dm-note kp">※このサンプルの船は架空のため、<wbr>実際のLINEは開きません。</p>
+</dialog>
+
+<dialog class="demo-modal" id="demo-tel" aria-labelledby="demo-tel-h">
+  <div class="dm-head"><span class="sample-tag">見本</span><button type="button" class="dm-close" aria-label="閉じる">×</button></div>
+  <h3 id="demo-tel-h" class="kp">実際の船では、<wbr>ここで電話が<wbr>かかります</h3>
+  <p class="kp">スマホでは、<wbr>ボタンを押すと<wbr>そのまま船長の携帯に<wbr>電話がかかります。<wbr>パソコンでは、<wbr>電話番号が大きく表示されます。</p>
+  <div class="dm-tel"><span>遊漁船 潮騒丸</span><b class="num">090-0000-0000</b><small>受付 6:00〜20:00</small></div>
+  <p class="dm-note kp">※このサンプルの船は架空のため、<wbr>電話はつながりません。</p>
+</dialog>
+
 <footer>
   <b>遊漁船 潮騒丸</b>
   山口県下関市豊浦町（サンプルのため架空です）<br>
   山口県知事登録 第0000号（架空）<br>
   <span style="display:block;margin-top:12px">&copy; 遊漁船 潮騒丸</span>
 </footer>
+<script>
+// 見本の電話・LINEボタン：押すと「実際の船ではこう開く」を出す。背景を押しても閉じる
+document.querySelectorAll('[data-demo]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var d = document.getElementById(b.getAttribute('data-demo'));
+    if (d && d.showModal) d.showModal();
+  });
+});
+document.querySelectorAll('.demo-modal').forEach(function (d) {
+  d.querySelector('.dm-close').addEventListener('click', function () { d.close(); });
+  d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+});
+</script>
 </body>
 </html>
