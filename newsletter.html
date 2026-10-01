@@ -20,121 +20,59 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="css/style.css?v=20260728">
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css?v=20261001">
   <style>
-    .newsletter-hero {
-      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-      padding: 50px 20px;
-      text-align: center;
-      border-bottom: 4px solid var(--primary-color);
-    }
-    .newsletter-hero h1 {
-      color: var(--primary-color);
-      font-size: 30px;
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-    .newsletter-hero p {
-      font-size: 17px;
-      color: #333;
-      max-width: 600px;
-      margin: 0 auto;
-      font-weight: bold;
-      line-height: 1.6;
-    }
-    .newsletter-box {
-      background: white;
-      border-radius: 16px;
-      padding: 32px 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      border: 1px solid var(--border-color);
-      max-width: 560px;
-      margin: 40px auto;
-    }
-    .newsletter-box label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 8px;
-      font-size: 16px;
-    }
-    .newsletter-box input[type="email"] {
-      width: 100%;
-      padding: 14px;
-      font-size: 16px;
-      border: 2px solid var(--border-color, #ddd);
-      border-radius: 8px;
-      margin-bottom: 16px;
-      box-sizing: border-box;
-    }
-    .newsletter-box .cf-turnstile {
-      margin-bottom: 16px;
-    }
-    .newsletter-box button[type="submit"] {
-      display: block;
-      width: 100%;
-      padding: 16px;
-      font-size: 18px;
-      font-weight: 900;
-      color: #fff;
-      background: var(--primary-color, #2e7d32);
-      border: none;
-      border-radius: 40px;
-      cursor: pointer;
-    }
-    .newsletter-box button[type="submit"]:disabled {
-      opacity: 0.6;
-      cursor: default;
-    }
-    #rondo-status {
-      margin-top: 16px;
-      font-weight: bold;
-      line-height: 1.6;
-    }
-    .newsletter-note {
-      font-size: 13px;
-      color: #666;
-      margin-top: 20px;
-      line-height: 1.7;
-    }
+    /* メルマガ登録フォーム用（site.css に無い部分だけ補う） */
+    #rondo-subscribe .cf-turnstile{margin-bottom:18px}
+    #rondo-subscribe button[type="submit"]{width:100%}
+    #rondo-subscribe button[type="submit"]:disabled{opacity:.6;cursor:default;transform:none}
+    #rondo-status{margin-top:16px;font-weight:700;line-height:1.6}
+    #rondo-status:empty{margin-top:0}
+    .newsletter-note{font-size:13.5px;color:var(--mute);margin-top:20px;line-height:1.8}
   </style>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+  <symbol id="i-line" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2.1-3.2 2.1-4.9C22 6.6 17.5 3 12 3z"/></symbol>
+</svg>
 
-  <!-- Header -->
-  <header>
-    <div style="display: flex; align-items: center;">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="とよサポ" class="header-logo">
-        <div class="header-text-group">
-          <span class="header-site-name">とよサポ</span>
-          <span class="header-site-sub">豊浦暮らしサポート</span>
-        </div>
-      </a>
-    </div>
+<div class="topbar"><div class="wrap"><span>下関市豊浦町の便利屋　<b>お見積り無料</b></span><span class="hide-sp">電話受付 9:00〜17:00 ／ LINEは24時間受付</span></div></div>
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
-
-    <nav class="main-nav" id="mainNav">
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="services.html">作業内容</a></li>
-        <li><a href="works.html">作業事例</a></li>
-        <li><a href="index.html#price">料金</a></li>
-        <li><a href="index.html#flow">ご依頼の流れ</a></li>
-        <li><a href="index.html#about">当社について</a></li>
-        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
-      </ul>
+<header class="hd" data-rondo-click-sec="header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="とよサポ"><span><b>とよサポ</b><small>豊浦暮らしサポート</small></span></a>
+    <nav class="nav" id="nav">
+      <a href="services.html">作業内容</a><a href="works.html">作業事例</a><a href="akiya.html">空き家管理</a><a href="price.html">料金表</a><a href="index.html#flow">ご利用の流れ</a>
     </nav>
-  </header>
+    <div class="hd-cta">
+      <div class="tel-box"><a href="#" data-tel data-rondo-cta><svg><use href="#i-tel"/></svg><span class="js-tel-num"></span></a><small>受付 9:00〜17:00</small></div>
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line btn-md" data-rondo-cta><svg><use href="#i-line"/></svg>LINEで相談</a>
+      <button class="menu-btn" id="menuBtn" aria-controls="nav" aria-expanded="false">メニュー</button>
+    </div>
+  </div>
+</header>
 
-  <section class="newsletter-hero">
-    <h1>メールマガジン登録</h1>
-    <p>暮らしに役立つ情報やとよサポからのお知らせを<br>メールでお届けします。</p>
-  </section>
+<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="index.html">ホーム</a><span aria-hidden="true">›</span><span>メールマガジン登録</span></div></nav>
 
-  <div class="container">
-    <div class="newsletter-box">
+<main>
+<section class="phero noimg" data-sec="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge">メールマガジン</span>
+      <h1>メールマガジン登録</h1>
+      <p class="lead">暮らしに役立つ情報やとよサポからのお知らせを<br>メールでお届けします。</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight soft" data-sec="form">
+  <div class="wrap">
+    <div class="form rv">
       <form id="rondo-subscribe">
         <label for="rondo-email">メールアドレス</label>
         <input
@@ -152,7 +90,7 @@
           <label for="rondo-website">Website</label>
           <input id="rondo-website" name="website" type="text" tabindex="-1" autocomplete="off">
         </div>
-        <button type="submit">登録確認メールを受け取る</button>
+        <button type="submit" class="btn btn-green btn-lg">登録確認メールを受け取る</button>
         <p id="rondo-status" role="status" aria-live="polite"></p>
       </form>
       <p class="newsletter-note">
@@ -161,26 +99,39 @@
       </p>
     </div>
   </div>
+</section>
+</main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
-        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
-        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
-          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
-          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
-        </div>
-      </div>
-      <div class="footer-info">
-        <p>地域の困りごと相談窓口</p>
-        <p>代表：森脇靖斗</p>
-      </div>
-      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
+<!-- CTA -->
+<section class="cta-band" id="contact" data-sec="contact">
+  <div class="wrap">
+    <h2>ひとりで悩まず、<br>まずはご相談ください。</h2>
+    <p>暮らしの困りごとは、地域の便利屋「とよサポ」へお気軽にご相談ください。</p>
+    <div class="row">
+      <a href="#" data-tel class="big-tel" data-rondo-cta><small>お電話（受付 9:00〜17:00）</small><b><svg><use href="#i-tel"/></svg><span class="js-tel-num"></span></b></a>
+      <a href="https://lin.ee/s2UKpeO" class="big-line" data-rondo-cta><small>24時間受付</small>LINEで相談する</a>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
+<footer class="ft">
+  <div class="wrap">
+    <div>
+      <a href="index.html" class="logo"><img src="images/logo.png" alt=""><span><b>とよサポ</b><small>豊浦暮らしサポート</small></span></a>
+      <p>地域の困りごと相談窓口<br>山口県下関市豊浦町　代表 森脇靖斗</p>
+    </div>
+    <nav>
+      <a href="services.html">作業内容</a><a href="works.html">作業事例</a><a href="price.html">料金表</a>
+      <a href="akiya.html">空き家管理</a><a href="index.html#flow">ご利用の流れ</a><a href="index.html#faq">よくある質問</a>
+      <a href="web-works.html">ホームページ制作</a><a href="https://www.instagram.com/toyosapo_official/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <div class="copy">© 2026 とよサポ All Rights Reserved.</div>
+  </div>
+</footer>
+
+<div class="fbar" data-rondo-click-sec="cta-bar"><a href="#" data-tel class="t" data-rondo-cta><svg><use href="#i-tel"/></svg>電話する</a><a href="https://lin.ee/s2UKpeO" class="l" data-rondo-cta><svg><use href="#i-line"/></svg>LINEで相談</a></div>
+
+<script>
     (() => {
       const form = document.getElementById('rondo-subscribe');
       const status = document.getElementById('rondo-status');
@@ -219,7 +170,8 @@
         }
       });
     })();
-  </script>
-  <script src="js/script.js"></script>
+</script>
+<script src="js/site.js?v=20261001"></script>
+<script src="js/contact.js" defer></script>
 </body>
 </html>

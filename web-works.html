@@ -19,427 +19,191 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="css/style.css?v=20260824">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css?v=20261001">
   <style>
-    /* 制作事例ページ専用スタイル */
-    .wk-hero {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, #14563a 100%);
-      padding: 50px 20px;
-      text-align: center;
-      color: #fff;
-    }
-    .wk-hero .wk-hero-badge {
-      display: inline-block;
-      background: var(--accent-color);
-      color: #fff;
-      font-weight: 900;
-      font-size: 13px;
-      letter-spacing: 0.15em;
-      padding: 6px 18px;
-      border-radius: 999px;
-      margin-bottom: 16px;
-    }
-    .wk-hero h1 {
-      color: #fff;
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
-    .wk-hero p {
-      font-size: 17px;
-      max-width: 640px;
-      margin: 0 auto;
-      font-weight: bold;
-      line-height: 1.8;
-    }
-    .breadcrumb {
-      padding: 12px 20px;
-      background: #f9f9f9;
-      font-size: 14px;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .breadcrumb a {
-      color: var(--secondary-color);
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .breadcrumb span { margin: 0 8px; color: #999; }
-
-    .wk-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .wk-card {
-      background: #fff;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
-      overflow: hidden;
-    }
-    .wk-card + .wk-card { margin-top: 40px; }
-
-    /* ブラウザ枠風のスクリーンショット */
-    .wk-shot {
-      background: #e9edea;
-      padding: 14px 14px 0;
-    }
-    .wk-browser {
-      border-radius: 10px 10px 0 0;
-      overflow: hidden;
-      box-shadow: 0 -2px 14px rgba(15, 40, 30, 0.12);
-      background: #fff;
-    }
-    .wk-bar {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: #dfe4e0;
-      padding: 8px 12px;
-    }
-    .wk-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #b9c2bc;
-      flex-shrink: 0;
-    }
-    .wk-url {
-      flex-grow: 1;
-      background: #fff;
-      border-radius: 999px;
-      font-size: 12px;
-      color: #6b746e;
-      padding: 3px 12px;
-      margin-left: 8px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      font-weight: bold;
-    }
-    .wk-browser img {
-      width: 100%;
-      display: block;
-      border-top: 1px solid #dfe4e0;
-    }
-
-    .wk-body { padding: 28px 28px 32px; }
-    .wk-labels {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-    .wk-label {
-      font-size: 13px;
-      font-weight: 900;
-      padding: 5px 14px;
-      border-radius: 999px;
-    }
-    .wk-label-live { background: var(--primary-color); color: #fff; }
-    .wk-label-sample { background: #6b746e; color: #fff; }
-    .wk-label-type { background: var(--primary-pale); color: var(--primary-color); }
-    .wk-body h3 {
-      font-size: 26px;
-      margin-bottom: 6px;
-    }
-    .wk-body .wk-sub {
-      font-size: 15px;
-      color: #6b746e;
-      font-weight: bold;
-      margin-bottom: 16px;
-    }
-    .wk-body p { font-size: 16px; margin-bottom: 20px; }
-
-    .wk-points {
-      list-style: none;
-      background: var(--light-gray);
-      border-radius: 12px;
-      padding: 18px 22px;
-      margin-bottom: 24px;
-    }
-    .wk-points li {
-      font-size: 15px;
-      font-weight: 700;
-      padding: 6px 0 6px 26px;
-      position: relative;
-      border-bottom: 1px dashed var(--border-color);
-    }
-    .wk-points li:last-child { border-bottom: none; }
-    .wk-points li::before {
-      content: "✔";
-      position: absolute;
-      left: 2px;
-      color: var(--primary-color);
-      font-weight: 900;
-    }
-
-    .wk-visit {
-      display: inline-block;
-      background: var(--primary-color);
-      color: #fff;
-      font-weight: 900;
-      font-size: 17px;
-      text-decoration: none;
-      padding: 14px 32px;
-      border-radius: 999px;
-      transition: background 0.2s;
-    }
-    .wk-visit:hover { background: #0f5f3a; }
-
-    /* 準備中カード */
-    .wk-coming {
-      background: #fff;
-      border: 2px dashed var(--border-color);
-      border-radius: var(--radius);
-      padding: 36px 28px;
-      text-align: center;
-      margin-top: 40px;
-    }
-    .wk-coming h3 { font-size: 22px; margin-bottom: 10px; }
-    .wk-coming p { font-size: 16px; color: #555; margin-bottom: 20px; }
-    .wk-coming-list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .wk-coming-item {
-      background: var(--primary-pale);
-      color: var(--primary-color);
-      font-weight: 900;
-      font-size: 15px;
-      padding: 10px 20px;
-      border-radius: 999px;
-    }
-
-    @media (max-width: 768px) {
-      .wk-hero h1 { font-size: 25px; }
-      .wk-hero p { font-size: 15px; }
-      .wk-body { padding: 22px 20px 26px; }
-      .wk-body h3 { font-size: 21px; }
-      .wk-shot { padding: 10px 10px 0; }
-      .wk-visit { display: block; text-align: center; }
-    }
+    /* ホームページの見本ページだけの小さな調整（ブラウザ枠風のスクリーンショット） */
+    .split{align-items:start}
+    .browser{border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .browser .bar{display:flex;align-items:center;gap:6px;background:var(--soft);border-bottom:1px solid var(--line);padding:9px 12px}
+    .browser .bar i{width:10px;height:10px;border-radius:50%;background:#c9d2d8;flex-shrink:0}
+    .browser .bar span{flex:1;min-width:0;margin-left:8px;background:#fff;border-radius:999px;font-family:var(--num);font-size:12px;font-weight:600;color:var(--mute);padding:2px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .browser img{width:100%;height:auto}
+    .split.rev .browser{order:2}
+    @media (max-width:900px){.split.rev .browser{order:0}}
+    .labels{display:flex;flex-wrap:wrap;gap:8px}
+    .labels .sample{display:inline-block;background:var(--sub);color:#fff;font-weight:900;font-size:13.5px;padding:4px 14px;border-radius:999px}
+    .ww-sub{font-size:14.5px;font-weight:700;color:var(--mute);margin:-6px 0 12px}
+    .split .checklist li{font-weight:500;font-size:15.5px}
+    .split .checklist b{font-weight:900}
   </style>
   <script src="https://rondo.ai-hisho-worker.workers.dev/heat.js" data-page="web-works" defer></script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+  <symbol id="i-line" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2.1-3.2 2.1-4.9C22 6.6 17.5 3 12 3z"/></symbol>
+</svg>
 
-  <!-- Header -->
-  <header data-rondo-click-sec="header">
-    <div style="display: flex; align-items: center;">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="とよサポ" class="header-logo">
-        <div class="header-text-group">
-          <span class="header-site-name">とよサポ</span>
-          <span class="header-site-sub">豊浦暮らしサポート</span>
-        </div>
-      </a>
-    </div>
+<div class="topbar"><div class="wrap"><span>下関市豊浦町の便利屋　<b>お見積り無料</b></span><span class="hide-sp">電話受付 9:00〜17:00 ／ LINEは24時間受付</span></div></div>
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
-
-    <nav class="main-nav" id="mainNav">
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="services.html">作業内容</a></li>
-        <li><a href="works.html">作業事例</a></li>
-        <li><a href="index.html#price">料金</a></li>
-        <li><a href="index.html#flow">ご依頼の流れ</a></li>
-        <li><a href="index.html#about">当社について</a></li>
-        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
-      </ul>
+<header class="hd" data-rondo-click-sec="header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="とよサポ"><span><b>とよサポ</b><small>豊浦暮らしサポート</small></span></a>
+    <nav class="nav" id="nav">
+      <a href="services.html">作業内容</a><a href="works.html">作業事例</a><a href="akiya.html">空き家管理</a><a href="price.html">料金表</a><a href="index.html#flow">ご利用の流れ</a>
     </nav>
-  </header>
-
-  <!-- Breadcrumb -->
-  <div class="breadcrumb">
-    <div class="container" style="padding: 0;">
-      <a href="index.html">ホーム</a><span>❯</span><a href="services.html">作業内容</a><span>❯</span>ホームページの見本
+    <div class="hd-cta">
+      <div class="tel-box"><a href="#" data-tel data-rondo-cta><svg><use href="#i-tel"/></svg><span class="js-tel-num"></span></a><small>受付 9:00〜17:00</small></div>
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line btn-md" data-rondo-cta><svg><use href="#i-line"/></svg>LINEで相談</a>
+      <button class="menu-btn" id="menuBtn" aria-controls="nav" aria-expanded="false">メニュー</button>
     </div>
   </div>
+</header>
 
-  <!-- Hero -->
-  <section class="wk-hero" data-sec="wk-hero">
-    <span class="wk-hero-badge">SAMPLE</span>
-    <h1>ホームページの見本</h1>
-    <p>「うちのお店だと、どんなホームページになるの？」<br>その答えになる見本を、業種ごとにご用意しました。</p>
-  </section>
+<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="index.html">ホーム</a><span aria-hidden="true">›</span><a href="services.html">作業内容</a><span aria-hidden="true">›</span><span>ホームページの見本</span></div></nav>
 
-  <!-- Works -->
-  <section class="section" style="background: linear-gradient(180deg, #FFFFFF 0%, var(--primary-pale) 100%);" data-sec="body">
-    <div class="wk-container">
-
-      <!-- 居酒屋のサンプル -->
-      <div class="wk-card">
-        <div class="wk-shot">
-          <div class="wk-browser">
-            <div class="wk-bar">
-              <span class="wk-dot"></span><span class="wk-dot"></span><span class="wk-dot"></span>
-              <span class="wk-url">toyosapo.net/samples/izakaya/</span>
-            </div>
-            <img src="images/web-works/izakaya.jpg" alt="架空の居酒屋のサンプルサイト トップページ" loading="lazy">
-          </div>
-        </div>
-        <div class="wk-body">
-          <div class="wk-labels">
-            <span class="wk-label wk-label-sample">サンプル（架空のお店）</span>
-            <span class="wk-label wk-label-type">飲食店・居酒屋</span>
-          </div>
-          <h3>湯あがり酒場 ゆのじ</h3>
-          <p class="wk-sub">川棚温泉の路地の居酒屋（架空）</p>
-          <p>「うちの店だと、どんな感じになるの？」にお答えするために作ったサンプルです。川棚温泉にありそうな小さな居酒屋を想定して、写真・お品書き・店舗情報まで一通り入れています。実在するお店ではありません。</p>
-          <ul class="wk-points">
-            <li>1ページですべてが分かる構成（おまかせプランの形）</li>
-            <li>スマホでは画面下に電話・LINEのボタンが常に表示</li>
-            <li>お品書きは価格つき。仕入れで変わる旨も明記</li>
-            <li>営業時間・定休日・駐車場・地図を1か所にまとめて掲載</li>
-            <li>写真はすべて自前で用意（他店の写真は使いません）</li>
-          </ul>
-          <a href="samples/izakaya/" class="wk-visit" target="_blank" rel="noopener">サンプルを見る ❯</a>
-        </div>
-      </div>
-
-      <!-- 美容室のサンプル -->
-      <div class="wk-card">
-        <div class="wk-shot">
-          <div class="wk-browser">
-            <div class="wk-bar">
-              <span class="wk-dot"></span><span class="wk-dot"></span><span class="wk-dot"></span>
-              <span class="wk-url">toyosapo.net/samples/biyoushitsu/</span>
-            </div>
-            <img src="images/web-works/biyoushitsu.jpg" alt="架空の美容室のサンプルサイト トップページ" loading="lazy">
-          </div>
-        </div>
-        <div class="wk-body">
-          <div class="wk-labels">
-            <span class="wk-label wk-label-sample">サンプル（架空のお店）</span>
-            <span class="wk-label wk-label-type">美容室・サロン</span>
-          </div>
-          <h3>美容室 ひより</h3>
-          <p class="wk-sub">川棚の小さな一軒家の美容室（架空）</p>
-          <p>同じ制作者でも、業種が違えば見た目はまったく変わります。居酒屋とは真逆の、白と自然光を基調とした静かなつくりにしました。落ち着いた雰囲気を出したいお店向けの形です。実在するお店ではありません。</p>
-          <ul class="wk-points">
-            <li><b>ネット予約つき</b>。実際に予約でき、店主用の管理画面もご覧いただけます（月額オプション）</li>
-            <li>写真を大きく使った、余白の多い落ち着いたデザイン</li>
-            <li>メニューは料金つきの一覧。「〜円から」の表記にも対応</li>
-            <li>ご予約は電話とLINEの2つだけに絞った導線</li>
-            <li>営業時間・定休日・駐車場・地図を1か所にまとめて掲載</li>
-            <li>写真はすべて自前で用意（他店の写真は使いません）</li>
-          </ul>
-          <a href="samples/biyoushitsu/" class="wk-visit" target="_blank" rel="noopener">サンプルを見る ❯</a>
-        </div>
-      </div>
-
-      <!-- ケーキ屋のサンプル -->
-      <div class="wk-card">
-        <div class="wk-shot">
-          <div class="wk-browser">
-            <div class="wk-bar">
-              <span class="wk-dot"></span><span class="wk-dot"></span><span class="wk-dot"></span>
-              <span class="wk-url">toyosapo.net/samples/youkashi/</span>
-            </div>
-            <img src="images/web-works/youkashi.jpg" alt="架空の洋菓子店のサンプルサイト トップページ" loading="lazy">
-          </div>
-        </div>
-        <div class="wk-body">
-          <div class="wk-labels">
-            <span class="wk-label wk-label-sample">サンプル（架空のお店）</span>
-            <span class="wk-label wk-label-type">洋菓子店・テイクアウト</span>
-          </div>
-          <h3>洋菓子店 こもれび</h3>
-          <p class="wk-sub">川棚の小さな洋菓子店（架空）</p>
-          <p>紙のようなクリーム色の地に明朝体を置いた、落ち着いた印象のつくりです。持ち帰り専門のお店を想定し、商品と値段、贈り物の相談先が一目で分かる並びにしました。実在するお店ではありません。</p>
-          <ul class="wk-points">
-            <li>商品と値段を一覧で掲載。「〜円から」の表記にも対応</li>
-            <li>「その日の分だけ」など、お店の考え方を伝える欄つき</li>
-            <li>ホールケーキの予約・のし対応の案内を明記</li>
-            <li>営業時間・定休日・駐車場・地図を1か所にまとめて掲載</li>
-            <li>写真はすべて自前で用意（他店の写真は使いません）</li>
-          </ul>
-          <a href="samples/youkashi/" class="wk-visit" target="_blank" rel="noopener">サンプルを見る ❯</a>
-        </div>
-      </div>
-
-      <!-- 遊漁船のサンプル -->
-      <div class="wk-card">
-        <div class="wk-shot">
-          <div class="wk-browser">
-            <div class="wk-bar">
-              <span class="wk-dot"></span><span class="wk-dot"></span><span class="wk-dot"></span>
-              <span class="wk-url">toyosapo.net/samples/yugyosen/</span>
-            </div>
-            <img src="images/web-works/yugyosen.jpg" alt="架空の遊漁船のサンプルサイト トップページ" loading="lazy">
-          </div>
-        </div>
-        <div class="wk-body">
-          <div class="wk-labels">
-            <span class="wk-label wk-label-sample">サンプル（架空の船）</span>
-            <span class="wk-label wk-label-type">遊漁船・釣り船</span>
-          </div>
-          <h3>遊漁船 潮騒丸</h3>
-          <p class="wk-sub">響灘で出船する船長ひとりの釣り船（架空）</p>
-          <p>紺と白で、海の力強さを前に出したつくりです。電話がつながらない、中止かどうか分からない、港で名簿を書く。釣り船の「ちょっと面倒」を、ネット予約とLINEで片づける形にしました。実在する船ではありません。</p>
-          <ul class="wk-points">
-            <li><b>便ごとのネット予約つき</b>。残りの席数が見え、貸切も受けられます（月額オプション）</li>
-            <li><b>乗船名簿を全員分スマホで事前入力</b>。同行の方には届いたURLから各自で</li>
-            <li>お客様が前日まで<b>自分で変更・キャンセル</b>できる確認ページ</li>
-            <li>前日のご案内と<b>出船確定・中止をLINEで一斉連絡</b>（お店のLINE公式アカウントと連携）</li>
-            <li>船長側の画面で名簿の印刷・CSV保存。実際に触れます</li>
-            <li>写真はすべて自前で用意（他店の写真は使いません）</li>
-          </ul>
-          <a href="samples/yugyosen/" class="wk-visit" target="_blank" rel="noopener">サンプルを見る ❯</a>
-        </div>
-      </div>
-
+<main>
+<section class="phero noimg" data-sec="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge">SAMPLE</span>
+      <h1><em>ホームページ</em>の見本</h1>
+      <p class="lead">「うちのお店だと、どんなホームページになるの？」<br>その答えになる見本を、業種ごとにご用意しました。</p>
     </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section text-center" data-sec="body-2">
-    <div class="container">
-      <div class="cta-panel">
-        <h2><span class="sec-en" style="color: #FFD9A8;">CONTACT</span>ホームページのこと、<br>まずはご相談ください。</h2>
-        <p style="margin-bottom: 32px; font-weight: bold;">初期費用0円・月額5,500円から。<br>「何から決めればいいか分からない」の状態で大丈夫です。</p>
-
-        <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px; max-width: 420px;" data-rondo-cta>
-          📞 <span class="js-tel-num"></span>
-          <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜17:00)</span>
-        </a>
-        <br>
-        <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 0; max-width: 420px;" data-rondo-cta>
-          LINEで相談する
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
-        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
-        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
-          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
-          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
-        </div>
-      </div>
-      <div class="footer-info">
-        <p>地域の困りごと相談窓口</p>
-        <p>代表：森脇靖斗</p>
-      </div>
-      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Fixed Bottom Bar -->
-  <div class="fixed-bottom" data-rondo-click-sec="cta-bar">
-    <a href="#" data-tel class="btn btn-phone" data-rondo-cta>📞 <span class="js-tel-num"></span></a>
-    <a href="https://lin.ee/s2UKpeO" class="btn btn-line" data-rondo-cta>LINE相談</a>
   </div>
+</section>
 
-  <script src="js/script.js?v=20260824"></script>
+<section class="sec soft" data-sec="body">
+  <div class="wrap">
+
+    <!-- 居酒屋のサンプル -->
+    <div class="split rv">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span>toyosapo.net/samples/izakaya/</span></div>
+        <img src="images/web-works/izakaya.jpg" alt="架空の居酒屋のサンプルサイト トップページ" loading="lazy" width="1280" height="728">
+      </div>
+      <div>
+        <div class="labels"><span class="sample">サンプル（架空のお店）</span><span class="tagline">飲食店・居酒屋</span></div>
+        <h3>湯あがり酒場 ゆのじ</h3>
+        <p class="ww-sub">川棚温泉の路地の居酒屋（架空）</p>
+        <div class="prose"><p>「うちの店だと、どんな感じになるの？」にお答えするために作ったサンプルです。川棚温泉にありそうな小さな居酒屋を想定して、写真・お品書き・店舗情報まで一通り入れています。実在するお店ではありません。</p></div>
+        <ul class="checklist">
+          <li>1ページですべてが分かる構成（おまかせプランの形）</li>
+          <li>スマホでは画面下に電話・LINEのボタンが常に表示</li>
+          <li>お品書きは価格つき。仕入れで変わる旨も明記</li>
+          <li>営業時間・定休日・駐車場・地図を1か所にまとめて掲載</li>
+          <li>写真はすべて自前で用意（他店の写真は使いません）</li>
+        </ul>
+        <a href="samples/izakaya/" class="btn btn-green btn-md" target="_blank" rel="noopener">サンプルを見る →</a>
+      </div>
+    </div>
+
+    <!-- 美容室のサンプル -->
+    <div class="split rev rv">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span>toyosapo.net/samples/biyoushitsu/</span></div>
+        <img src="images/web-works/biyoushitsu.jpg" alt="架空の美容室のサンプルサイト トップページ" loading="lazy" width="1280" height="782">
+      </div>
+      <div>
+        <div class="labels"><span class="sample">サンプル（架空のお店）</span><span class="tagline">美容室・サロン</span></div>
+        <h3>美容室 ひより</h3>
+        <p class="ww-sub">川棚の小さな一軒家の美容室（架空）</p>
+        <div class="prose"><p>同じ制作者でも、業種が違えば見た目はまったく変わります。居酒屋とは真逆の、白と自然光を基調とした静かなつくりにしました。落ち着いた雰囲気を出したいお店向けの形です。実在するお店ではありません。</p></div>
+        <ul class="checklist">
+          <li><span><b>ネット予約つき</b>。実際に予約でき、店主用の管理画面もご覧いただけます（月額オプション）</span></li>
+          <li>写真を大きく使った、余白の多い落ち着いたデザイン</li>
+          <li>メニューは料金つきの一覧。「〜円から」の表記にも対応</li>
+          <li>ご予約は電話とLINEの2つだけに絞った導線</li>
+          <li>営業時間・定休日・駐車場・地図を1か所にまとめて掲載</li>
+          <li>写真はすべて自前で用意（他店の写真は使いません）</li>
+        </ul>
+        <a href="samples/biyoushitsu/" class="btn btn-green btn-md" target="_blank" rel="noopener">サンプルを見る →</a>
+      </div>
+    </div>
+
+    <!-- 洋菓子店のサンプル -->
+    <div class="split rv">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span>toyosapo.net/samples/youkashi/</span></div>
+        <img src="images/web-works/youkashi.jpg" alt="架空の洋菓子店のサンプルサイト トップページ" loading="lazy" width="1280" height="800">
+      </div>
+      <div>
+        <div class="labels"><span class="sample">サンプル（架空のお店）</span><span class="tagline">洋菓子店・テイクアウト</span></div>
+        <h3>洋菓子店 こもれび</h3>
+        <p class="ww-sub">川棚の小さな洋菓子店（架空）</p>
+        <div class="prose"><p>紙のようなクリーム色の地に明朝体を置いた、落ち着いた印象のつくりです。持ち帰り専門のお店を想定し、商品と値段、贈り物の相談先が一目で分かる並びにしました。実在するお店ではありません。</p></div>
+        <ul class="checklist">
+          <li>商品と値段を一覧で掲載。「〜円から」の表記にも対応</li>
+          <li>「その日の分だけ」など、お店の考え方を伝える欄つき</li>
+          <li>ホールケーキの予約・のし対応の案内を明記</li>
+          <li>営業時間・定休日・駐車場・地図を1か所にまとめて掲載</li>
+          <li>写真はすべて自前で用意（他店の写真は使いません）</li>
+        </ul>
+        <a href="samples/youkashi/" class="btn btn-green btn-md" target="_blank" rel="noopener">サンプルを見る →</a>
+      </div>
+    </div>
+
+    <!-- 遊漁船のサンプル -->
+    <div class="split rev rv">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span>toyosapo.net/samples/yugyosen/</span></div>
+        <img src="images/web-works/yugyosen.jpg" alt="架空の遊漁船のサンプルサイト トップページ" loading="lazy" width="1280" height="800">
+      </div>
+      <div>
+        <div class="labels"><span class="sample">サンプル（架空の船）</span><span class="tagline">遊漁船・釣り船</span></div>
+        <h3>遊漁船 潮騒丸</h3>
+        <p class="ww-sub">響灘で出船する船長ひとりの釣り船（架空）</p>
+        <div class="prose"><p>紺と白で、海の力強さを前に出したつくりです。電話がつながらない、中止かどうか分からない、港で名簿を書く。釣り船の「ちょっと面倒」を、ネット予約とLINEで片づける形にしました。実在する船ではありません。</p></div>
+        <ul class="checklist">
+          <li><span><b>便ごとのネット予約つき</b>。残りの席数が見え、貸切も受けられます（月額オプション）</span></li>
+          <li><span><b>乗船名簿を全員分スマホで事前入力</b>。同行の方には届いたURLから各自で</span></li>
+          <li><span>お客様が前日まで<b>自分で変更・キャンセル</b>できる確認ページ</span></li>
+          <li><span>前日のご案内と<b>出船確定・中止をLINEで一斉連絡</b>（お店のLINE公式アカウントと連携）</span></li>
+          <li>船長側の画面で名簿の印刷・CSV保存。実際に触れます</li>
+          <li>写真はすべて自前で用意（他店の写真は使いません）</li>
+        </ul>
+        <a href="samples/yugyosen/" class="btn btn-green btn-md" target="_blank" rel="noopener">サンプルを見る →</a>
+      </div>
+    </div>
+
+    <p class="note"><a href="services.html#web" class="link">ホームページ制作の料金プランを見る</a></p>
+  </div>
+</section>
+</main>
+
+<!-- CTA -->
+<section class="cta-band" id="contact" data-sec="contact">
+  <div class="wrap">
+    <h2>ホームページのこと、<br>まずはご相談ください。</h2>
+    <p>初期費用0円・月額5,500円から。<br>「何から決めればいいか分からない」の状態で大丈夫です。</p>
+    <div class="row">
+      <a href="#" data-tel class="big-tel" data-rondo-cta><small>お電話（受付 9:00〜17:00）</small><b><svg><use href="#i-tel"/></svg><span class="js-tel-num"></span></b></a>
+      <a href="https://lin.ee/s2UKpeO" class="big-line" data-rondo-cta><small>24時間受付</small>LINEで相談する</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div>
+      <a href="index.html" class="logo"><img src="images/logo.png" alt=""><span><b>とよサポ</b><small>豊浦暮らしサポート</small></span></a>
+      <p>地域の困りごと相談窓口<br>山口県下関市豊浦町　代表 森脇靖斗</p>
+    </div>
+    <nav>
+      <a href="services.html">作業内容</a><a href="works.html">作業事例</a><a href="price.html">料金表</a>
+      <a href="akiya.html">空き家管理</a><a href="index.html#flow">ご利用の流れ</a><a href="index.html#faq">よくある質問</a>
+      <a href="web-works.html">ホームページ制作</a><a href="https://www.instagram.com/toyosapo_official/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <div class="copy">© 2026 とよサポ All Rights Reserved.</div>
+  </div>
+</footer>
+
+<div class="fbar" data-rondo-click-sec="cta-bar"><a href="#" data-tel class="t" data-rondo-cta><svg><use href="#i-tel"/></svg>電話する</a><a href="https://lin.ee/s2UKpeO" class="l" data-rondo-cta><svg><use href="#i-line"/></svg>LINEで相談</a></div>
+
+<script src="js/site.js?v=20261001"></script>
 <script src="js/contact.js" defer></script>
 </body>
 </html>

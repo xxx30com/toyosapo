@@ -19,221 +19,163 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="css/style.css?v=20260728">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css?v=20261001">
   <script src="https://rondo.ai-hisho-worker.workers.dev/heat.js" data-page="price" defer></script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+  <symbol id="i-line" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2.1-3.2 2.1-4.9C22 6.6 17.5 3 12 3z"/></symbol>
+</svg>
 
-  <!-- Header -->
-  <header data-rondo-click-sec="header">
-    <div style="display: flex; align-items: center;">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="とよサポ" class="header-logo">
-        <div class="header-text-group">
-          <span class="header-site-name">とよサポ</span>
-          <span class="header-site-sub">豊浦暮らしサポート</span>
-        </div>
-      </a>
-    </div>
-    
-    <button class="menu-toggle" id="menuToggle">☰</button>
-    
-    <nav class="main-nav" id="mainNav">
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="services.html">作業内容</a></li>
-        <li><a href="works.html">作業事例</a></li>
-        <li><a href="index.html#price">料金</a></li>
-        <li><a href="index.html#flow">ご依頼の流れ</a></li>
-        <li><a href="index.html#about">当社について</a></li>
-        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
-      </ul>
+<div class="topbar"><div class="wrap"><span>下関市豊浦町の便利屋　<b>お見積り無料</b></span><span class="hide-sp">電話受付 9:00〜17:00 ／ LINEは24時間受付</span></div></div>
+
+<header class="hd" data-rondo-click-sec="header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="とよサポ"><span><b>とよサポ</b><small>豊浦暮らしサポート</small></span></a>
+    <nav class="nav" id="nav">
+      <a href="services.html">作業内容</a><a href="works.html">作業事例</a><a href="akiya.html">空き家管理</a><a href="price.html" aria-current="page">料金表</a><a href="index.html#flow">ご利用の流れ</a>
     </nav>
-  </header>
-
-  <!-- Detailed Price Section -->
-  <section class="section bg-light" style="min-height: 70vh;" data-sec="body">
-    <div class="container">
-      <h2 style="margin-bottom: 40px;">詳しい料金表</h2>
-      
-      <div class="price-table">
-        <div class="price-table-header">作業費の一例<span style="font-size: 16px; font-weight: normal; margin-left: 16px;">（全て税込表示）</span></div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">草刈り・草むしり</div>
-          <div class="price-table-cell service-price">7,700<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">除草剤散布</div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">植木の伐採・剪定</div>
-          <div class="price-table-cell service-price">7,700<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">
-            蜂の巣駆除
-            <div style="font-size: 13px; color: #666; margin-top: 4px;">※巣の大きさ・場所・蜂の種類により料金が変わります。まずは写真をお送りください</div>
-          </div>
-          <div class="price-table-cell service-price">6,600<span>円〜</span></div>
-        </div>
-
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">
-            電球の交換
-            <div style="font-size: 13px; color: #666; margin-top: 4px;">※電球本体は別料金</div>
-          </div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">
-            照明器具の交換
-            <div style="font-size: 13px; color: #666; margin-top: 4px;">※照明器具本体は別料金</div>
-          </div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">引掛けシーリング取付</div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">コンセント交換</div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">スイッチ交換</div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">コンセント増設</div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">エアコン撤去・処分</div>
-          <div class="price-table-cell service-price">6,600<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">家具の移動</div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">家具の組立</div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">家具の処分</div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-        
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">買い物代行</div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">
-            墓掃除
-            <div style="font-size: 13px; color: #666; margin-top: 4px;">
-              【内容】 墓石水洗い清掃、敷地内草抜き、写真報告<br>
-              ※お花・お線香のお供え、お参りは含みません
-            </div>
-          </div>
-          <div class="price-table-cell service-price" style="white-space: nowrap;">11,000<span>円</span></div>
-        </div>
-
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">
-            墓参り代行
-            <div style="font-size: 13px; color: #666; margin-top: 4px;">
-              【内容】 線香お供え、高品質造花（1対）お供え、簡易清掃、写真報告
-            </div>
-          </div>
-          <div class="price-table-cell service-price" style="white-space: nowrap;">13,200<span>円</span></div>
-        </div>
-
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">
-            墓掃除＋墓参り代行『まごころおまかせパック』
-            <div style="font-size: 13px; color: #666; margin-top: 4px;">
-              【セット内容】 墓石水洗い清掃、敷地内草抜き、枯れ花・お供え物の処分、造花設置、線香お供え、合掌礼拝、LINE写真報告<br>
-              ※上記は標準的な敷地サイズ（1坪程度）の目安料金となります。<br>
-              ※お墓の荒れ具合が酷い（草木が生い茂り、機械伐採や解体が必要等）場合は、別途お見積り（別途請求）となる場合がございます。
-            </div>
-          </div>
-          <div class="price-table-cell service-price" style="white-space: nowrap;">19,800<span>円</span></div>
-        </div>
-
-
-
-        <div class="price-table-row">
-          <div class="price-table-cell service-name">スマホ操作・プラン見直し</div>
-          <div class="price-table-cell service-price">5,500<span>円〜</span></div>
-        </div>
-        
-      </div>
-      
-      <div style="margin-top: 24px; font-size: 16px; line-height: 1.6;">
-        ※上記の作業費はあくまで一例です。<br>
-        ※エリア料金は豊浦町・菊川町・豊北町・豊田町は無料です。<br>
-        　その他のエリアは別途エリア料金がかかる場合があります。<br>
-        ※正確な料金や詳しい内容につきましては、お気軽にお問い合わせください。
-      </div>
-      
-      <div style="text-align: center; margin-top: 48px;">
-        <a href="index.html" class="btn btn-outline" style="max-width: 300px; display: inline-flex;">トップページに戻る</a>
-      </div>
-      
+    <div class="hd-cta">
+      <div class="tel-box"><a href="#" data-tel data-rondo-cta><svg><use href="#i-tel"/></svg><span class="js-tel-num"></span></a><small>受付 9:00〜17:00</small></div>
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line btn-md" data-rondo-cta><svg><use href="#i-line"/></svg>LINEで相談</a>
+      <button class="menu-btn" id="menuBtn" aria-controls="nav" aria-expanded="false">メニュー</button>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- Final CTA Section (Simplified for inner page) -->
-  <section class="section bg-light text-center" style="padding-bottom: 120px;" data-sec="body-2">
-    <div class="container">
-      <h2 style="color: var(--primary-color);">ひとりで悩まず、<br>まずはご相談ください。</h2>
-      
-      <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;" data-rondo-cta>
-        📞 <span class="js-tel-num"></span>
-        <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜17:00)</span>
-      </a>
-      
-      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;" data-rondo-cta>
-        LINEで相談する
-      </a>
-    </div>
-  </section>
+<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="index.html">ホーム</a><span aria-hidden="true">›</span><span>料金表</span></div></nav>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
-        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
-        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
-          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
-          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
-        </div>
+<main>
+<section class="phero noimg" data-sec="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge">料金表</span>
+      <h1>詳しい料金表</h1>
+      <p class="lead">とよサポの各種作業の料金一覧です。金額は全て税込表示です。</p>
+      <div class="btns">
+        <a href="https://lin.ee/s2UKpeO" class="btn btn-line btn-lg" data-rondo-cta><svg><use href="#i-line"/></svg>LINEで相談する</a>
+        <a href="#" data-tel class="btn btn-tel btn-lg" data-rondo-cta><svg><use href="#i-tel"/></svg>電話で相談</a>
       </div>
-      <div class="footer-info">
-        <p>地域の困りごと相談窓口</p>
-        <p>代表：森脇靖斗</p>
-      </div>
-      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="js/script.js"></script>
+<!-- 料金のしくみ -->
+<section class="sec tight" data-sec="formula">
+  <div class="wrap">
+    <div class="head"><span class="en">SYSTEM</span><h2>料金のしくみ</h2><p>料金は「作業費」と「エリア料金」の2つです。</p></div>
+    <div class="formula rv">
+      <div class="fb"><small>作業内容による</small><h3>作業費</h3><p>作業の内容・広さ・量に応じて<br>お見積りします（無料）</p></div>
+      <div class="plus">＋</div>
+      <div class="fb free"><small>エリアによる</small><h3>エリア料金</h3><p>下関市内は</p><div class="big">無料</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 作業費の一例 -->
+<section class="sec soft" id="list" data-sec="body">
+  <div class="wrap">
+    <div class="head"><span class="en">PRICE LIST</span><h2>作業費の一例</h2><p>（全て税込表示）</p></div>
+    <div class="ptable rv mt-0">
+      <div class="cap">庭・屋外の作業</div>
+      <div><span class="item"><a href="mowing.html" class="link">草刈り・草むしり</a></span><b>7,700<small>円〜</small></b></div>
+      <div><span class="item">除草剤散布</span><b>5,500<small>円〜</small></b></div>
+      <div><span class="item">植木の伐採・剪定</span><b>7,700<small>円〜</small></b></div>
+      <div><span class="item">蜂の巣駆除<small>※巣の大きさ・場所・蜂の種類により料金が変わります。まずは写真をお送りください</small></span><b>6,600<small>円〜</small></b></div>
+      <div class="cap">電気まわり</div>
+      <div><span class="item"><a href="lightbulb.html" class="link">電球の交換</a><small>※電球本体は別料金</small></span><b>5,500<small>円〜</small></b></div>
+      <div><span class="item">照明器具の交換<small>※照明器具本体は別料金</small></span><b>5,500<small>円〜</small></b></div>
+      <div><span class="item">引掛けシーリング取付</span><b>5,500<small>円〜</small></b></div>
+      <div><span class="item">コンセント交換</span><b>5,500<small>円〜</small></b></div>
+      <div><span class="item">スイッチ交換</span><b>5,500<small>円〜</small></b></div>
+      <div><span class="item">コンセント増設</span><b>5,500<small>円〜</small></b></div>
+      <div class="cap">家電・家具</div>
+      <div><span class="item"><a href="aircon.html" class="link">エアコン撤去・処分</a></span><b>6,600<small>円〜</small></b></div>
+      <div><span class="item"><a href="furniture.html" class="link">家具の移動</a></span><b>5,500<small>円〜</small></b></div>
+      <div><span class="item">家具の組立</span><b>5,500<small>円〜</small></b></div>
+      <div><span class="item">家具の処分</span><b>5,500<small>円〜</small></b></div>
+      <div class="cap">暮らしのサポート</div>
+      <div><span class="item"><a href="shopping.html" class="link">買い物代行</a></span><b>5,500<small>円〜</small></b></div>
+      <div><span class="item"><a href="smartphone.html" class="link">スマホ操作・プラン見直し</a></span><b>5,500<small>円〜</small></b></div>
+    </div>
+  </div>
+</section>
+
+<!-- お墓 -->
+<section class="sec" id="grave" data-sec="grave">
+  <div class="wrap">
+    <div class="head"><span class="en">GRAVE</span><h2>墓掃除・墓参り代行</h2><p>（全て税込表示）</p></div>
+    <div class="pcards three">
+      <div class="pcard rv">
+        <h3>墓掃除</h3>
+        <div class="amt">11,000<small>円</small></div>
+        <p class="sub">※お花・お線香のお供え、お参りは含みません</p>
+        <ul><li>墓石水洗い清掃</li><li>敷地内草抜き</li><li>写真報告</li></ul>
+      </div>
+      <div class="pcard rv">
+        <h3>墓参り代行</h3>
+        <div class="amt">13,200<small>円</small></div>
+        <p class="sub">お供え・簡易清掃・写真報告</p>
+        <ul><li>線香お供え</li><li>高品質造花（1対）お供え</li><li>簡易清掃</li><li>写真報告</li></ul>
+      </div>
+      <div class="pcard hot rv">
+        <span class="flag">墓掃除＋墓参り代行</span>
+        <h3>まごころおまかせパック</h3>
+        <div class="amt">19,800<small>円</small></div>
+        <p class="sub">墓掃除と墓参り代行のセットです</p>
+        <ul><li>墓石水洗い清掃</li><li>敷地内草抜き</li><li>枯れ花・お供え物の処分</li><li>造花設置</li><li>線香お供え</li><li>合掌礼拝</li><li>LINE写真報告</li></ul>
+      </div>
+    </div>
+    <p class="pnote">※まごころおまかせパックは、標準的な敷地サイズ（1坪程度）の目安料金となります。<br>※お墓の荒れ具合が酷い（草木が生い茂り、機械伐採や解体が必要等）場合は、別途お見積り（別途請求）となる場合がございます。　<a href="grave.html">墓掃除・墓参り代行のくわしい内容を見る</a></p>
+  </div>
+</section>
+
+<!-- 注意事項 -->
+<section class="sec soft tight" data-sec="note">
+  <div class="wrap-s">
+    <div class="box rv">
+      <h3>料金について</h3>
+      <p>※上記の作業費はあくまで一例です。<br>※エリア料金（出張費）は下関市内は無料です。下関市外は別途エリア料金がかかる場合があります。<br>※正確な料金や詳しい内容につきましては、お気軽にお問い合わせください。</p>
+    </div>
+    <div class="note"><a href="index.html" class="btn btn-out btn-lg">トップページに戻る</a></div>
+  </div>
+</section>
+</main>
+
+<!-- CTA -->
+<section class="cta-band" id="contact" data-sec="contact">
+  <div class="wrap">
+    <h2>ひとりで悩まず、<br>まずはご相談ください。</h2>
+    <p>正確な料金や詳しい内容につきましては、お気軽にお問い合わせください。</p>
+    <div class="row">
+      <a href="#" data-tel class="big-tel" data-rondo-cta><small>お電話（受付 9:00〜17:00）</small><b><svg><use href="#i-tel"/></svg><span class="js-tel-num"></span></b></a>
+      <a href="https://lin.ee/s2UKpeO" class="big-line" data-rondo-cta><small>24時間受付</small>LINEで相談する</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div>
+      <a href="index.html" class="logo"><img src="images/logo.png" alt=""><span><b>とよサポ</b><small>豊浦暮らしサポート</small></span></a>
+      <p>地域の困りごと相談窓口<br>山口県下関市豊浦町　代表 森脇靖斗</p>
+    </div>
+    <nav>
+      <a href="services.html">作業内容</a><a href="works.html">作業事例</a><a href="price.html">料金表</a>
+      <a href="akiya.html">空き家管理</a><a href="index.html#flow">ご利用の流れ</a><a href="index.html#faq">よくある質問</a>
+      <a href="web-works.html">ホームページ制作</a><a href="https://www.instagram.com/toyosapo_official/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <div class="copy">© 2026 とよサポ All Rights Reserved.</div>
+  </div>
+</footer>
+
+<div class="fbar" data-rondo-click-sec="cta-bar"><a href="#" data-tel class="t" data-rondo-cta><svg><use href="#i-tel"/></svg>電話する</a><a href="https://lin.ee/s2UKpeO" class="l" data-rondo-cta><svg><use href="#i-line"/></svg>LINEで相談</a></div>
+
+<script src="js/site.js?v=20261001"></script>
 <script src="js/contact.js" defer></script>
 </body>
 </html>

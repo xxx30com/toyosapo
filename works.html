@@ -19,527 +19,190 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="css/style.css?v=20260728">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css?v=20261001">
   <style>
-    /* 作業事例ページ用スタイル */
-    .works-hero {
-      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-      padding: 50px 20px;
-      text-align: center;
-      border-bottom: 4px solid var(--primary-color);
-    }
-    .works-hero h1 {
-      color: var(--primary-color);
-      font-size: 32px;
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-    .works-hero p {
-      font-size: 18px;
-      color: #333;
-      max-width: 600px;
-      margin: 0 auto;
-      font-weight: bold;
-      line-height: 1.5;
-    }
-
-    .breadcrumb {
-      padding: 12px 20px;
-      background: #f9f9f9;
-      font-size: 14px;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .breadcrumb a {
-      color: var(--secondary-color);
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .breadcrumb span {
-      margin: 0 8px;
-      color: #999;
-    }
-
-    .intro-box {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
-      border: 1px solid var(--border-color);
-    }
-    .intro-box p {
-      margin-bottom: 16px;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-    .intro-box p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* 事例カード */
-    .case-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      margin-bottom: 48px;
-      border: 1px solid var(--border-color);
-    }
-    .case-header {
-      background: var(--primary-color);
-      color: white;
-      padding: 18px 24px;
-    }
-    .case-header .case-num {
-      display: block;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      color: #FFD9A8;
-      margin-bottom: 4px;
-    }
-    .case-header h3 {
-      color: white;
-      font-size: 22px;
-      margin: 0;
-      line-height: 1.4;
-    }
-    .case-body {
-      padding: 24px;
-    }
-
-    /* ビフォーアフター写真 */
-    .ba-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 4px;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .ba-item {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .ba-item img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-    }
-    .ba-label {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      padding: 4px 18px;
-      border-radius: 999px;
-      font-weight: 900;
-      color: white;
-      font-size: 15px;
-      letter-spacing: 0.08em;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-    }
-    .ba-label.before {
-      background: #5f6b66;
-    }
-    .ba-label.after {
-      background: var(--accent-color);
-    }
-    .ba-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      font-weight: 900;
-      color: var(--accent-color);
-      transform: rotate(90deg);
-      padding: 2px 0;
-    }
-    @media (min-width: 768px) {
-      .ba-grid {
-        grid-template-columns: 1fr 44px 1fr;
-        gap: 8px;
-      }
-      .ba-arrow {
-        transform: none;
-        padding: 0;
-      }
-    }
-
-    /* 縦長写真（3:4）のビフォーアフター */
-    .ba-item.tall img {
-      aspect-ratio: 3 / 4;
-    }
-    .ba-pair-caption {
-      font-size: 15px;
-      font-weight: bold;
-      color: var(--primary-color);
-      margin: 20px 0 8px;
-    }
-    .ba-pair-caption:first-child {
-      margin-top: 0;
-    }
-
-    /* 1枚写真の事例 */
-    .single-photo {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .single-photo img {
-      width: 100%;
-      max-width: 380px;
-      border-radius: 12px;
-      display: block;
-      margin: 0 auto 8px;
-    }
-    .single-photo figcaption {
-      font-size: 14px;
-      color: #777;
-    }
-
-    .case-desc p {
-      font-size: 17px;
-      line-height: 1.7;
-      color: #444;
-      margin-bottom: 16px;
-    }
-
-    .case-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .case-tag {
-      background: var(--primary-pale);
-      color: var(--primary-color);
-      border-radius: 999px;
-      padding: 4px 14px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .case-point {
-      background: var(--accent-pale);
-      border-left: 5px solid var(--accent-color);
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin-bottom: 20px;
-    }
-    .case-point .case-point-title {
-      font-weight: 900;
-      color: var(--accent-color);
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
-    .case-point p {
-      font-size: 16px;
-      line-height: 1.7;
-      color: #444;
-      margin: 0;
-    }
-
-    .case-link {
-      text-align: right;
-    }
-    .case-link a {
-      color: var(--primary-color);
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 16px;
-    }
-    .case-link a:hover {
-      text-decoration: underline;
-    }
-
-    .works-note {
-      text-align: center;
-      font-size: 16px;
-      color: #666;
-      margin-bottom: 0;
-    }
-
-    /* LINEかんたん見積りの案内 */
-    .photo-quote-box {
-      background: white;
-      border: 2px solid var(--primary-color);
-      border-radius: 16px;
-      padding: 30px 24px;
-      text-align: center;
-      margin-top: 48px;
-    }
-    .photo-quote-box h3 {
-      color: var(--primary-color);
-      margin-bottom: 12px;
-    }
-    .photo-quote-box p {
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 0;
-    }
+    /* 作業事例ページだけの小さな調整 */
+    .works.one{gap:40px}
+    .wk .pair-cap{background:var(--green);color:#fff;font-weight:900;font-size:14px;padding:6px 18px}
+    .wk .pair + .pair-cap{margin-top:3px}
+    .wk .bd{padding:24px 28px 28px}
+    .wk .solo{background:var(--soft);padding:24px 20px 18px;text-align:center}
+    .wk .solo figure{aspect-ratio:3/4;max-width:380px;margin:0 auto;border-radius:14px}
+    .wk .solo p{font-size:13.5px;color:var(--mute);margin:10px 0 0}
+    .wk .case-link{margin:16px 0 0}
+    .wk .link{font-size:15px}
+    .intro{margin-bottom:50px}
+    .works-note{margin-top:40px}
+    .works-band{margin-top:30px}
+    @media (max-width:600px){.wk .bd{padding:20px 18px 22px}}
   </style>
   <script src="https://rondo.ai-hisho-worker.workers.dev/heat.js" data-page="works" defer></script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+  <symbol id="i-line" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2.1-3.2 2.1-4.9C22 6.6 17.5 3 12 3z"/></symbol>
+</svg>
 
-  <!-- Header -->
-  <header data-rondo-click-sec="header">
-    <div style="display: flex; align-items: center;">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="とよサポ" class="header-logo">
-        <div class="header-text-group">
-          <span class="header-site-name">とよサポ</span>
-          <span class="header-site-sub">豊浦暮らしサポート</span>
-        </div>
-      </a>
-    </div>
+<div class="topbar"><div class="wrap"><span>下関市豊浦町の便利屋　<b>お見積り無料</b></span><span class="hide-sp">電話受付 9:00〜17:00 ／ LINEは24時間受付</span></div></div>
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
-
-    <nav class="main-nav" id="mainNav">
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="services.html">作業内容</a></li>
-        <li><a href="works.html">作業事例</a></li>
-        <li><a href="index.html#price">料金</a></li>
-        <li><a href="index.html#flow">ご依頼の流れ</a></li>
-        <li><a href="index.html#about">当社について</a></li>
-        <li class="nav-contact"><a href="index.html#contact" class="nav-contact-btn">お問い合わせ ❯</a></li>
-      </ul>
+<header class="hd" data-rondo-click-sec="header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="とよサポ"><span><b>とよサポ</b><small>豊浦暮らしサポート</small></span></a>
+    <nav class="nav" id="nav">
+      <a href="services.html">作業内容</a><a href="works.html" aria-current="page">作業事例</a><a href="akiya.html">空き家管理</a><a href="price.html">料金表</a><a href="index.html#flow">ご利用の流れ</a>
     </nav>
-  </header>
-
-  <!-- Breadcrumb -->
-  <div class="breadcrumb">
-    <div class="container" style="padding: 0;">
-      <a href="index.html">ホーム</a><span>❯</span>作業事例
+    <div class="hd-cta">
+      <div class="tel-box"><a href="#" data-tel data-rondo-cta><svg><use href="#i-tel"/></svg><span class="js-tel-num"></span></a><small>受付 9:00〜17:00</small></div>
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line btn-md" data-rondo-cta><svg><use href="#i-line"/></svg>LINEで相談</a>
+      <button class="menu-btn" id="menuBtn" aria-controls="nav" aria-expanded="false">メニュー</button>
     </div>
   </div>
+</header>
 
-  <!-- Hero Section -->
-  <section class="works-hero" data-sec="works-hero">
-    <div class="container">
-      <h1>作業事例（ビフォーアフター）</h1>
-      <p>「頼んだら、どれくらい綺麗になるの？」<br>その答えを、実際の写真でご覧ください。</p>
+<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="index.html">ホーム</a><span aria-hidden="true">›</span><span>作業事例</span></div></nav>
+
+<main>
+<section class="phero noimg" data-sec="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge">作業事例</span>
+      <h1>作業事例<em>（ビフォーアフター）</em></h1>
+      <p class="lead">「頼んだら、どれくらい綺麗になるの？」<br>その答えを、実際の写真でご覧ください。</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Main Content Section -->
-  <section class="section bg-cool" data-sec="body">
-    <div class="container">
+<section class="sec soft" data-sec="body">
+  <div class="wrap-s">
 
-      <!-- Intro Box -->
-      <div class="intro-box">
-        <p><strong>「業者に頼むのは初めてで、仕上がりが不安…」</strong><br>
-        そんな方にこそ見ていただきたいのが、このページです。</p>
-        <p>ここでは、とよサポが実際に行った作業のビフォーアフターをご紹介しています。同じようなお悩みをお持ちでしたら、「うちの場合はどうなる？」とお気軽にご相談ください。お見積りは無料です。</p>
-      </div>
+    <div class="box rv intro">
+      <h3>「業者に頼むのは初めてで、仕上がりが不安…」</h3>
+      <p>そんな方にこそ見ていただきたいのが、このページです。</p>
+      <p>ここでは、とよサポが実際に行った作業のビフォーアフターをご紹介しています。同じようなお悩みをお持ちでしたら、「うちの場合はどうなる？」とお気軽にご相談ください。お見積りは無料です。</p>
+    </div>
+
+    <div class="works one">
 
       <!-- CASE 01 草刈り -->
-      <div class="case-card">
-        <div class="case-header">
-          <span class="case-num">CASE 01｜草刈り</span>
+      <article class="wk rv" id="mowing">
+        <div class="pair">
+          <figure><img src="images/works/mowing-before.jpg" alt="草刈り前：大人の背丈ほどまで草が伸び放題の土地" loading="lazy"><figcaption>BEFORE</figcaption></figure>
+          <figure><img src="images/works/mowing-after.jpg" alt="草刈り後：草が刈り取られ、見通しの良くなった土地" loading="lazy"><figcaption>AFTER</figcaption></figure>
+        </div>
+        <div class="bd">
+          <span class="tag">CASE 01｜草刈り</span>
           <h3>背丈まで伸びた草むらが、ここまでスッキリ！</h3>
+          <p>長期間手つかずで、大人の背丈ほどまで草が伸びてしまった土地です。刈払機（草刈り機）を使って広範囲を一気に刈り取り、奥まで見通せるスッキリとした状態になりました。</p>
+          <div class="pts"><span>刈払機による機械刈り</span><span>広範囲の草刈り</span><span>空き地・遊休地</span></div>
+          <div class="voice"><b>担当者より</b>ここまで草が伸びると、ご自身での作業は体力的にも大変ですし、虫や蛇などの危険もあります。「もう手が付けられない…」という状態でも大丈夫。プロの機材で一気に解決いたします。</div>
+          <p class="case-link"><a href="mowing.html" class="link">草刈り・除草剤散布の詳細はこちら →</a></p>
         </div>
-        <div class="case-body">
-          <div class="ba-grid">
-            <div class="ba-item">
-              <img src="images/works/mowing-before.jpg" alt="草刈り前：大人の背丈ほどまで草が伸び放題の土地">
-              <span class="ba-label before">Before</span>
-            </div>
-            <div class="ba-arrow">❯</div>
-            <div class="ba-item">
-              <img src="images/works/mowing-after.jpg" alt="草刈り後：草が刈り取られ、見通しの良くなった土地">
-              <span class="ba-label after">After</span>
-            </div>
-          </div>
-          <div class="case-desc">
-            <p>長期間手つかずで、大人の背丈ほどまで草が伸びてしまった土地です。刈払機（草刈り機）を使って広範囲を一気に刈り取り、奥まで見通せるスッキリとした状態になりました。</p>
-          </div>
-          <div class="case-tags">
-            <span class="case-tag">刈払機による機械刈り</span>
-            <span class="case-tag">広範囲の草刈り</span>
-            <span class="case-tag">空き地・遊休地</span>
-          </div>
-          <div class="case-point">
-            <div class="case-point-title">担当者より</div>
-            <p>ここまで草が伸びると、ご自身での作業は体力的にも大変ですし、虫や蛇などの危険もあります。「もう手が付けられない…」という状態でも大丈夫。プロの機材で一気に解決いたします。</p>
-          </div>
-          <div class="case-link">
-            <a href="mowing.html">草刈り・除草剤散布の詳細はこちら ❯</a>
-          </div>
-        </div>
-      </div>
+      </article>
 
       <!-- CASE 02 庭木剪定 -->
-      <div class="case-card">
-        <div class="case-header">
-          <span class="case-num">CASE 02｜庭木剪定</span>
+      <article class="wk rv" id="pruning">
+        <div class="pair">
+          <figure><img src="images/works/pruning-before.jpg" alt="剪定前：枝葉が大きく茂り、道路側まで張り出した庭木" loading="lazy"><figcaption>BEFORE</figcaption></figure>
+          <figure><img src="images/works/pruning-after.jpg" alt="剪定後：枝葉が整理され、明るく風通しの良くなったお庭" loading="lazy"><figcaption>AFTER</figcaption></figure>
+        </div>
+        <div class="bd">
+          <span class="tag">CASE 02｜庭木剪定</span>
           <h3>大きく茂った庭木が、風通しの良いすっきりした姿に</h3>
+          <p>枝葉が大きく茂り、お庭が薄暗くなってしまっていた庭木です。1本1本樹形を見ながら思い切って枝を整理し、お庭全体が明るく、風通しの良い状態になりました。剪定した枝葉の回収・処分まで全て対応しています。</p>
+          <div class="pts"><span>庭木の剪定</span><span>複数本まとめて対応</span><span>枝葉の回収・処分込み</span></div>
+          <div class="voice"><b>担当者より</b>枝が伸びすぎると、日当たりや風通しが悪くなるだけでなく、台風時の枝折れや、お隣への越境トラブルの原因にもなります。「どこまで切っていいかわからない」という方も、お気軽にご相談ください。</div>
+          <p class="case-link"><a href="price.html" class="link">料金表はこちら →</a></p>
         </div>
-        <div class="case-body">
-          <div class="ba-grid">
-            <div class="ba-item">
-              <img src="images/works/pruning-before.jpg" alt="剪定前：枝葉が大きく茂り、道路側まで張り出した庭木">
-              <span class="ba-label before">Before</span>
-            </div>
-            <div class="ba-arrow">❯</div>
-            <div class="ba-item">
-              <img src="images/works/pruning-after.jpg" alt="剪定後：枝葉が整理され、明るく風通しの良くなったお庭">
-              <span class="ba-label after">After</span>
-            </div>
-          </div>
-          <div class="case-desc">
-            <p>枝葉が大きく茂り、お庭が薄暗くなってしまっていた庭木です。1本1本樹形を見ながら思い切って枝を整理し、お庭全体が明るく、風通しの良い状態になりました。剪定した枝葉の回収・処分まで全て対応しています。</p>
-          </div>
-          <div class="case-tags">
-            <span class="case-tag">庭木の剪定</span>
-            <span class="case-tag">複数本まとめて対応</span>
-            <span class="case-tag">枝葉の回収・処分込み</span>
-          </div>
-          <div class="case-point">
-            <div class="case-point-title">担当者より</div>
-            <p>枝が伸びすぎると、日当たりや風通しが悪くなるだけでなく、台風時の枝折れや、お隣への越境トラブルの原因にもなります。「どこまで切っていいかわからない」という方も、お気軽にご相談ください。</p>
-          </div>
-          <div class="case-link">
-            <a href="price.html">料金表はこちら ❯</a>
-          </div>
-        </div>
-      </div>
+      </article>
 
       <!-- CASE 03 草刈り・草抜き -->
-      <div class="case-card">
-        <div class="case-header">
-          <span class="case-num">CASE 03｜草刈り・草抜き</span>
+      <article class="wk rv" id="weeding">
+        <div class="pair-cap">玄関まわり</div>
+        <div class="pair">
+          <figure><img src="images/works/weeding-before-2.jpg" alt="草抜き前：玄関まわりに草木が生い茂り、室外機が隠れるほどの状態" loading="lazy"><figcaption>BEFORE</figcaption></figure>
+          <figure><img src="images/works/weeding-after-2.jpg" alt="草抜き後：玄関まわりの草がなくなり、タイルや室外機が見えるスッキリした状態" loading="lazy"><figcaption>AFTER</figcaption></figure>
+        </div>
+        <div class="pair-cap">犬走り</div>
+        <div class="pair">
+          <figure><img src="images/works/weeding-before-1.jpg" alt="草抜き前：犬走り沿いに草が生い茂った状態" loading="lazy"><figcaption>BEFORE</figcaption></figure>
+          <figure><img src="images/works/weeding-after-1.jpg" alt="草抜き後：犬走り沿いの草が取り除かれ、見通しの良くなった状態" loading="lazy"><figcaption>AFTER</figcaption></figure>
+        </div>
+        <div class="bd">
+          <span class="tag">CASE 03｜草刈り・草抜き</span>
           <h3>玄関まわり・犬走りの草を、根まで枯らしてスッキリと</h3>
+          <p>駐車場・玄関前・犬走りの草刈り作業です。場所に合わせて刈払機と草抜き工具を使い分け、細かく残った草には除草剤を散布して、完全に枯らす処置をしています。</p>
+          <p>犬走りには、抜くには大きすぎる草も生えていました。無理に抜根すると犬走りやブロック塀を傷める恐れがあるため、切り株にキリで穴を空けて除草剤の原液を注入し、根まで完全に枯らす処置を行いました。</p>
+          <div class="pts"><span>刈払機＋手作業の草抜き</span><span>除草剤で再発防止</span><span>駐車場・玄関前・犬走り</span></div>
+          <div class="voice"><b>担当者より</b>大きくなった草や木は、刈るだけだと切り口からまた元気に生えてきます。「切る＋根を枯らす」までがワンセット。とよサポでは、再発防止まで見据えた処置を標準で行っています。</div>
+          <p class="case-link"><a href="mowing.html" class="link">草刈り・除草剤散布の詳細はこちら →</a></p>
         </div>
-        <div class="case-body">
-          <p class="ba-pair-caption">▼ 玄関まわり</p>
-          <div class="ba-grid">
-            <div class="ba-item tall">
-              <img src="images/works/weeding-before-2.jpg" alt="草抜き前：玄関まわりに草木が生い茂り、室外機が隠れるほどの状態">
-              <span class="ba-label before">Before</span>
-            </div>
-            <div class="ba-arrow">❯</div>
-            <div class="ba-item tall">
-              <img src="images/works/weeding-after-2.jpg" alt="草抜き後：玄関まわりの草がなくなり、タイルや室外機が見えるスッキリした状態">
-              <span class="ba-label after">After</span>
-            </div>
-          </div>
-          <p class="ba-pair-caption">▼ 犬走り</p>
-          <div class="ba-grid">
-            <div class="ba-item tall">
-              <img src="images/works/weeding-before-1.jpg" alt="草抜き前：犬走り沿いに草が生い茂った状態">
-              <span class="ba-label before">Before</span>
-            </div>
-            <div class="ba-arrow">❯</div>
-            <div class="ba-item tall">
-              <img src="images/works/weeding-after-1.jpg" alt="草抜き後：犬走り沿いの草が取り除かれ、見通しの良くなった状態">
-              <span class="ba-label after">After</span>
-            </div>
-          </div>
-          <div class="case-desc">
-            <p>駐車場・玄関前・犬走りの草刈り作業です。場所に合わせて刈払機と草抜き工具を使い分け、細かく残った草には除草剤を散布して、完全に枯らす処置をしています。</p>
-            <p>犬走りには、抜くには大きすぎる草も生えていました。無理に抜根すると犬走りやブロック塀を傷める恐れがあるため、切り株にキリで穴を空けて除草剤の原液を注入し、根まで完全に枯らす処置を行いました。</p>
-          </div>
-          <div class="case-tags">
-            <span class="case-tag">刈払機＋手作業の草抜き</span>
-            <span class="case-tag">除草剤で再発防止</span>
-            <span class="case-tag">駐車場・玄関前・犬走り</span>
-          </div>
-          <div class="case-point">
-            <div class="case-point-title">担当者より</div>
-            <p>大きくなった草や木は、刈るだけだと切り口からまた元気に生えてきます。「切る＋根を枯らす」までがワンセット。とよサポでは、再発防止まで見据えた処置を標準で行っています。</p>
-          </div>
-          <div class="case-link">
-            <a href="mowing.html">草刈り・除草剤散布の詳細はこちら ❯</a>
-          </div>
-        </div>
-      </div>
+      </article>
 
       <!-- CASE 04 蜂の巣駆除 -->
-      <div class="case-card">
-        <div class="case-header">
-          <span class="case-num">CASE 04｜蜂の巣駆除</span>
+      <article class="wk rv" id="hachi">
+        <div class="solo">
+          <figure><img src="images/works/hachinosu-1.jpg" alt="屋外の棚の裏にできていたアシナガバチの巣。多数の蜂が巣に集まっている" loading="lazy"></figure>
+          <p>屋外の棚の裏にできていたアシナガバチの巣</p>
+        </div>
+        <div class="bd">
+          <span class="tag">CASE 04｜蜂の巣駆除</span>
           <h3>棚の裏に隠れていたアシナガバチの巣を駆除</h3>
+          <p>蜂の巣の駆除作業です。場所は屋外の棚の裏。普段あまり動かさない物の陰に、アシナガバチが巣を作っていました。</p>
+          <p>蜂の巣は「雨風がしのげて、人が普段見ない場所」にできやすく、軒下やベランダの天井、物置や外の棚の裏、エアコン室外機のまわりなどが要注意。気づいたときには、写真くらいの大きさになっています。特に8月の巣は蜂の数が増えていて、巣に気づかず物を動かした拍子に刺されるケースが多い時期です。</p>
+          <div class="pts"><span>蜂の巣駆除</span><span>アシナガバチ</span><span>棚の裏・物陰</span></div>
+          <div class="voice"><b>担当者より</b>蜂の巣を見つけたら、まず近づかず、巣を刺激しないようにしてください。巣が大きいもの・高い場所・スズメバチと思われるものは、ご自身で無理をなさらないでください。「これって蜂の巣？」という段階でも構いません。写真を送っていただければ、対応をご相談できます。</div>
+          <p class="case-link"><a href="price.html" class="link">料金表はこちら →</a></p>
         </div>
-        <div class="case-body">
-          <figure class="single-photo">
-            <img src="images/works/hachinosu-1.jpg" alt="屋外の棚の裏にできていたアシナガバチの巣。多数の蜂が巣に集まっている">
-            <figcaption>屋外の棚の裏にできていたアシナガバチの巣</figcaption>
-          </figure>
-          <div class="case-desc">
-            <p>蜂の巣の駆除作業です。場所は屋外の棚の裏。普段あまり動かさない物の陰に、アシナガバチが巣を作っていました。</p>
-            <p>蜂の巣は「雨風がしのげて、人が普段見ない場所」にできやすく、軒下やベランダの天井、物置や外の棚の裏、エアコン室外機のまわりなどが要注意。気づいたときには、写真くらいの大きさになっています。特に8月の巣は蜂の数が増えていて、巣に気づかず物を動かした拍子に刺されるケースが多い時期です。</p>
-          </div>
-          <div class="case-tags">
-            <span class="case-tag">蜂の巣駆除</span>
-            <span class="case-tag">アシナガバチ</span>
-            <span class="case-tag">棚の裏・物陰</span>
-          </div>
-          <div class="case-point">
-            <div class="case-point-title">担当者より</div>
-            <p>蜂の巣を見つけたら、まず近づかず、巣を刺激しないようにしてください。巣が大きいもの・高い場所・スズメバチと思われるものは、ご自身で無理をなさらないでください。「これって蜂の巣？」という段階でも構いません。写真を送っていただければ、対応をご相談できます。</p>
-          </div>
-          <div class="case-link">
-            <a href="price.html">料金表はこちら ❯</a>
-          </div>
-        </div>
-      </div>
-
-      <p class="works-note">※掲載しているのは、実際にとよサポが行った作業です。事例は今後も随時追加していきます。</p>
-
-      <!-- 写真でかんたん見積り -->
-      <div class="photo-quote-box">
-        <h3>📷 写真を送るだけ！かんたん見積り</h3>
-        <p>「うちの庭も同じような状態…」という方は、LINEで現場のお写真をお送りください。<br>おおよそのお見積りをお伝えできます。もちろん相談だけでも大歓迎です。</p>
-      </div>
+      </article>
 
     </div>
-  </section>
 
-  <!-- Final CTA Section -->
-  <section id="contact" class="section bg-light text-center" style="padding-bottom: 120px;" data-sec="contact">
-    <div class="container">
-      <h2 style="color: var(--primary-color);">「うちもお願いしたい」と思ったら、<br>まずはお気軽にご相談ください。</h2>
-      <p style="margin-bottom: 32px; font-weight: bold;">地域の皆様を支える「とよサポ」が、<br>迅速・丁寧にスッキリ綺麗にいたします！</p>
+    <p class="pnote center works-note">※掲載しているのは、実際にとよサポが行った作業です。事例は今後も随時追加していきます。</p>
 
-      <a href="#" data-tel class="btn btn-phone" style="padding: 24px; border-radius: 40px; margin-bottom: 24px;" data-rondo-cta>
-        📞 <span class="js-tel-num"></span>
-        <span style="font-size: 16px; font-weight: normal;">(受付: 9:00〜17:00)</span>
-      </a>
-
-      <a href="https://lin.ee/s2UKpeO" class="btn btn-line" style="border-radius: 40px; margin-bottom: 16px;" data-rondo-cta>
-        LINEで簡単見積り・相談
-      </a>
+    <div class="photo-band rv works-band">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+      <div><h3>写真を送るだけ！かんたん見積り</h3><p>「うちの庭も同じような状態…」という方は、LINEで現場のお写真をお送りください。おおよそのお見積りをお伝えできます。もちろん相談だけでも大歓迎です。</p></div>
+      <a href="https://lin.ee/s2UKpeO" class="btn btn-line btn-md" data-rondo-cta><svg><use href="#i-line"/></svg>LINEで送る</a>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
-        <img src="images/logo.png" alt="とよサポ" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; display: block;">
-        <div class="footer-text-group" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
-          <span class="footer-site-name" style="font-size: 20px; font-weight: 900; color: var(--accent-color); line-height: 1.2; letter-spacing: 0.05em;">とよサポ</span>
-          <span class="footer-site-sub" style="font-size: 10px; font-weight: bold; color: #ffffff; line-height: 1.2; margin-top: 2px; white-space: nowrap;">豊浦暮らしサポート</span>
-        </div>
-      </div>
-      <div class="footer-info">
-        <p>地域の困りごと相談窓口</p>
-        <p>代表：森脇靖斗</p>
-      </div>
-      <p style="font-size: 14px;">&copy; 2026 とよサポ All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Fixed Bottom Bar -->
-  <div class="fixed-bottom" data-rondo-click-sec="cta-bar">
-    <a href="#" data-tel class="btn btn-phone" data-rondo-cta>📞 <span class="js-tel-num"></span></a>
-    <a href="https://lin.ee/s2UKpeO" class="btn btn-line" data-rondo-cta>LINE相談</a>
   </div>
+</section>
+</main>
 
-  <script src="js/script.js"></script>
+<!-- CTA -->
+<section class="cta-band" id="contact" data-sec="contact">
+  <div class="wrap">
+    <h2>「うちもお願いしたい」と思ったら、<br>まずはお気軽にご相談ください。</h2>
+    <p>地域の皆様を支える「とよサポ」が、迅速・丁寧にスッキリ綺麗にいたします。</p>
+    <div class="row">
+      <a href="#" data-tel class="big-tel" data-rondo-cta><small>お電話（受付 9:00〜17:00）</small><b><svg><use href="#i-tel"/></svg><span class="js-tel-num"></span></b></a>
+      <a href="https://lin.ee/s2UKpeO" class="big-line" data-rondo-cta><small>24時間受付</small>LINEで簡単見積り・相談</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div>
+      <a href="index.html" class="logo"><img src="images/logo.png" alt=""><span><b>とよサポ</b><small>豊浦暮らしサポート</small></span></a>
+      <p>地域の困りごと相談窓口<br>山口県下関市豊浦町　代表 森脇靖斗</p>
+    </div>
+    <nav>
+      <a href="services.html">作業内容</a><a href="works.html">作業事例</a><a href="price.html">料金表</a>
+      <a href="akiya.html">空き家管理</a><a href="index.html#flow">ご利用の流れ</a><a href="index.html#faq">よくある質問</a>
+      <a href="web-works.html">ホームページ制作</a><a href="https://www.instagram.com/toyosapo_official/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <div class="copy">© 2026 とよサポ All Rights Reserved.</div>
+  </div>
+</footer>
+
+<div class="fbar" data-rondo-click-sec="cta-bar"><a href="#" data-tel class="t" data-rondo-cta><svg><use href="#i-tel"/></svg>電話する</a><a href="https://lin.ee/s2UKpeO" class="l" data-rondo-cta><svg><use href="#i-line"/></svg>LINEで相談</a></div>
+
+<script src="js/site.js?v=20261001"></script>
 <script src="js/contact.js" defer></script>
 </body>
 </html>
